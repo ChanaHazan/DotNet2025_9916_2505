@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DO
-{   
+{
     /// <summary>
     /// ישות לקוח
     /// בקצביה שלנו
@@ -14,7 +14,7 @@ namespace DO
     /// <param name="CustomerName"></param>
     /// <param name="Adress"></param>
     /// <param name="Phone"></param>
-    internal record Customer
+    public record Customer//לשאול את המורה
         (
           int Id,
           string? CustomerName,
@@ -22,9 +22,9 @@ namespace DO
           string? Phone
         )
     {
-        public Customer():this(0,null,null,null)
+        public Customer() : this(0, null, null, null)
         {
-                
+
         }
     }
 }
