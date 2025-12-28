@@ -17,7 +17,7 @@ namespace DO
     /// <param name="IsSaleToCustomer"></param>
     /// <param name="StartSale"></param>
     /// <param name="EndSale"></param>
-    internal record Sale
+    public record Sale
         (
           int Id,
           int ProductId,

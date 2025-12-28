@@ -1,11 +1,16 @@
-﻿namespace DalTest
+﻿using DO;
+using DalApi;
+using DalList;
+
+namespace DalTest
 {
     internal class Program
-    {
+    { 
+        static readonly IDal s_dal;
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            Console.WriteLine("hello chani&michal");
+            //Initialization.Initialize(s_dal);
+
         }
     }
 }
