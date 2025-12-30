@@ -12,7 +12,11 @@ namespace DalTest
         private static void Main(string[] args)
         {
             Initialization.Initialize(s_dal);
-           
+
+        public static int PrintMainMenu()
+        {
+            Console.WriteLine("Product? press 1, Customer? press 2, Sale? press 3, exit? press another key");
+            return int.Parse(Console.ReadLine());
         }
 
 
