@@ -222,10 +222,6 @@ namespace DalTest
             s_dal.Sale.Update(sale);
             Console.WriteLine("sale update!");
         }
-
-        }
-
-        }
         private static void Delete<T>(ICrud<T> crud)
         {
             try

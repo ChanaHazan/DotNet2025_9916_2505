@@ -47,7 +47,7 @@ public static class Initialization
         // אמנון
         s_dal.Product.Create(new Product(0, "Sardines", Categories.Fish, 35.0, 100));      
         // סרדינים
-    }
+        }
 
 
     public static void Initialize(IDal dal)
