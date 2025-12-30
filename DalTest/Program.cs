@@ -11,25 +11,32 @@ namespace DalTest
         static readonly IDal s_dal = new Dal.DalList();
         private static void Main(string[] args)
         {
-            Initialization.Initialize(s_dal);
-            while (true)
+            try
             {
-                int select1 = PrintMainMenu();
-                switch (select1)
+                Initialization.Initialize(s_dal);
+                while (true)
                 {
-                    case 1:
-                        ProductMenu();
-                        break;
-                    case 2:
-                        CustomerMenu();
-                        break;
-                    case 3:
-                        SaleMenu();
-                        break;
-                    default:
-                        return;
+                    int select1 = PrintMainMenu();
+                    switch (select1)
+                    {
+                        case 1:
+                            ProductMenu();
+                            break;
+                        case 2:
+                            CustomerMenu();
+                            break;
+                        case 3:
+                            SaleMenu();
+                            break;
+                        default:
+                            return;
 
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
         private static void ProductMenu()
