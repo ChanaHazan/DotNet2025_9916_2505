@@ -9,15 +9,15 @@ internal class SaleImplementation : ISale
 {
     public int Create(Sale item)
     {
-
-        //האם צריך להשתמש פה בקונפיגורציה??
+        int newId = DataSource.Config.GetSaleId();
+        Sale newSale = item with { Id=newId};
         foreach (Sale i in DataSource.Sales)
         {
-            if (item.Id == i.Id)
+            if (newSale.Id == i.Id)
                 throw new Exception("קיים מבצע עם קוד זה");
         }
-        DataSource.Sales.Add(item);
-        return item.Id;
+        DataSource.Sales.Add(newSale);
+        return newSale.Id;
     }
 
     public void Delete(int id)

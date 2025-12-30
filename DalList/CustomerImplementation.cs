@@ -9,11 +9,10 @@ internal class CustomerImplementation:ICustomer
     public int Create(Customer item)
     {
 
-        //האם צריך להשתמש פה בקונפיגורציה??
         foreach (Customer i in DataSource.Customers)
         {
             if (item.Id == i.Id)
-                throw new Exception("קיים מבצע עם קוד זה");
+                throw new Exception("קיים לקוח עם מספר מזהה זה");
         }
         DataSource.Customers.Add(item);
         return item.Id;
@@ -26,7 +25,7 @@ internal class CustomerImplementation:ICustomer
             if (item.Id == id)
             { DataSource.Customers.Remove(item); return; }
         }
-        throw new Exception("לא נמצא מבצע עם קוד זה");
+        throw new Exception("לא נמצא לקוח עם מספר מזהה זה");
     }
 
     public Customer? Read(int id)
@@ -55,6 +54,6 @@ internal class CustomerImplementation:ICustomer
                 return;
             }
         }
-        throw new Exception("לא נמצא מבצע עם מזהה זה.");
+        throw new Exception("לא נמצא לקוח עם מספר מזהה זה.");
     }
 }
