@@ -13,26 +13,35 @@ namespace DalTest
         static readonly IDal s_dal = new Dal.DalList();
         private static void Main(string[] args)
         {
-            Initialization.Initialize(s_dal);
-            while (true)
+            try
             {
-                int select1 = PrintMainMenu();
-                switch (select1)
+                Initialization.Initialize(s_dal);
+                while (true)
                 {
-                    case 1:
-                        ProductMenu();
-                        break;
-                    case 2:
-                        CustomerMenu();
-                        break;
-                    case 3:
-                        SaleMenu();
-                        break;
-                    default:
-                        return;
+                    int select1 = PrintMainMenu();
+                    switch (select1)
+                    {
+                        case 1:
+                            ProductMenu();
+                            break;
+                        case 2:
+                            CustomerMenu();
+                            break;
+                        case 3:
+                            SaleMenu();
+                            break;
+                        default:
+                            return;
 
+                    }
                 }
             }
+            catch (Exception e) 
+            {
+                Console.WriteLine(e.Message); 
+            }
+
+
         }
         public static void ProductMenu()
         {
@@ -129,7 +138,6 @@ namespace DalTest
             Console.WriteLine("enter stock");
             int.TryParse(Console.ReadLine(), out stock);
             return new Product(id, productName, category, price, stock);
-
         }
         private static Sale AskSale(int id = 0)
         {
@@ -251,7 +259,6 @@ namespace DalTest
                 Console.WriteLine(e.Message);
             }
         }
-
         public static int PrintMainMenu()
         {
             int choice;
