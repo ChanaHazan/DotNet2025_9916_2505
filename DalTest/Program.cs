@@ -228,6 +228,23 @@ namespace DalTest
             s_dal.Sale.Update(sale);
             Console.WriteLine("sale update!");
         }
+
+        private static void ReadAll<T>(ICrud<T> icrud)
+        {
+            foreach (T t in icrud.ReadAll())
+                if (t != null)
+                    Console.WriteLine(t);
+        }
+        private static void Read<T>(ICrud<T> crud)
+        {
+            try
+            {
+                Console.WriteLine("enter id");
+                Console.WriteLine(crud.Read(int.Parse(Console.ReadLine())));
+            }
+            catch (Exception e) { Console.WriteLine(e.Message); }
+        }
+
         private static void Delete<T>(ICrud<T> crud)
         {
             try
