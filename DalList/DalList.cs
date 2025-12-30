@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dal
 {
-    public class DalList1:IDal
+    public class DalList:IDal
     {
         public IProduct Product=>new ProductImplementation();
         public ISale Sale=>new SaleImplementation();

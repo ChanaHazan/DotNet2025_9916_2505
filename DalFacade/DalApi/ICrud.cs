@@ -28,7 +28,7 @@ namespace DalApi
         /// פונקציה המחזירה רשימה של כל 
         /// </summary>
         /// <returns>רשימה של כל הלקוחות</returns>
-        List<T?> ReadAll();
+        List<T> ReadAll();
 
         /// <summary>
         /// פונקציה המעדכנת נתוני 
