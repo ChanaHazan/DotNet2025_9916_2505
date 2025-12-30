@@ -19,13 +19,13 @@ namespace DO
         (
           int Id,
           string? ProductName,
-          Categries Category,
+          Categories Category,
           double? Price,
           int? Stock
         )
     {
         public Product()
-            : this(0, null,Categries.Fish, null,0)
+            : this(0, null,Categories.Fish, null,0)
         {
 
         }

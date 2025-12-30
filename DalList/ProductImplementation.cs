@@ -12,7 +12,7 @@ internal class ProductImplementation:IProduct
         foreach (Product i in DataSource.Products)
         {
             if (newProduct.Id == i.Id)
-                throw new Exception("קיים מבצע עם קוד זה");
+                throw new Exception("קיים מוצר עם קוד זה");
         }
         DataSource.Products.Add(newProduct);
         return newProduct.Id;
@@ -25,7 +25,7 @@ internal class ProductImplementation:IProduct
             if (item.Id == id)
             { DataSource.Products.Remove(item); return; }
         }
-        throw new Exception("לא נמצא מבצע עם קוד זה");
+        throw new Exception("לא נמצא מוצר עם קוד זה");
     }
 
     public Product? Read(int id)
@@ -54,6 +54,6 @@ internal class ProductImplementation:IProduct
                 return;
             }
         }
-        throw new Exception("לא נמצא מבצע עם מזהה זה.");
+        throw new Exception("לא נמצא מוצר עם מזהה זה.");
     }
 }
