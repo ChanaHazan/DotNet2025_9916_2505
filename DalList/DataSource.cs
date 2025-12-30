@@ -1,6 +1,6 @@
 ﻿
-namespace Dal;//??
-using DO;//??
+namespace Dal;
+using DO;
 internal static class DataSource
 {
     internal static List<Customer?> Customers = new List<Customer?>();

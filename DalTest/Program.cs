@@ -28,9 +28,9 @@ namespace DalTest
                         break;
                     default:
                         return;
+
                 }
             }
-
         }
         private static void ProductMenu()
         {
@@ -126,9 +126,8 @@ namespace DalTest
             double.TryParse(Console.ReadLine(),out price);
 
             Console.WriteLine("enter stock");
-            int.TryParse(Console.ReadLine(),out stock);
-
-            return new Product(id,productName,category,price,stock);
+            int.TryParse(Console.ReadLine(), out stock);
+            return new Product(id, productName, category, price, stock);
 
         }
         private static Customer AskCustomer(int id = 0)
