@@ -2,8 +2,7 @@
 using DalApi;
 using DalList;
 using DO;
-using Microsoft.VisualBasic.FileIO;
-using System.Diagnostics;
+
 
 namespace DalTest
 {
@@ -224,20 +223,7 @@ namespace DalTest
             Console.WriteLine("sale update!");
         }
 
-        private static void ReadAll<T>(ICrud<T> icrud)
-        {
-            foreach (T t in icrud.ReadAll())
-                if (t != null)
-                    Console.WriteLine(t);
         }
-        private static void Read<T>(ICrud<T> crud)
-        {
-            try
-            {
-                Console.WriteLine("enter id");
-                Console.WriteLine(crud.Read(int.Parse(Console.ReadLine())));
-            }
-            catch(Exception e) { Console.WriteLine(e.Message); }
 
         }
         private static void Delete<T>(ICrud<T> crud)
@@ -254,8 +240,7 @@ namespace DalTest
         {
             int choice;
             Console.WriteLine("Product? press 1, Customer? press 2, Sale? press 3, exit? press another key");
-            int.TryParse(Console.ReadLine(),out choice);
-            return choice;
+            return int.Parse(Console.ReadLine());
         }
         public static int PrintSubMenu(string item)
         {
