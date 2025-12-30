@@ -7,15 +7,15 @@ internal class ProductImplementation:IProduct
 {
     public int Create(Product item)
     {
-
-        //האם צריך להשתמש פה בקונפיגורציה??
+        int newId = DataSource.Config.GetProductId();
+        Product newProduct = item with { Id = newId };
         foreach (Product i in DataSource.Products)
         {
-            if (item.Id == i.Id)
+            if (newProduct.Id == i.Id)
                 throw new Exception("קיים מבצע עם קוד זה");
         }
-        DataSource.Products.Add(item);
-        return item.Id;
+        DataSource.Products.Add(newProduct);
+        return newProduct.Id;
     }
 
     public void Delete(int id)
