@@ -10,7 +10,7 @@ namespace DalTest
         static readonly IDal s_dal=new Dal.DalList();
         static void Main(string[] args)
         {
-            //Initialization.Initialize(s_dal);
+            Initialization.Initialize(s_dal);
 
         }
     }
