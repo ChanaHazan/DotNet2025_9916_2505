@@ -10,7 +10,7 @@ internal class SaleImplementation : ISale
     public int Create(Sale item)
     {
         int newId = DataSource.Config.GetSaleId();
-        Sale newSale = item with { Id=newId};
+        Sale newSale = item with { Id = newId };
         foreach (Sale i in DataSource.Sales)
         {
             if (newSale.Id == i.Id)
