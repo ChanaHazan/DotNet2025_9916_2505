@@ -15,7 +15,7 @@ namespace DO
     /// <param name="Category"></param>
     /// <param name="Price"></param>
     /// <param name="Stock"></param>
-    internal record Product
+    public record Product
         (
           int Id,
           string? ProductName,

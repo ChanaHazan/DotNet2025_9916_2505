@@ -14,7 +14,7 @@ namespace DO
     /// <param name="CustomerName"></param>
     /// <param name="Adress"></param>
     /// <param name="Phone"></param>
-    internal record Customer
+    public record Customer//לשאול על הpublic 
         (
           int Id,
           string? CustomerName,
