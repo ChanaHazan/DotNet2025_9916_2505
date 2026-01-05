@@ -11,9 +11,9 @@ internal class SaleImplementation : ISale
     {
         int newId = DataSource.Config.GetSaleId();
         Sale newSale = item with { Id = newId };
-        foreach (Sale i in DataSource.Sales)
+        foreach (Sale? i in DataSource.Sales)
         {
-            if (newSale.Id == i.Id)
+            if (newSale.Id == i?.Id)
                 throw new Exception("קיים מבצע עם קוד זה");
         }
         DataSource.Sales.Add(newSale);
@@ -47,9 +47,9 @@ internal class SaleImplementation : ISale
 
     public void Update(Sale item)
     {
-        foreach (Sale i in DataSource.Sales)
+        foreach (Sale? i in DataSource.Sales)
         {
-            if (i.Id == item.Id)
+            if (i?.Id == item.Id)
             {
                 DataSource.Sales.Remove(i);
                 DataSource.Sales.Add(item);

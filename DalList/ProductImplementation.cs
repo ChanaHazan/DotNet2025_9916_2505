@@ -20,9 +20,9 @@ internal class ProductImplementation:IProduct
 
     public void Delete(int id)
     {
-        foreach (Product item in DataSource.Products)
+        foreach (Product? item in DataSource.Products)
         {
-            if (item.Id == id)
+            if (item?.Id == id)
             { DataSource.Products.Remove(item); return; }
         }
         throw new Exception("לא נמצא מוצר עם קוד זה");
