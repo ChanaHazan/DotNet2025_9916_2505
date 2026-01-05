@@ -29,7 +29,7 @@ internal class CustomerImplementation:ICustomer
 
     public Customer? Read(int id)
     {
-        foreach (Customer item in DataSource.Customers)
+        foreach (Customer? item in DataSource.Customers)
         {
             if (item?.Id == id)
                 return item;
@@ -39,7 +39,7 @@ internal class CustomerImplementation:ICustomer
 
     public List<Customer?> ReadAll()
     {
-        return DataSource.Customers;
+        return new List<Customer?>(DataSource.Customers);
     }
 
     public void Update(Customer item)

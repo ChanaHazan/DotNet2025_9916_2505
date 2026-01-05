@@ -9,9 +9,9 @@ internal class ProductImplementation:IProduct
     {
         int newId = DataSource.Config.GetProductId();
         Product newProduct = item with { Id = newId };
-        foreach (Product i in DataSource.Products)
+        foreach (Product? i in DataSource.Products)
         {
-            if (newProduct.Id == i.Id)
+            if (newProduct.Id == i?.Id)
                 throw new Exception("קיים מוצר עם קוד זה");
         }
         DataSource.Products.Add(newProduct);
@@ -30,9 +30,9 @@ internal class ProductImplementation:IProduct
 
     public Product? Read(int id)
     {
-        foreach (Product item in DataSource.Products)
+        foreach (Product? item in DataSource.Products)
         {
-            if (item.Id == id)
+            if (item?.Id == id)
                 return item;
         }
         return null;
@@ -40,14 +40,14 @@ internal class ProductImplementation:IProduct
 
     public List<Product?> ReadAll()
     {
-        return DataSource.Products;
+        return new List<Product?>(DataSource.Products);
     }
 
     public void Update(Product item)
     {
-        foreach (Product i in DataSource.Products)
+        foreach (Product? i in DataSource.Products)
         {
-            if (i.Id == item.Id)
+            if (i?.Id == item.Id)
             {
                 DataSource.Products.Remove(i);
                 DataSource.Products.Add(item);

@@ -22,9 +22,9 @@ internal class SaleImplementation : ISale
 
     public void Delete(int id)
     {
-        foreach (Sale item in DataSource.Sales)
+        foreach (Sale? item in DataSource.Sales)
         {
-            if(item.Id==id)
+            if(item?.Id==id)
             { DataSource.Sales.Remove(item); return; }
         }
         throw new Exception("לא נמצא מבצע עם קוד זה");
@@ -32,9 +32,9 @@ internal class SaleImplementation : ISale
 
     public Sale? Read(int id)
     {
-        foreach (Sale item in DataSource.Sales)
+        foreach (Sale? item in DataSource.Sales)
         {
-            if (item.Id == id)
+            if (item?.Id == id)
                 return item;
         }
         return null;
@@ -42,7 +42,7 @@ internal class SaleImplementation : ISale
 
     public List<Sale?> ReadAll()
     {
-        return DataSource.Sales;    
+        return new List<Sale?>(DataSource.Sales);    
     }
 
     public void Update(Sale item)
