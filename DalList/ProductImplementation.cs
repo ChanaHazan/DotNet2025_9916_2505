@@ -7,13 +7,8 @@ internal class ProductImplementation:IProduct
 {
     public int Create(Product item)
     {
-        int newId = DataSource.Config.GetProductId();
+        int newId = DataSource.Config.GetProductId;
         Product newProduct = item with { Id = newId };
-        foreach (Product? i in DataSource.Products)
-        {
-            if (newProduct.Id == i?.Id)
-                throw new Exception("קיים מוצר עם קוד זה");
-        }
         DataSource.Products.Add(newProduct);
         return newProduct.Id;
     }
@@ -45,15 +40,7 @@ internal class ProductImplementation:IProduct
 
     public void Update(Product item)
     {
-        foreach (Product? i in DataSource.Products)
-        {
-            if (i?.Id == item.Id)
-            {
-                DataSource.Products.Remove(i);
-                DataSource.Products.Add(item);
-                return;
-            }
-        }
-        throw new Exception("לא נמצא מוצר עם מזהה זה.");
+        Delete(item.Id);
+        Create(item);
     }
 }

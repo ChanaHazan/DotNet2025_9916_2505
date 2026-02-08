@@ -44,15 +44,7 @@ internal class CustomerImplementation:ICustomer
 
     public void Update(Customer item)
     {
-        foreach (Customer? i in DataSource.Customers)
-        {
-            if (i?.Id == item.Id)
-            {
-                DataSource.Customers.Remove(i);
-                DataSource.Customers.Add(item);
-                return;
-            }
-        }
-        throw new Exception("לא נמצא לקוח עם מספר מזהה זה.");
+        Delete(item.Id);
+        Create(item);
     }
 }

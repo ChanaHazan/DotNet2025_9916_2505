@@ -40,74 +40,84 @@ namespace DalTest
         }
         private static void ProductMenu()
         {
-            int select = PrintSubMenu("Product");
-            switch (select)
+            while (true)
             {
-                case 1:
-                    AddProduct();
-                    break;
-                case 2:
-                    Delete(s_dal.Product);
-                    break;
-                case 3:
-                    UpdateProduct();
-                    break;
-                case 4:
-                    Read(s_dal.Product);
-                    break;
-                case 5:
-                    ReadAll(s_dal.Product);
-                    break;
-                default:
-                    return;
+                int select = PrintSubMenu("Product");
+                switch (select)
+                {
+                    case 1:
+                        AddProduct();
+                        break;
+                    case 2:
+                        Delete(s_dal.Product);
+                        break;
+                    case 3:
+                        UpdateProduct();
+                        break;
+                    case 4:
+                        Read(s_dal.Product);
+                        break;
+                    case 5:
+                        ReadAll(s_dal.Product);
+                        break;
+                    default:
+                        return; // חזרה לתפריט הראשי
+                }
             }
         }
+
         private static void CustomerMenu()
         {
-            int select = PrintSubMenu("Customer");
-            switch (select)
+            while (true)
             {
-                case 1:
-                    AddCustomer();
-                    break;
-                case 2:
-                    Delete(s_dal.Customer);
-                    break;
-                case 3:
-                    UpdateCustomer();
-                    break;
-                case 4:
-                    Read(s_dal.Customer);
-                    break;
-                case 5:
-                    ReadAll(s_dal.Customer);
-                    break;
-                default:
-                    return;
+                int select = PrintSubMenu("Customer");
+                switch (select)
+                {
+                    case 1:
+                        AddCustomer();
+                        break;
+                    case 2:
+                        Delete(s_dal.Customer);
+                        break;
+                    case 3:
+                        UpdateCustomer();
+                        break;
+                    case 4:
+                        Read(s_dal.Customer);
+                        break;
+                    case 5:
+                        ReadAll(s_dal.Customer);
+                        break;
+                    default:
+                        return;
+                }
             }
         }
         private static void SaleMenu()
         {
-            int select = PrintSubMenu("Sale");
-            switch (select)
+            while (true)
             {
-                case 1:
-                    AddSale();
-                    break;
-                case 2:
-                    Delete(s_dal.Sale);
-                    break;
-                case 3:
-                    UpdateSale();
-                    break;
-                case 4:
-                    Read(s_dal.Sale);
-                    break;
-                case 5:
-                    ReadAll(s_dal.Sale);
-                    break;
-                default:
-                    return;
+                int select = PrintSubMenu("Sale");
+                switch (select)
+                {
+                    case 1:
+                        AddSale();
+                        break;
+                    case 2:
+                        Delete(s_dal.Sale);
+                        break;
+                    case 3:
+                        UpdateSale();
+                        break;
+                    case 4:
+                        Read(s_dal.Sale);
+                        break;
+                    case 5:
+                        ReadAll(s_dal.Sale);
+                        break;
+                    default:
+                        return;
+                }
             }
         }
     

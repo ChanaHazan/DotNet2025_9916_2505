@@ -11,24 +11,25 @@ internal static class DataSource
     {
         internal const int firstIdProduct = 100000;
         private static int productId=firstIdProduct;
-        private int myVar;
+        private static int myVar;
 
-        public int GetProductId
+
+        public static int GetProductId
         {
-            get { return myVar; }
-           
+            get
+            {
+                return productId++;
+            }
         }
-
-        public static int GetProductId { get; }//איך הוא יהיה עם ++
-        //public static int GetProductId()
-        //{
-        //    return productId++;
-        //}
         internal const int firstIdSale = 100;
         private static int saleId = firstIdSale;
-        public static int GetSaleId()
+
+        public static int GetSaleId
         {
-            return saleId++;
+            get
+            {
+                return saleId++;
+            }
         }
     }
 
