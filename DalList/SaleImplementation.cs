@@ -7,6 +7,13 @@ using System.Collections.Generic;
 
 internal class SaleImplementation : ISale
 {
+    public Sale? Read(Func<Sale, bool>? filter)
+    {
+        var q = DataSource.Sales.FirstOrDefault(c => filter(c));
+        if (q != null)
+            return q;
+        throw new DalNotfoundObjectWithThisFilterException("לא נמצא מבצע שעונה על תנאי זה");
+    }
     public int Create(Sale item)
     {
         int newId = DataSource.Config.GetSaleId;
@@ -17,27 +24,28 @@ internal class SaleImplementation : ISale
 
     public void Delete(int id)
     {
-        foreach (Sale? item in DataSource.Sales)
-        {
-            if(item?.Id==id)
-            { DataSource.Sales.Remove(item); return; }
-        }
-        throw new Exception("לא נמצא מבצע עם קוד זה");
+        var q = DataSource.Sales.FirstOrDefault(i => i.Id == id);
+        if (q != null)
+            DataSource.Sales.Remove(q);
+        else
+            throw new DalIdNotFoundException("לא נמצא מבצע עם קוד זה");
     }
 
     public Sale? Read(int id)
     {
-        foreach (Sale? item in DataSource.Sales)
-        {
-            if (item?.Id == id)
-                return item;
-        }
-        return null;
+        var q = from c in DataSource.Sales
+                where c.Id == id
+                select c;
+        if (q != null)
+            return (Sale)q;
+        throw new DalIdNotFoundException("לא נמצא מבצע עם קוד זה");
     }
-
-    public List<Sale?> ReadAll()
+    public List<Sale?> ReadAll(Func<Sale, bool>? filter)
     {
-        return new List<Sale?>(DataSource.Sales);    
+        if (filter == null)
+            return new List<Sale?>(DataSource.Sales);
+        var q = DataSource.Sales.Where(c => filter(c));
+        return q.ToList();
     }
 
     public void Update(Sale item)

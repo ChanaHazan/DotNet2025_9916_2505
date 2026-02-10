@@ -28,7 +28,7 @@ namespace DalApi
         /// פונקציה המחזירה רשימה של כל 
         /// </summary>
         /// <returns>רשימה של כל הלקוחות</returns>
-        List<T> ReadAll();
+        List<T> ReadAll(Func<T,bool>? filter=null);
 
         /// <summary>
         /// פונקציה המעדכנת נתוני 
@@ -41,5 +41,7 @@ namespace DalApi
         /// </summary>
         /// <param name="id">מזהה הלקוח הרצוי למחיקה</param>
         void Delete(int id);
+
+        T? Read(Func<T,bool>? filter);
     }
 }
