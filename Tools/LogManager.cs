@@ -30,7 +30,7 @@ public static class LogManager
         {
             File.Create(getFilePath()).Close();
         }
-        using (StreamWriter writer = new StreamWriter(LogPath, true))
+        using (StreamWriter writer = new StreamWriter(getFilePath(), true))
         {
             writer.WriteLine($"{DateTime.Now}\t{nameProject}.{nameFanction}:\t{message}");
         }
