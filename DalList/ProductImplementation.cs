@@ -3,13 +3,19 @@
 namespace Dal;
 using DO;
 using DalApi;
+using System.Reflection;
+using Tools;
+
 internal class ProductImplementation:IProduct
 {
     public Product? Read(Func<Product, bool>? filter)
     {
         var q = DataSource.Products.FirstOrDefault(c => filter(c));
         if (q != null)
+        {
+            LogManager.WriteToLog("read Product by filter", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
             return q;
+        }
         throw new DalNotfoundObjectWithThisFilterException("לא נמצא פריט שעונה על תנאי זה");
     }
     public int Create(Product item)
@@ -17,6 +23,7 @@ internal class ProductImplementation:IProduct
         int newId = DataSource.Config.GetProductId;
         Product newProduct = item with { Id = newId };
         DataSource.Products.Add(newProduct);
+        LogManager.WriteToLog("created Product", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
         return newProduct.Id;
     }
 
@@ -24,7 +31,10 @@ internal class ProductImplementation:IProduct
     {
         var q = DataSource.Products.FirstOrDefault(i => i.Id == id);
         if (q != null)
+        {
             DataSource.Products.Remove(q);
+            LogManager.WriteToLog("deleted Product by id", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+        }
         else
             throw new DalIdNotFoundException("לא נמצא מוצר עם קוד זה");
     }
@@ -35,7 +45,10 @@ internal class ProductImplementation:IProduct
                 where c.Id == id
                 select c;
         if (q != null)
+        {
+            LogManager.WriteToLog("read customer by id", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
             return (Product)q;
+        }
         throw new DalIdNotFoundException("לא נמצא מוצר עם קוד זה");
     }
 
