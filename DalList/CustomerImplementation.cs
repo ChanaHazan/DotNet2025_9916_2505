@@ -2,6 +2,8 @@
 namespace Dal;
 using DO;
 using DalApi;
+using Tools;
+using System.Reflection;
 
 internal class CustomerImplementation:ICustomer
 {
@@ -9,8 +11,12 @@ internal class CustomerImplementation:ICustomer
     {
         var q = DataSource.Customers.FirstOrDefault(c => filter(c));
         if (q != null)
+        {
+            LogManager.WriteToLog("read customer by filter", MethodBase.GetCurrentMethod().DeclaringType.FullName ,MethodBase.GetCurrentMethod().Name);
             return q;
+        }
         throw new DalNotfoundObjectWithThisFilterException("לא נמצא לקוח שעונה על תנאי זה");
+
     }
     public int Create(Customer item)
     {
@@ -18,14 +24,18 @@ internal class CustomerImplementation:ICustomer
         if (q)
            throw new DalIdExistsException("קיים לקוח עם מספר מזהה זה");
         DataSource.Customers.Add(item);
+        LogManager.WriteToLog("created customer", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
         return item.Id;
     }
 
     public void Delete(int id)
     {
         var q = DataSource.Customers.FirstOrDefault(i => i.Id == id);
-        if(q!=null)
+        if (q != null)
+        {
             DataSource.Customers.Remove(q);
+            LogManager.WriteToLog("deleted customer by id", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+        }
         else
             throw new DalIdNotFoundException("לא נמצא לקוח עם מספר מזהה זה");
     }
@@ -35,16 +45,23 @@ internal class CustomerImplementation:ICustomer
         var q=from c in DataSource.Customers
               where c.Id == id
               select c;
-        if(q!=null)
+        if (q != null)
+        {
+            LogManager.WriteToLog("read customer by id", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
             return (Customer)q;
+        }
         throw new DalIdNotFoundException("לא נמצא לקוח עם מספר מזהה זה");
     }
 
     public List<Customer?> ReadAll(Func<Customer,bool>? filter)
     {
-        if (filter==null)
+        if (filter == null)
+        {
+            LogManager.WriteToLog(" ReadAll customer", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
             return new List<Customer?>(DataSource.Customers);
+        }
         var q=DataSource.Customers.Where(c => filter(c));
+        LogManager.WriteToLog("Read customer by filter", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
         return q.ToList();  
     }
 
@@ -52,5 +69,7 @@ internal class CustomerImplementation:ICustomer
     {
         Delete(item.Id);
         Create(item);
+        LogManager.WriteToLog("update customer", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+
     }
 }

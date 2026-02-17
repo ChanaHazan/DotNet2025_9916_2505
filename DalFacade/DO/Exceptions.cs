@@ -16,4 +16,9 @@ public class DalNotfoundObjectWithThisFilterException : Exception
 {
     public DalNotfoundObjectWithThisFilterException(string messege) : base(messege) { }
 }
+public class FailedToDeleteFolder : Exception
+{
+    public FailedToDeleteFolder(string messege) : base(messege) { }
+}
+
 
