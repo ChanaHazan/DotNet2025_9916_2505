@@ -48,9 +48,9 @@ public static class LogManager
         // רשימת התיקיות לשמירה
         string[] keepFolders = new string[]
         {
-            $"{currentMonth.Month}-{currentMonth.Year}",
-            $"{previousMonth.Month}-{previousMonth.Year}",
-            $"{twoMonthsAgo.Month}-{twoMonthsAgo.Year}"
+            $"{currentMonth.Month} - {currentMonth.Year}",
+            $"{previousMonth.Month} - {previousMonth.Year}",
+            $"{twoMonthsAgo.Month} - {twoMonthsAgo.Year}"
         };
 
         // קריאת כל התיקיות בתיקיית LOG

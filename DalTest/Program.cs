@@ -1,6 +1,7 @@
 ﻿using Dal;
 using DalApi;
 using DO;
+using Tools;
 
 
 namespace DalTest
@@ -26,6 +27,9 @@ namespace DalTest
                             break;
                         case 3:
                             SaleMenu();
+                            break;
+                        case 4:
+                            LogManager.DeleteFromLog();
                             break;
                         default:
                             return;
@@ -267,7 +271,7 @@ namespace DalTest
         public static int PrintMainMenu()
         {
             int choice;
-            Console.WriteLine("Product? press 1, Customer? press 2, Sale? press 3, exit? press another key");
+            Console.WriteLine("Product? press 1, Customer? press 2, Sale? press 3,delete from log? press 4, exit? press another key");
             return int.Parse(Console.ReadLine());
         }
         public static int PrintSubMenu(string item)
