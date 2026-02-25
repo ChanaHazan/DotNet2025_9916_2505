@@ -1,5 +1,4 @@
-﻿using Dal;
-using DalApi;
+﻿using DalApi;
 using DO;
 using Tools;
 
@@ -8,7 +7,7 @@ namespace DalTest
 {
     internal class Program
     {
-        static readonly IDal s_dal = new Dal.DalList();
+        static readonly IDal s_dal = new DalList();
         private static void Main(string[] args)
         {
             try
