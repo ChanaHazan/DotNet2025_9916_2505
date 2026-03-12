@@ -9,12 +9,12 @@ namespace Dal
 {
     internal sealed class DalList : IDal
     {
-        private readonly DalList instance;
-        public static readonly DalList Instance { get { return instance; } }
+        private static readonly DalList instance=new DalList();
+        public static  DalList Instance { get { return instance; } }
 
         private DalList()
         {
-            instance = new DalList();
+
         }
         public IProduct Product => new ProductImplementation();
         public ISale Sale => new SaleImplementation();
