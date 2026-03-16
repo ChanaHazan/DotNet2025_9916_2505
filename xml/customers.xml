@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfCustomer>
-	
+<ArrayOfCustomer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Customer>
+    <Id>1002</Id>
+    <CustomerName>Miriam Cohen</CustomerName>
+    <Adress>Tel Aviv</Adress>
+    <Phone>054-3332211</Phone>
+  </Customer>
+  <Customer>
+    <Id>1003</Id>
+    <CustomerName>Yael Friedman</CustomerName>
+    <Adress>Haifa</Adress>
+    <Phone>050-9876543</Phone>
+  </Customer>
+  <Customer>
+    <Id>1004</Id>
+    <CustomerName>Rina Gold</CustomerName>
+    <Adress>Be'er Sheva</Adress>
+    <Phone>053-4455667</Phone>
+  </Customer>
 </ArrayOfCustomer>

@@ -12,7 +12,6 @@ namespace DalTest
         {
             try
             {
-                Initialization.Initialize();
                 while (true)
                 {
                     int select1 = PrintMainMenu();
@@ -29,6 +28,9 @@ namespace DalTest
                             break;
                         case 4:
                             LogManager.DeleteFromLog();
+                            break;
+                        case 5:
+                            Initialization.Initialize();
                             break;
                         default:
                             return;
@@ -257,6 +259,8 @@ namespace DalTest
             catch (Exception e) { Console.WriteLine(e.Message); }
         }
 
+
+
         private static void Delete<T>(ICrud<T> crud)
         {
             try
@@ -270,7 +274,7 @@ namespace DalTest
         public static int PrintMainMenu()
         {
             int choice;
-            Console.WriteLine("Product? press 1, Customer? press 2, Sale? press 3,delete from log? press 4, exit? press another key");
+            Console.WriteLine("Product? press 1, Customer? press 2, Sale? press 3,delete from log? press 4, exit? press another key, to initialisation press 5");
             return int.Parse(Console.ReadLine());
         }
         public static int PrintSubMenu(string item)
