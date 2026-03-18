@@ -45,7 +45,7 @@ namespace Dal
             if (q != null)
             {
                 LogManager.WriteToLog("finish read customer by filter", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
-                return(Customer)q;
+                return q;
             }
             LogManager.WriteToLog("לא נמצא לקוח שעונה על תנאי זה", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
             throw new DalNotfoundObjectWithThisFilterException("לא נמצא לקוח שעונה על תנאי זה");
@@ -83,6 +83,7 @@ namespace Dal
                 throw new DalIdNotFoundException("לא נמצא לקוח עם מספר מזהה זה");
             }
         }
+
 
         public Customer? Read(int id)
         {
