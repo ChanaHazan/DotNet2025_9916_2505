@@ -35,8 +35,6 @@ namespace Dal
             }
         }
 
-
-
         public Customer? Read(Func<Customer, bool>? filter)
         {
             customers=LoadList();
@@ -83,7 +81,6 @@ namespace Dal
                 throw new DalIdNotFoundException("לא נמצא לקוח עם מספר מזהה זה");
             }
         }
-
 
         public Customer? Read(int id)
         {

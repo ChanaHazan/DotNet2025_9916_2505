@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="BlImplementation\" />
+    <Compile Remove="BlImplementation\**" />
+    <EmbeddedResource Remove="BlImplementation\**" />
+    <None Remove="BlImplementation\**" />
   </ItemGroup>
 
 	

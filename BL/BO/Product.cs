@@ -5,7 +5,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DO
+namespace BO
 {
     /// <summary>
     /// ישות מוצר 
@@ -18,15 +18,12 @@ namespace DO
     /// <param name="Stock"></param>
     public class Product
     {   
-        public int Id { get; set; }
+        public int Id { get; init;}
         public int? Stock { get; set; }
         public double? Price { get; set; }
         public string? ProductName { get; set; }
-        public Categories Category  { get; set; }
+        public Categories Category  { get; init;}
         public List<Sale>? SaleList { get; set; }
-        public Product()
-        {
-
-        }
+        public override string ToString() => this.ToStringProperty();
     }
 }

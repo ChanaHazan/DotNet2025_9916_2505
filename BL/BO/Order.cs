@@ -7,9 +7,11 @@ using DO;
 
 namespace BO;
 
-internal class Order
+public class Order
 {
     public bool IsPreferredCudtomer { get; set; }
     public List<Product> ProductInOrder { get; set; }
     public double TotalPrice { get; set; }
+
+    public override string ToString() => this.ToStringProperty();
 }

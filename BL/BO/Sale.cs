@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DO
+namespace BO
 {
     /// <summary>
     /// ישות מבצע
@@ -19,15 +19,13 @@ namespace DO
     /// <param name="EndSale"></param>
     public class Sale
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
         public int ProductId { get; set; }
         public double? SalePrice { get; set; }
         public int QuantityRequier { get; set; }
         public bool IsSaleToCustomer { get; set; }
         public DateTime? StartSale { get; set; }
         public DateTime? EndSale { get; set; }
-        public Sale()
-        {
-        }
+        public override string ToString() => this.ToStringProperty();
     }
 }

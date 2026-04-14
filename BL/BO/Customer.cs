@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DO
+namespace BO
 {   
     /// <summary>
     /// ישות לקוח
@@ -16,13 +16,12 @@ namespace DO
     /// <param name="Phone"></param>
     public class Customer
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
         public string? Phone { get; set; }
         public string? CustomerName { get; set; }
         public string? Adress { get; set; }
-        public Customer()
-        {
-            
-        }
+
+        public override string ToString() => this.ToStringProperty();
+       
     }
 }
