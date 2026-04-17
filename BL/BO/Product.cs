@@ -5,6 +5,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace BO
 {
     /// <summary>
@@ -23,7 +24,7 @@ namespace BO
         public double? Price { get; set; }
         public string? ProductName { get; set; }
         public Categories Category  { get; init;}
-        public List<Sale>? SaleList { get; set; }
+        public List<SaleInProduct>? SaleList { get; set; }
         public override string ToString() => this.ToStringProperty();
     }
 }

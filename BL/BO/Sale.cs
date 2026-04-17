@@ -23,7 +23,7 @@ namespace BO
         public int ProductId { get; set; }
         public double? SalePrice { get; set; }
         public int QuantityRequier { get; set; }
-        public bool IsSaleToCustomer { get; set; }
+        public bool IsSaleToAllCustomer { get; set; }
         public DateTime? StartSale { get; set; }
         public DateTime? EndSale { get; set; }
         public override string ToString() => this.ToStringProperty();

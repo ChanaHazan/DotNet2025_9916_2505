@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BO
 {
-    static internal class Tools
+    internal static class Tools
     {
             public static string ToStringProperty<T>(this T obj)
             {
@@ -73,7 +73,7 @@ namespace BO
         {
             return new DO.Customer(obj.Id, obj.CustomerName, obj.Adress, obj.Phone);
         }
-        public static BO.Customer convertBOCustomerToDOCustomer(this DO.Customer obj)
+        public static BO.Customer convertDOCustomerToBOCustomer(this DO.Customer obj)
         {
             return new BO.Customer()
             {
