@@ -9,9 +9,9 @@ namespace BlApi
 {
     public static class Factory
     {
-        public static IBI Get()
+        public static IBl Get()
         {
-            BI instance = new BI();
+            Bl instance = new Bl();
             return instance;
         }
     }

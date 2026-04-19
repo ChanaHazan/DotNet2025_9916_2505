@@ -54,7 +54,7 @@ namespace BO
             }
         public static DO.Sale convertBOSaleToDOSale(this BO.Sale obj)
         {
-            return new DO.Sale(obj.Id, obj.ProductId, obj.QuantityRequier, obj.SalePrice, obj.IsSaleToCustomer, obj.StartSale, obj.EndSale);
+            return new DO.Sale(obj.Id, obj.ProductId, obj.QuantityRequier, obj.SalePrice, obj.IsSaleToAllCustomer, obj.StartSale, obj.EndSale);
         }
         public static BO.Sale convertDOSaleToBOSale(this DO.Sale obj)
         {

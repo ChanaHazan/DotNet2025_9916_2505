@@ -11,4 +11,10 @@
     <ProjectReference Include="..\DalFacade\DalFacade.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Config.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
 </Project>
