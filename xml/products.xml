@@ -63,11 +63,4 @@
     <Price>60</Price>
     <Stock>80</Stock>
   </Product>
-  <Product>
-    <Id>1020</Id>
-    <ProductName>Sardines</ProductName>
-    <Category>Fish</Category>
-    <Price>35</Price>
-    <Stock>100</Stock>
-  </Product>
 </ArrayOfProduct>

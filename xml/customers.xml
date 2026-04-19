@@ -18,4 +18,10 @@
     <Adress>Be'er Sheva</Adress>
     <Phone>053-4455667</Phone>
   </Customer>
+  <Customer>
+    <Id>123456</Id>
+    <CustomerName>חני</CustomerName>
+    <Adress>שאגת אריה 13</Adress>
+    <Phone>089798478</Phone>
+  </Customer>
 </ArrayOfCustomer>
