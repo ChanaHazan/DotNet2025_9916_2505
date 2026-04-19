@@ -56,7 +56,7 @@ namespace BO
         {
             return new DO.Sale(obj.Id, obj.ProductId, obj.QuantityRequier, obj.SalePrice, obj.IsSaleToCustomer, obj.StartSale, obj.EndSale);
         }
-        public static BO.Sale convertBOSaleToDOSale(this DO.Sale obj)
+        public static BO.Sale convertDOSaleToBOSale(this DO.Sale obj)
         {
             return new BO.Sale()
             { 
@@ -64,7 +64,7 @@ namespace BO
                 ProductId = obj.ProductId,
                 QuantityRequier = obj.QuantityRequier,
                 SalePrice = obj.SalePrice,
-                IsSaleToCustomer = obj.IsSaleToCustomer,
+                IsSaleToAllCustomer = obj.IsSaleToCustomer,
                 StartSale = obj.StartSale,
                 EndSale = obj.EndSale
             };

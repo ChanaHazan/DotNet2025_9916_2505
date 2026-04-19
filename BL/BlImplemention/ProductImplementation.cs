@@ -1,13 +1,13 @@
 ﻿
 using BlApi;
 using BO;
+using DO;
 
 namespace BlImplemention
 {
     internal class ProductImplementation : IProduct
     {
         private DalApi.IDal _dal = DalApi.Factory.Get;
-
         public int Create(BO.Product item)
         {
             try
@@ -77,9 +77,30 @@ namespace BlImplemention
             }
         }
 
-        void AllAvailableSales(ProductInOrder productInOrder, bool isPreferdCustomer)
+        public void AllAvailableSales(BO.ProductInOrder product, bool isPreferdCustomer)
         {
-            //לא הבנתי!
+            try
+            {
+                var sales = _dal.Sale.ReadAll(s =>
+                s.ProductId == product.ProductId &&
+                s.StartSale <= DateTime.Now &&
+                s.EndSale <= DateTime.Now &&
+                (s.IsSaleToCustomer || isPreferdCustomer));
+
+                product.SalesList = sales.Select(s => new SaleInProduct
+                {
+                    IsSaleToAllCustomer = s.IsSaleToCustomer,
+                    SaleId = s.Id,
+                    Price = s.SalePrice
+                }).OrderBy(s => s.Price).ToList();
+
+            }
+            catch(Exception ex) 
+            {
+                throw new Exception("שגיאה בשליפת מבצעים למוצר", ex);
+            }
+
         }
+
     }
 }

@@ -8,20 +8,69 @@ using System.Threading.Tasks;
 
 namespace BlImplemention
 {
-    internal class SaleImplementation:ICustomer
+    internal class SaleImplementation : ISale
     {
         private DalApi.IDal _dal = DalApi.Factory.Get;
-        //int Create(Sale item);
-        //Sale? Read(int id);
+        public int Create(Sale item)
+        {
+            return _dal.Sale.Create(item.convertBOSaleToDOSale());
+        }
+        public BO.Sale? Read(int id)
+        {
+            try
+            {
+                return (_dal.Sale.Read(id)).convertDOSaleToBOSale();
+            }
+            catch (DO.DalIdNotFoundException ex)
+            {
+                throw new BO.BLIdNotFoundException("לא נמצא מבצע עם מספר מזהה זה", ex);
+            }
+        }
+        public List<Sale> ReadAll(Func<Sale, bool>? filter = null)
+        {
+            var list = _dal.Sale.ReadAll(null)
+            .Select(s => s.convertDOSaleToBOSale());
 
-       
-        //List<Sale> ReadAll(Func<Sale, bool>? filter = null);
+            if (filter != null)
+                list = list.Where(filter);
 
-        //void Update(Sale item);
+            return list.ToList();
 
-        //void Delete(int id);
+        }
 
-        //Sale? Read(Func<Sale, bool>? filter);
+        public void Update(Sale item)
+        {
+            _dal.Sale.Update(item.convertBOSaleToDOSale());
+        }
+
+        public void Delete(int id)
+        {
+            try
+            {
+                _dal.Sale.Delete(id);
+            }
+            catch (DO.DalIdNotFoundException ex)
+            {
+                throw new BO.BLIdNotFoundException("לא נמצא מבצע עם מספר מזהה זה", ex);
+            }
+        }
+
+        public Sale? Read(Func<Sale, bool>? filter)
+        {
+            try
+            {
+                var list = _dal.Sale.ReadAll(null)
+                            .Select(c => c.convertDOSaleToBOSale());
+
+                return list.FirstOrDefault(filter);
+            }
+            catch (DO.DalNotfoundObjectWithThisFilterException ex)
+            {
+                throw new BO.BlNotfoundObjectWithThisFilterException("לא נמצא מבצע שעונה על תנאי זה", ex);
+            }
+        }
+            
+
 
     }
 }

@@ -32,4 +32,16 @@ public class FailedToDeleteFolder : Exception
     //public FailedToDeleteFolder(string messege,Exception innerException) : base(messege, innerException) { }
 
 }
+[Serializable]
+public class BLThereIsNotEnoughInStock : Exception
+{
+    public BLThereIsNotEnoughInStock(string messege) : base(messege) { }
+}
+[Serializable]
+public class BlInputNotCorectException : Exception
+{
+    public BlInputNotCorectException(string massage) : base(massage) { }
+    public BlInputNotCorectException(string massage, Exception innerException) : base(massage, innerException) { }
+}
+
 

@@ -11,7 +11,7 @@ namespace BlApi
         void CalcTotalPrice(Order order);
         void DoOrder(Order order);
 
-        void SearchSaleForProduct(ProductInOrder productInOrder);
+        void SearchSaleForProduct(BO.ProductInOrder product, bool isOrderToExistCustomer);
 
     }
 }
