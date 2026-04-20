@@ -88,13 +88,18 @@ namespace BlImplemention
             try
             {
                 var sales = _dal.Sale.ReadAll(s =>
-                s.ProductId == product.Id );
+                s.ProductId == product.Id
+                //צריך לבדוק פה שהמבצע בתוקף
+                 //&& s.StartSale <= DateTime.Now &&
+                 // s.EndSale <= DateTime.Now
+                );
 
                 product.SaleList = sales.Select(s => new SaleInProduct
                 {
                     IsSaleToAllCustomer = s.IsSaleToCustomer,
                     SaleId = s.Id,
                     Price = s.SalePrice
+                    ,QuantityRequire=s.QuantityRequier
                 }).OrderBy(s => s.Price).ToList();
                 
             }

@@ -50,10 +50,10 @@
     <Stock>110</Stock>
   </Product>
   <Product>
-    <Id>1021</Id>
+    <Id>1022</Id>
     <ProductName>BeefSteak</ProductName>
     <Category>Meats</Category>
     <Price>120.5</Price>
-    <Stock>48</Stock>
+    <Stock>44</Stock>
   </Product>
 </ArrayOfProduct>

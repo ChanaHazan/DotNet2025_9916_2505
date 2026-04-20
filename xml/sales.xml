@@ -54,4 +54,13 @@
     <StartSale>0001-01-01T00:00:00</StartSale>
     <EndSale>0001-01-01T00:00:00</EndSale>
   </Sale>
+  <Sale>
+    <id>114</id>
+    <ProductId>1021</ProductId>
+    <SalePrice>10</SalePrice>
+    <QuantityRequier>3</QuantityRequier>
+    <IsSaleToCustomer>true</IsSaleToCustomer>
+    <StartSale>2026-04-20T00:00:00</StartSale>
+    <EndSale>0001-01-01T00:00:00</EndSale>
+  </Sale>
 </ArrayOfSale>
