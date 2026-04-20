@@ -53,8 +53,8 @@ internal class Program
         BO.Order currentOrder = new BO.Order { ProductInOrder = new List<BO.ProductInOrder>() };
 
         // 2. שאילת פרטים ראשוניים (לוגיקה עסקית)
-        Console.WriteLine("Is this a preferred customer? (y/n)");
-        currentOrder.IsPreferredCudtomer = Console.ReadLine()?.ToLower() == "y";
+        //Console.WriteLine("Is this a preferred customer? (y/n)");
+        //currentOrder.IsPreferredCudtomer = Console.ReadLine()?.ToLower() == "y";
 
         while (true)
         {
@@ -242,6 +242,7 @@ internal class Program
             Category = category,
             Price = price,
             Stock = stock,
+            SaleList = null
         };
 
     }

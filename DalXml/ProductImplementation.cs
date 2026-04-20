@@ -83,17 +83,19 @@ namespace Dal
         {
             products = LoadList();
             LogManager.WriteToLog("start to read product by id", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
-            var q = from p in products
-                    where p.Id == id
-                    select p;
-            if (q != null)
+            List<Product> q = (from p in products
+                               where p.Id == id
+                               select p).ToList();
+            if (q != null&&q.Count>0)
             {
                 LogManager.WriteToLog("finish to read product by id", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
                 return q.FirstOrDefault();
             }
+
             LogManager.WriteToLog("לא נמצא מוצר עם מספר מזהה זה", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
             throw new DalIdNotFoundException("לא נמצא מוצר עם מספר מזהה זה");
         }
+
 
         public List<Product?> ReadAll(Func<Product, bool>? filter)
         {

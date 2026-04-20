@@ -12,8 +12,7 @@ namespace BlImplemention
         {
             try
             {
-                return _dal.Product.Create(item.convertBOProductToDOProduct());
-
+                return _dal.Product.Create(item.convertBOProductToDOProduct()); 
             }
             catch (DO.DalIdExistsException innerExeption)
             {
@@ -29,13 +28,13 @@ namespace BlImplemention
             }
             catch (DO.DalIdNotFoundException ex)
             {
-                throw new BO.BLIdNotFoundException("לא נמצא לקוח עם מספר מזהה זה", ex);
+                throw new BO.BLIdNotFoundException("לא נמצא מוצר עם מספר מזהה זה", ex);
             }
         }
 
         public List<BO.Product> ReadAll(Func<BO.Product, bool>? filter = null)
         {
-            var list = _dal.Product.ReadAll(null)
+            var list = _dal.Product.ReadAll()
                 .Select(c => c.convertDOProductToBOProduct());
 
             if (filter != null)
@@ -65,10 +64,8 @@ namespace BlImplemention
         {
             try
             {
-                var list = _dal.Product.ReadAll(null)
-                            .Select(c => c.convertDOProductToBOProduct());
-
-                return list.FirstOrDefault(filter);
+                var product = _dal.Product.Read(p => filter(p.convertDOProductToBOProduct()));
+                return product.convertDOProductToBOProduct();
             }
             catch (DO.DalNotfoundObjectWithThisFilterException ex)
             {
@@ -77,23 +74,23 @@ namespace BlImplemention
             }
         }
 
-        public void AllAvailableSales(BO.ProductInOrder product, bool isPreferdCustomer)
+        public void AllAvailableSales(BO.Product product)
         {
             try
             {
                 var sales = _dal.Sale.ReadAll(s =>
-                s.ProductId == product.ProductId &&
+                s.ProductId == product.Id &&
                 s.StartSale <= DateTime.Now &&
                 s.EndSale <= DateTime.Now &&
-                (s.IsSaleToCustomer || isPreferdCustomer));
+                (s.IsSaleToCustomer ));
 
-                product.SalesList = sales.Select(s => new SaleInProduct
+                product.SaleList = sales.Select(s => new SaleInProduct
                 {
                     IsSaleToAllCustomer = s.IsSaleToCustomer,
                     SaleId = s.Id,
                     Price = s.SalePrice
                 }).OrderBy(s => s.Price).ToList();
-
+                
             }
             catch(Exception ex) 
             {

@@ -87,7 +87,7 @@ namespace BlImplemention
         }
         public void SearchSaleForProduct(BO.ProductInOrder product, bool isOrderToExistCustomer)
         {
-            var sales = _dal.Sale.ReadAll(s =>
+            product.SalesList= _dal.Sale.ReadAll(s =>
                s.ProductId == product.ProductId &&
                s.StartSale <= DateTime.Now &&
                s.EndSale <= DateTime.Now &&

@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Product>
-    <Id>1011</Id>
-    <ProductName>BeefSteak</ProductName>
-    <Category>Meats</Category>
-    <Price>120.5</Price>
-    <Stock>50</Stock>
-  </Product>
-  <Product>
     <Id>1012</Id>
     <ProductName>GroundBeef</ProductName>
     <Category>Meats</Category>
@@ -57,10 +50,10 @@
     <Stock>110</Stock>
   </Product>
   <Product>
-    <Id>1019</Id>
-    <ProductName>Tilapia</ProductName>
-    <Category>Fish</Category>
-    <Price>60</Price>
-    <Stock>80</Stock>
+    <Id>1021</Id>
+    <ProductName>BeefSteak</ProductName>
+    <Category>Meats</Category>
+    <Price>120.5</Price>
+    <Stock>48</Stock>
   </Product>
 </ArrayOfProduct>
