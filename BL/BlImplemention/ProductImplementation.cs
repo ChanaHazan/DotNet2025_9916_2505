@@ -94,12 +94,13 @@ namespace BlImplemention
                  // s.EndSale <= DateTime.Now
                 );
 
+
                 product.SaleList = sales.Select(s => new SaleInProduct
                 {
                     IsSaleToAllCustomer = s.IsSaleToCustomer,
                     SaleId = s.Id,
-                    Price = s.SalePrice
-                    ,QuantityRequire=s.QuantityRequier
+                    Price = s.SalePrice,
+                    QuantityRequire=s.QuantityRequier
                 }).OrderBy(s => s.Price).ToList();
                 
             }
