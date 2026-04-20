@@ -90,11 +90,13 @@ namespace BlImplemention
                 var sales = _dal.Sale.ReadAll(s =>
                 s.ProductId == product.Id );
 
+
                 product.SaleList = sales.Select(s => new SaleInProduct
                 {
                     IsSaleToAllCustomer = s.IsSaleToCustomer,
                     SaleId = s.Id,
-                    Price = s.SalePrice
+                    Price = s.SalePrice,
+                    QuantityRequire=s.QuantityRequier
                 }).OrderBy(s => s.Price).ToList();
                 
             }
