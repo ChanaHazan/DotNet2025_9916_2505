@@ -18,10 +18,4 @@
     <Adress>shagat arie</Adress>
     <Phone>0548550710</Phone>
   </Customer>
-  <Customer>
-    <Id>123456</Id>
-    <CustomerName>חני</CustomerName>
-    <Adress>שאגת אריה 13</Adress>
-    <Phone>089798478</Phone>
-  </Customer>
 </ArrayOfCustomer>

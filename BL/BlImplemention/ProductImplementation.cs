@@ -24,7 +24,12 @@ namespace BlImplemention
         {
             try
             {
-                return (_dal.Product.Read(id)).convertDOProductToBOProduct();
+                var boProduct = (_dal.Product.Read(id)).convertDOProductToBOProduct();
+                if (boProduct != null)
+                {
+                    AllAvailableSales(boProduct);
+                }
+                return boProduct;
             }
             catch (DO.DalIdNotFoundException ex)
             {
@@ -40,7 +45,11 @@ namespace BlImplemention
             if (filter != null)
                 list = list.Where(filter);
 
-            return list.ToList();
+            var productsList = list.ToList();
+
+            productsList.ForEach(p => AllAvailableSales(p));
+
+            return productsList;
         }
 
         public void Update(BO.Product item)
@@ -79,10 +88,7 @@ namespace BlImplemention
             try
             {
                 var sales = _dal.Sale.ReadAll(s =>
-                s.ProductId == product.Id &&
-                s.StartSale <= DateTime.Now &&
-                s.EndSale <= DateTime.Now &&
-                (s.IsSaleToCustomer ));
+                s.ProductId == product.Id );
 
                 product.SaleList = sales.Select(s => new SaleInProduct
                 {

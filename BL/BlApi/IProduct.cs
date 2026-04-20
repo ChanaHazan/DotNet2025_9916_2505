@@ -40,5 +40,5 @@ public interface IProduct
 
     Product? Read(Func<Product, bool>? filter);
 
-    void AllAvailableSales(ProductInOrder productInOrder, bool isPreferdCustomer);
+    void AllAvailableSales(Product product);
 }
