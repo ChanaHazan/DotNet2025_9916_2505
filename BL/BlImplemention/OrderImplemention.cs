@@ -56,6 +56,10 @@ namespace BlImplemention
                         throw new BO.BLThereIsNotEnoughInStock("אין מספיק במלאי");
                     }
                     existingProduct.Amount += amount;
+                    SearchSaleForProduct(existingProduct, true);
+                    CalcTotalPriceForProduct(existingProduct);
+                    CalcTotalPrice(order);
+
                 }
                 else
                 {

@@ -55,15 +55,6 @@
     <EndSale>0001-01-01T00:00:00</EndSale>
   </Sale>
   <Sale>
-    <id>116</id>
-    <ProductId>1017</ProductId>
-    <SalePrice>7</SalePrice>
-    <QuantityRequier>2</QuantityRequier>
-    <IsSaleToCustomer>true</IsSaleToCustomer>
-    <StartSale>0001-01-01T00:00:00</StartSale>
-    <EndSale>0001-01-01T00:00:00</EndSale>
-  </Sale>
-  <Sale>
     <id>117</id>
     <ProductId>1017</ProductId>
     <SalePrice>7</SalePrice>
@@ -71,5 +62,14 @@
     <IsSaleToCustomer>true</IsSaleToCustomer>
     <StartSale>2020-01-01T00:00:00</StartSale>
     <EndSale>2030-01-01T00:00:00</EndSale>
+  </Sale>
+  <Sale>
+    <id>118</id>
+    <ProductId>1014</ProductId>
+    <SalePrice>80</SalePrice>
+    <QuantityRequier>2</QuantityRequier>
+    <IsSaleToCustomer>true</IsSaleToCustomer>
+    <StartSale>2026-04-22T00:00:00</StartSale>
+    <EndSale>2026-05-05T00:00:00</EndSale>
   </Sale>
 </ArrayOfSale>

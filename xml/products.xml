@@ -56,4 +56,11 @@
     <Price>120.5</Price>
     <Stock>44</Stock>
   </Product>
+  <Product>
+    <Id>1022</Id>
+    <ProductName>fishfish</ProductName>
+    <Category>Fish</Category>
+    <Price>14</Price>
+    <Stock>100</Stock>
+  </Product>
 </ArrayOfProduct>
