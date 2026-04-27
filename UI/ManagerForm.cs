@@ -125,5 +125,40 @@ namespace UI
             sf.Show();
             this.Hide();
         }
+
+        private void createCustomer_Click(object sender, EventArgs e)
+        {
+            CustomerForm cf = new CustomerForm(FormMode.Create);
+            cf.Show();
+            this.Hide();
+        }
+
+        private void deleteCustomer_Click(object sender, EventArgs e)
+        {
+            CustomerForm cf = new CustomerForm(FormMode.Delete);
+            cf.Show();
+            this.Hide();
+        }
+
+        private void readCustomer_Click(object sender, EventArgs e)
+        {
+            CustomerForm cf = new CustomerForm(FormMode.View);
+            cf.Show();
+            this.Hide();
+        }
+
+        private void updateCustomer_Click(object sender, EventArgs e)
+        {
+            CustomerForm cf = new CustomerForm(FormMode.Update);
+            cf.Show();
+            this.Hide();
+        }
+
+        private void readAllCustomer_Click(object sender, EventArgs e)
+        {
+            CustomerForm cf = new CustomerForm(FormMode.ViewAll);
+            cf.Show();
+            this.Hide();
+        }
     }
 }

@@ -165,7 +165,7 @@
             panelCustomer.Controls.Add(readAllCustomer);
             panelCustomer.Controls.Add(deleteCustomer);
             panelCustomer.Controls.Add(createCustomer);
-            panelCustomer.Location = new Point(644, 173);
+            panelCustomer.Location = new Point(312, 20);
             panelCustomer.Name = "panelCustomer";
             panelCustomer.Size = new Size(1842, 834);
             panelCustomer.TabIndex = 5;
@@ -180,6 +180,7 @@
             readCustomer.TabIndex = 4;
             readCustomer.Text = "לקרוא לקוח";
             readCustomer.UseVisualStyleBackColor = true;
+            readCustomer.Click += readCustomer_Click;
             // 
             // updateCustomer
             // 
@@ -189,6 +190,7 @@
             updateCustomer.TabIndex = 3;
             updateCustomer.Text = "לעדכן לקוח";
             updateCustomer.UseVisualStyleBackColor = true;
+            updateCustomer.Click += updateCustomer_Click;
             // 
             // readAllCustomer
             // 
@@ -198,6 +200,7 @@
             readAllCustomer.TabIndex = 2;
             readAllCustomer.Text = "לקרוא את כל הלקוחות";
             readAllCustomer.UseVisualStyleBackColor = true;
+            readAllCustomer.Click += readAllCustomer_Click;
             // 
             // deleteCustomer
             // 
@@ -207,6 +210,7 @@
             deleteCustomer.TabIndex = 1;
             deleteCustomer.Text = "למחוק לקוח";
             deleteCustomer.UseVisualStyleBackColor = true;
+            deleteCustomer.Click += deleteCustomer_Click;
             // 
             // createCustomer
             // 
@@ -216,10 +220,12 @@
             createCustomer.TabIndex = 0;
             createCustomer.Text = "ליצור לקוח";
             createCustomer.UseVisualStyleBackColor = true;
+            createCustomer.Click += createCustomer_Click;
             // 
             // panelSale
             // 
             panelSale.Controls.Add(readSale);
+            panelSale.Controls.Add(panelCustomer);
             panelSale.Controls.Add(updateSale);
             panelSale.Controls.Add(readAllSales);
             panelSale.Controls.Add(deleteSale);
@@ -286,7 +292,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2498, 1118);
             Controls.Add(panelSale);
-            Controls.Add(panelCustomer);
             Controls.Add(panelProduct);
             Controls.Add(sales);
             Controls.Add(customer);
