@@ -51,6 +51,8 @@
             ToDelateProduct = new Button();
             label1 = new Label();
             formUpdateProduct = new Panel();
+            idToUpdate = new TextBox();
+            label10 = new Label();
             updateProduct = new Button();
             numericUpDown1 = new NumericUpDown();
             textBox1 = new TextBox();
@@ -60,8 +62,6 @@
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
-            label10 = new Label();
-            idToUpdate = new TextBox();
             panelReadAll.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewReadAllProducts).BeginInit();
             panelRead.SuspendLayout();
@@ -75,10 +75,10 @@
             // 
             // backToLastForm
             // 
-            backToLastForm.Location = new Point(687, 611);
-            backToLastForm.Margin = new Padding(1);
+            backToLastForm.Location = new Point(1718, 1466);
+            backToLastForm.Margin = new Padding(2);
             backToLastForm.Name = "backToLastForm";
-            backToLastForm.Size = new Size(181, 29);
+            backToLastForm.Size = new Size(452, 70);
             backToLastForm.TabIndex = 1;
             backToLastForm.Text = "חזרה ";
             backToLastForm.UseVisualStyleBackColor = true;
@@ -87,23 +87,22 @@
             // panelReadAll
             // 
             panelReadAll.Controls.Add(dataGridViewReadAllProducts);
-            panelReadAll.Location = new Point(151, 71);
-            panelReadAll.Margin = new Padding(1);
+            panelReadAll.Location = new Point(142, 171);
+            panelReadAll.Margin = new Padding(2);
             panelReadAll.Name = "panelReadAll";
-            panelReadAll.Size = new Size(960, 538);
+            panelReadAll.Size = new Size(2515, 1291);
             panelReadAll.TabIndex = 2;
             panelReadAll.Visible = false;
             // 
             // dataGridViewReadAllProducts
             // 
             dataGridViewReadAllProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewReadAllProducts.Location = new Point(-36, 21);
-            dataGridViewReadAllProducts.Margin = new Padding(1);
+            dataGridViewReadAllProducts.Location = new Point(-78, 50);
+            dataGridViewReadAllProducts.Margin = new Padding(2);
             dataGridViewReadAllProducts.Name = "dataGridViewReadAllProducts";
             dataGridViewReadAllProducts.RowHeadersWidth = 123;
-            dataGridViewReadAllProducts.Size = new Size(731, 500);
+            dataGridViewReadAllProducts.Size = new Size(1828, 1200);
             dataGridViewReadAllProducts.TabIndex = 0;
-            dataGridViewReadAllProducts.CellContentClick += dataGridViewReadAllProducts_CellContentClick;
             // 
             // panelRead
             // 
@@ -111,30 +110,29 @@
             panelRead.Controls.Add(buttonSearchProduct);
             panelRead.Controls.Add(textBoxEnterProductName);
             panelRead.Controls.Add(labelEnterProductName);
-            panelRead.Location = new Point(116, 80);
-            panelRead.Margin = new Padding(1);
+            panelRead.Location = new Point(0, 0);
+            panelRead.Margin = new Padding(2);
             panelRead.Name = "panelRead";
-            panelRead.Size = new Size(589, 415);
+            panelRead.Size = new Size(1472, 996);
             panelRead.TabIndex = 3;
             panelRead.Visible = false;
-            panelRead.Paint += panelRead_Paint;
             // 
             // dataGridViewReadProduct
             // 
             dataGridViewReadProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewReadProduct.Location = new Point(10, 175);
-            dataGridViewReadProduct.Margin = new Padding(1);
+            dataGridViewReadProduct.Location = new Point(25, 420);
+            dataGridViewReadProduct.Margin = new Padding(2);
             dataGridViewReadProduct.Name = "dataGridViewReadProduct";
             dataGridViewReadProduct.RowHeadersWidth = 123;
-            dataGridViewReadProduct.Size = new Size(506, 188);
+            dataGridViewReadProduct.Size = new Size(1265, 451);
             dataGridViewReadProduct.TabIndex = 3;
             // 
             // buttonSearchProduct
             // 
-            buttonSearchProduct.Location = new Point(38, 123);
-            buttonSearchProduct.Margin = new Padding(1);
+            buttonSearchProduct.Location = new Point(95, 295);
+            buttonSearchProduct.Margin = new Padding(2);
             buttonSearchProduct.Name = "buttonSearchProduct";
-            buttonSearchProduct.Size = new Size(108, 29);
+            buttonSearchProduct.Size = new Size(270, 70);
             buttonSearchProduct.TabIndex = 2;
             buttonSearchProduct.Text = "חפש מוצר זה";
             buttonSearchProduct.UseVisualStyleBackColor = true;
@@ -142,21 +140,21 @@
             // 
             // textBoxEnterProductName
             // 
-            textBoxEnterProductName.Location = new Point(170, 128);
-            textBoxEnterProductName.Margin = new Padding(1);
+            textBoxEnterProductName.Location = new Point(425, 307);
+            textBoxEnterProductName.Margin = new Padding(2);
             textBoxEnterProductName.Name = "textBoxEnterProductName";
-            textBoxEnterProductName.Size = new Size(188, 27);
+            textBoxEnterProductName.Size = new Size(464, 55);
             textBoxEnterProductName.TabIndex = 1;
             // 
             // labelEnterProductName
             // 
             labelEnterProductName.AutoSize = true;
-            labelEnterProductName.Location = new Point(376, 129);
-            labelEnterProductName.Margin = new Padding(1, 0, 1, 0);
+            labelEnterProductName.Location = new Point(940, 310);
+            labelEnterProductName.Margin = new Padding(2, 0, 2, 0);
             labelEnterProductName.Name = "labelEnterProductName";
-            labelEnterProductName.Size = new Size(104, 20);
+            labelEnterProductName.Size = new Size(281, 48);
             labelEnterProductName.TabIndex = 0;
-            labelEnterProductName.Text = "הכנס שם מוצר";
+            labelEnterProductName.Text = "הכנס מזהה מוצר";
             // 
             // panelCreateProduct
             // 
@@ -169,20 +167,19 @@
             panelCreateProduct.Controls.Add(label4);
             panelCreateProduct.Controls.Add(label3);
             panelCreateProduct.Controls.Add(label2);
-            panelCreateProduct.Location = new Point(44, 81);
-            panelCreateProduct.Margin = new Padding(1);
+            panelCreateProduct.Location = new Point(94, 126);
+            panelCreateProduct.Margin = new Padding(2);
             panelCreateProduct.Name = "panelCreateProduct";
-            panelCreateProduct.Size = new Size(630, 376);
+            panelCreateProduct.Size = new Size(1575, 902);
             panelCreateProduct.TabIndex = 4;
             panelCreateProduct.Visible = false;
-            panelCreateProduct.Paint += panelCreateProduct_Paint;
             // 
             // btnAddProduct
             // 
-            btnAddProduct.Location = new Point(421, 261);
-            btnAddProduct.Margin = new Padding(1);
+            btnAddProduct.Location = new Point(1052, 626);
+            btnAddProduct.Margin = new Padding(2);
             btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new Size(90, 29);
+            btnAddProduct.Size = new Size(225, 70);
             btnAddProduct.TabIndex = 9;
             btnAddProduct.Text = "הוסף מוצר";
             btnAddProduct.UseVisualStyleBackColor = true;
@@ -190,75 +187,75 @@
             // 
             // numericUpDownStock
             // 
-            numericUpDownStock.Location = new Point(367, 215);
-            numericUpDownStock.Margin = new Padding(1);
+            numericUpDownStock.Location = new Point(918, 516);
+            numericUpDownStock.Margin = new Padding(2);
             numericUpDownStock.Name = "numericUpDownStock";
-            numericUpDownStock.Size = new Size(144, 27);
+            numericUpDownStock.Size = new Size(360, 55);
             numericUpDownStock.TabIndex = 8;
             // 
             // textBoxPrice
             // 
-            textBoxPrice.Location = new Point(391, 180);
-            textBoxPrice.Margin = new Padding(1);
+            textBoxPrice.Location = new Point(978, 432);
+            textBoxPrice.Margin = new Padding(2);
             textBoxPrice.Name = "textBoxPrice";
-            textBoxPrice.Size = new Size(122, 27);
+            textBoxPrice.Size = new Size(299, 55);
             textBoxPrice.TabIndex = 7;
             // 
             // comboBoxCategory
             // 
             comboBoxCategory.FormattingEnabled = true;
             comboBoxCategory.Items.AddRange(new object[] { "Meats", "Poultry", "Spices", "Frozens", "Fish" });
-            comboBoxCategory.Location = new Point(367, 148);
-            comboBoxCategory.Margin = new Padding(1);
+            comboBoxCategory.Location = new Point(918, 355);
+            comboBoxCategory.Margin = new Padding(2);
             comboBoxCategory.Name = "comboBoxCategory";
-            comboBoxCategory.Size = new Size(148, 28);
+            comboBoxCategory.Size = new Size(364, 56);
             comboBoxCategory.TabIndex = 6;
             // 
             // textBoxName
             // 
-            textBoxName.Location = new Point(388, 114);
-            textBoxName.Margin = new Padding(1);
+            textBoxName.Location = new Point(970, 274);
+            textBoxName.Margin = new Padding(2);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(122, 27);
+            textBoxName.Size = new Size(299, 55);
             textBoxName.TabIndex = 5;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(528, 216);
-            label5.Margin = new Padding(1, 0, 1, 0);
+            label5.Location = new Point(1320, 518);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(41, 20);
+            label5.Size = new Size(97, 48);
             label5.TabIndex = 4;
             label5.Text = "מלאי";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(528, 181);
-            label4.Margin = new Padding(1, 0, 1, 0);
+            label4.Location = new Point(1320, 434);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(41, 20);
+            label4.Size = new Size(98, 48);
             label4.TabIndex = 3;
             label4.Text = "מחיר";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(528, 148);
-            label3.Margin = new Padding(1, 0, 1, 0);
+            label3.Location = new Point(1320, 355);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(62, 20);
+            label3.Size = new Size(148, 48);
             label3.TabIndex = 2;
             label3.Text = "קטגוריה";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(528, 114);
-            label2.Margin = new Padding(1, 0, 1, 0);
+            label2.Location = new Point(1320, 274);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(66, 20);
+            label2.Size = new Size(158, 48);
             label2.TabIndex = 1;
             label2.Text = "שם מוצר";
             // 
@@ -267,25 +264,26 @@
             paneDelate.Controls.Add(IdToDelate);
             paneDelate.Controls.Add(ToDelateProduct);
             paneDelate.Controls.Add(label1);
-            paneDelate.Location = new Point(71, 238);
+            paneDelate.Location = new Point(0, 0);
+            paneDelate.Margin = new Padding(8, 7, 8, 7);
             paneDelate.Name = "paneDelate";
-            paneDelate.Size = new Size(664, 386);
+            paneDelate.Size = new Size(1660, 926);
             paneDelate.TabIndex = 10;
-            paneDelate.Paint += paneDelate_Paint;
             // 
             // IdToDelate
             // 
-            IdToDelate.Location = new Point(108, 151);
+            IdToDelate.Location = new Point(270, 362);
+            IdToDelate.Margin = new Padding(8, 7, 8, 7);
             IdToDelate.Name = "IdToDelate";
-            IdToDelate.Size = new Size(125, 27);
+            IdToDelate.Size = new Size(306, 55);
             IdToDelate.TabIndex = 2;
-            IdToDelate.TextChanged += IdToDelate_TextChanged;
             // 
             // ToDelateProduct
             // 
-            ToDelateProduct.Location = new Point(317, 149);
+            ToDelateProduct.Location = new Point(792, 358);
+            ToDelateProduct.Margin = new Padding(8, 7, 8, 7);
             ToDelateProduct.Name = "ToDelateProduct";
-            ToDelateProduct.Size = new Size(146, 29);
+            ToDelateProduct.Size = new Size(365, 70);
             ToDelateProduct.TabIndex = 1;
             ToDelateProduct.Text = "למחיקת מוצר";
             ToDelateProduct.UseVisualStyleBackColor = true;
@@ -294,9 +292,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(115, 117);
+            label1.Location = new Point(288, 281);
+            label1.Margin = new Padding(8, 0, 8, 0);
             label1.Name = "label1";
-            label1.Size = new Size(110, 20);
+            label1.Size = new Size(264, 48);
             label1.TabIndex = 0;
             label1.Text = "הכנס מס מזהה ";
             // 
@@ -313,20 +312,37 @@
             formUpdateProduct.Controls.Add(label7);
             formUpdateProduct.Controls.Add(label8);
             formUpdateProduct.Controls.Add(label9);
-            formUpdateProduct.Location = new Point(368, 142);
-            formUpdateProduct.Margin = new Padding(1);
+            formUpdateProduct.Location = new Point(920, 341);
+            formUpdateProduct.Margin = new Padding(2);
             formUpdateProduct.Name = "formUpdateProduct";
-            formUpdateProduct.Size = new Size(630, 376);
+            formUpdateProduct.Size = new Size(1575, 902);
             formUpdateProduct.TabIndex = 11;
             formUpdateProduct.Visible = false;
-            formUpdateProduct.Paint += formUpdateProduct_Paint;
+            // 
+            // idToUpdate
+            // 
+            idToUpdate.Location = new Point(242, 274);
+            idToUpdate.Margin = new Padding(8, 7, 8, 7);
+            idToUpdate.Name = "idToUpdate";
+            idToUpdate.Size = new Size(306, 55);
+            idToUpdate.TabIndex = 11;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(242, 175);
+            label10.Margin = new Padding(8, 0, 8, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(304, 48);
+            label10.TabIndex = 10;
+            label10.Text = "הכנס מזהה לעדכון";
             // 
             // updateProduct
             // 
-            updateProduct.Location = new Point(421, 261);
-            updateProduct.Margin = new Padding(1);
+            updateProduct.Location = new Point(1052, 626);
+            updateProduct.Margin = new Padding(2);
             updateProduct.Name = "updateProduct";
-            updateProduct.Size = new Size(90, 29);
+            updateProduct.Size = new Size(225, 70);
             updateProduct.TabIndex = 9;
             updateProduct.Text = "עדכן מוצר";
             updateProduct.UseVisualStyleBackColor = true;
@@ -334,106 +350,90 @@
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(367, 215);
-            numericUpDown1.Margin = new Padding(1);
+            numericUpDown1.Location = new Point(918, 516);
+            numericUpDown1.Margin = new Padding(2);
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(144, 27);
+            numericUpDown1.Size = new Size(360, 55);
             numericUpDown1.TabIndex = 8;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(391, 180);
-            textBox1.Margin = new Padding(1);
+            textBox1.Location = new Point(978, 432);
+            textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(122, 27);
+            textBox1.Size = new Size(299, 55);
             textBox1.TabIndex = 7;
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Meats", "Poultry", "Spices", "Frozens", "Fish" });
-            comboBox1.Location = new Point(367, 148);
-            comboBox1.Margin = new Padding(1);
+            comboBox1.Location = new Point(918, 355);
+            comboBox1.Margin = new Padding(2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(148, 28);
+            comboBox1.Size = new Size(364, 56);
             comboBox1.TabIndex = 6;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(388, 114);
-            textBox2.Margin = new Padding(1);
+            textBox2.Location = new Point(970, 274);
+            textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(122, 27);
+            textBox2.Size = new Size(299, 55);
             textBox2.TabIndex = 5;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(528, 216);
-            label6.Margin = new Padding(1, 0, 1, 0);
+            label6.Location = new Point(1320, 518);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(41, 20);
+            label6.Size = new Size(97, 48);
             label6.TabIndex = 4;
             label6.Text = "מלאי";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(528, 181);
-            label7.Margin = new Padding(1, 0, 1, 0);
+            label7.Location = new Point(1320, 434);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(41, 20);
+            label7.Size = new Size(98, 48);
             label7.TabIndex = 3;
             label7.Text = "מחיר";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(528, 148);
-            label8.Margin = new Padding(1, 0, 1, 0);
+            label8.Location = new Point(1320, 355);
+            label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(62, 20);
+            label8.Size = new Size(148, 48);
             label8.TabIndex = 2;
             label8.Text = "קטגוריה";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(528, 114);
-            label9.Margin = new Padding(1, 0, 1, 0);
+            label9.Location = new Point(1320, 274);
+            label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
-            label9.Size = new Size(66, 20);
+            label9.Size = new Size(158, 48);
             label9.TabIndex = 1;
             label9.Text = "שם מוצר";
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(97, 73);
-            label10.Name = "label10";
-            label10.Size = new Size(126, 20);
-            label10.TabIndex = 10;
-            label10.Text = "הכנס מזהה לעדכון";
-            // 
-            // idToUpdate
-            // 
-            idToUpdate.Location = new Point(97, 114);
-            idToUpdate.Name = "idToUpdate";
-            idToUpdate.Size = new Size(125, 27);
-            idToUpdate.TabIndex = 11;
-            // 
             // ProductForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(20F, 48F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1367, 661);
-            Controls.Add(formUpdateProduct);
+            ClientSize = new Size(3418, 1586);
             Controls.Add(panelRead);
             Controls.Add(panelCreateProduct);
+            Controls.Add(formUpdateProduct);
             Controls.Add(panelReadAll);
             Controls.Add(paneDelate);
             Controls.Add(backToLastForm);
-            Margin = new Padding(1);
+            Margin = new Padding(2);
             Name = "ProductForm";
             Text = "ProductForm";
             Load += ProductForm_Load;

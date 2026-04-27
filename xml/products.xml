@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Product>
-    <Id>1012</Id>
-    <ProductName>GroundBeef</ProductName>
-    <Category>Meats</Category>
-    <Price>65</Price>
-    <Stock>80</Stock>
-  </Product>
-  <Product>
-    <Id>1013</Id>
-    <ProductName>TurkeyBreast</ProductName>
-    <Category>Poultry</Category>
-    <Price>82</Price>
-    <Stock>70</Stock>
-  </Product>
-  <Product>
-    <Id>1014</Id>
-    <ProductName>TurkeySlices</ProductName>
-    <Category>Poultry</Category>
-    <Price>80.7</Price>
-    <Stock>100</Stock>
-  </Product>
-  <Product>
     <Id>1015</Id>
     <ProductName>BlackPepper</ProductName>
     <Category>Spices</Category>
@@ -69,5 +48,19 @@
     <Category>Fish</Category>
     <Price>15</Price>
     <Stock>100</Stock>
+  </Product>
+  <Product>
+    <Id>1024</Id>
+    <ProductName>HotPaprika</ProductName>
+    <Category>Poultry</Category>
+    <Price>12</Price>
+    <Stock>100</Stock>
+  </Product>
+  <Product>
+    <Id>1025</Id>
+    <ProductName>afuna</ProductName>
+    <Category>Frozens</Category>
+    <Price>12</Price>
+    <Stock>10</Stock>
   </Product>
 </ArrayOfProduct>

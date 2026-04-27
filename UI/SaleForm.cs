@@ -58,7 +58,7 @@ namespace UI
         {
             var allProducts = _bl.Product.ReadAll();
             var productIds = allProducts.Select(p => p.Id).ToList();
-            comboBoxProductId.DataSource = productIds;
+            comboBox1.DataSource = productIds;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -90,28 +90,35 @@ namespace UI
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBoxEnterName.Text))
+            try
             {
-                MessageBox.Show("נא להזין מספר ID");
-                return;
-            }
-            if (int.TryParse(textBoxEnterName.Text, out int id))
-            {
-                var sale = _bl.Sale.Read(id);
-
-                if (sale != null)
+                if (string.IsNullOrWhiteSpace(textBoxEnterName.Text))
                 {
-                    dataGridViewRead.DataSource = new List<BO.Sale> { sale };
+                    MessageBox.Show("נא להזין מספר ID");
+                    return;
+                }
+                if (int.TryParse(textBoxEnterName.Text, out int id))
+                {
+                    var sale = _bl.Sale.Read(id);
+
+                    if (sale != null)
+                    {
+                        dataGridViewRead.DataSource = new List<BO.Sale> { sale };
+                    }
+                    else
+                    {
+                        MessageBox.Show("המבצע לא נמצא");
+                        dataGridViewRead.DataSource = null;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("המבצע לא נמצא");
-                    dataGridViewRead.DataSource = null;
+                    MessageBox.Show("נא להזין מספרים בלבד");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("נא להזין מספרים בלבד");
+                MessageBox.Show("שגיאה בקריאה: " + ex.Message);
             }
         }
 
@@ -159,11 +166,12 @@ namespace UI
                 if (!int.TryParse(id, out int saleId))
                 {
                     MessageBox.Show("נא להזין מספר מבצע לעדכון תקין בלבד.", "קלט לא תקין", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
                 BO.Sale newSale = new BO.Sale
                 {
-                    Id= saleId,
-                    ProductId = (int)comboBoxProductId.SelectedItem,
+                    Id = saleId,
+                    ProductId = int.Parse(comboBox1.Text),
                     SalePrice = double.Parse(textBoxPrice.Text),
                     QuantityRequier = (int)numericUpDownQuantity.Value,
                     IsSaleToAllCustomer = checkBoxToAll.Checked,
@@ -179,6 +187,11 @@ namespace UI
             {
                 MessageBox.Show("שגיאה בעדכון המבצע: " + ex.Message);
             }
+        }
+
+        private void panelReadAll_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

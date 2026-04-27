@@ -64,32 +64,41 @@ namespace UI
         private void ProductForm_Load(object sender, EventArgs e)
         {
             comboBoxCategory.DataSource = Enum.GetValues(typeof(BO.Categories));
+            comboBox1.DataSource = Enum.GetValues(typeof(BO.Categories));
+
         }
 
         private void buttonSearchProduct_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBoxEnterProductName.Text))
+            try
             {
-                MessageBox.Show("נא להזין מספר ID");
-                return;
-            }
-            if (int.TryParse(textBoxEnterProductName.Text, out int id))
-            {
-                var product = _bl.Product.Read(id);
-
-                if (product != null)
+                if (string.IsNullOrWhiteSpace(textBoxEnterProductName.Text))
                 {
-                    dataGridViewReadProduct.DataSource = new List<BO.Product> { product };
+                    MessageBox.Show("נא להזין מספר ID");
+                    return;
+                }
+                if (int.TryParse(textBoxEnterProductName.Text, out int id))
+                {
+                    var product = _bl.Product.Read(id);
+
+                    if (product != null)
+                    {
+                        dataGridViewReadProduct.DataSource = new List<BO.Product> { product };
+                    }
+                    else
+                    {
+                        MessageBox.Show("המוצר לא נמצא");
+                        dataGridViewReadProduct.DataSource = null;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("המוצר לא נמצא");
-                    dataGridViewReadProduct.DataSource = null;
+                    MessageBox.Show("נא להזין מספרים בלבד");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("נא להזין מספרים בלבד");
+                MessageBox.Show("שגיאה בקריאה: " + ex.Message);
             }
         }
 
@@ -124,11 +133,6 @@ namespace UI
             numericUpDownStock.Value = 0;
         }
 
-        private void dataGridViewReadAllProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void ToDelateProduct_Click(object sender, EventArgs e)
         {
 
@@ -153,37 +157,6 @@ namespace UI
                 MessageBox.Show("נא להזין מספר מוצר תקין בלבד.", "קלט לא תקין", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
-        private void IdToDelate_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelRead_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void paneDelate_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelCreateProduct_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void formUpdateProduct_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void updateProduct_Click(object sender, EventArgs e)
         { 
 
@@ -192,15 +165,16 @@ namespace UI
                 string id = idToUpdate.Text;
                 if (!int.TryParse(id, out int productId)){
                     
-                     MessageBox.Show("נא להזין מספר מוצר לעדכון תקין בלבד.", "קלט לא תקין", MessageBoxButtons.OK, MessageBoxIcon.Warning);  
+                     MessageBox.Show("נא להזין מספר מוצר לעדכון תקין בלבד.", "קלט לא תקין", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
                 BO.Product newProduct = new BO.Product
                 {
                     Id = productId,
-                    ProductName = textBoxName.Text,
-                    Category = (Categories)comboBoxCategory.SelectedItem,
-                    Price = double.Parse(textBoxPrice.Text),
-                    Stock = (int)numericUpDownStock.Value
+                    ProductName = textBox2.Text,
+                    Category = (Categories)comboBox1.SelectedItem,
+                    Price = double.Parse(textBox1.Text),
+                    Stock = (int)numericUpDown1.Value
                 };
                 _bl.Product.Update(newProduct);
 
