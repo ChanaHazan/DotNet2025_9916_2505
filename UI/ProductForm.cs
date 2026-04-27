@@ -10,11 +10,8 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public enum FormMode { Create, Update, Delete, View, ViewAll }
     public partial class ProductForm : Form
     {
-
-
         public FormMode CurrentMode { get; set; }
         public ProductForm(FormMode mode)
         {

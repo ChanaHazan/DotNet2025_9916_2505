@@ -19,9 +19,14 @@ namespace UI
 
         private void backToMainForm_Click(object sender, EventArgs e)
         {
-            MainForm main=new MainForm();
+            MainForm main = new MainForm();
             main.Show();
             this.Hide();
+        }
+
+        private void CashierForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

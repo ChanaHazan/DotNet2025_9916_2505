@@ -46,9 +46,84 @@ namespace UI
             panelProduct.Visible = false;
         }
 
-        private void Create_Click(object sender, EventArgs e)
+        private void ManagerForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void panelCustomer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CreateProduct_Click(object sender, EventArgs e)
+        {
+            ProductForm pf = new ProductForm(FormMode.Create);
+            pf.Show();
+            this.Hide();
+        }
+
+        private void DeleteProduct_Click(object sender, EventArgs e)
+        {
+            ProductForm pf = new ProductForm(FormMode.Delete);
+            pf.Show();
+            this.Hide();
+        }
+
+        private void UpdateProduct_Click(object sender, EventArgs e)
+        {
+            ProductForm pf = new ProductForm(FormMode.Update);
+            pf.Show();
+            this.Hide();
+        }
+
+        private void ReadProduct_Click(object sender, EventArgs e)
+        {
+            ProductForm pf = new ProductForm(FormMode.View);
+            pf.Show();
+            this.Hide();
+        }
+
+        private void ReadAllProduct_Click(object sender, EventArgs e)
+        {
+            ProductForm pf = new ProductForm(FormMode.ViewAll);
+            pf.Show();
+            this.Hide();
+        }
+
+        private void createSale_Click(object sender, EventArgs e)
+        {
+            SaleForm sf = new SaleForm(FormMode.Create);
+            sf.Show();
+            this.Hide();
+        }
+
+        private void deleteSale_Click(object sender, EventArgs e)
+        {
+            SaleForm sf = new SaleForm(FormMode.Delete);
+            sf.Show();
+            this.Hide();
+        }
+
+        private void updateSale_Click(object sender, EventArgs e)
+        {
+            SaleForm sf = new SaleForm(FormMode.Update);
+            sf.Show();
+            this.Hide();
+        }
+
+        private void readSale_Click(object sender, EventArgs e)
+        {
+            SaleForm sf = new SaleForm(FormMode.View);
+            sf.Show();
+            this.Hide();
+        }
+
+        private void readAllSales_Click(object sender, EventArgs e)
+        {
+            SaleForm sf = new SaleForm(FormMode.ViewAll);
+            sf.Show();
+            this.Hide();
         }
     }
 }

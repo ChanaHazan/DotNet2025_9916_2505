@@ -49,6 +49,7 @@
             Controls.Add(backToMainForm);
             Name = "CashierForm";
             Text = "CashierForm";
+            Load += CashierForm_Load;
             ResumeLayout(false);
         }
 

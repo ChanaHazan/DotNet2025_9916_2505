@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public enum FormMode { Create, Update, Delete, View, ViewAll }
+    
 
     public partial class CustomerForm : Form
     {

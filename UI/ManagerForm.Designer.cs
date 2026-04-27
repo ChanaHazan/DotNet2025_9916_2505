@@ -33,23 +33,23 @@
             customer = new Button();
             sales = new Button();
             panelProduct = new Panel();
-            Read = new Button();
-            Update = new Button();
-            ReadAll = new Button();
-            Delete = new Button();
-            Create = new Button();
+            ReadProduct = new Button();
+            UpdateProduct = new Button();
+            ReadAllProduct = new Button();
+            DeleteProduct = new Button();
+            CreateProduct = new Button();
             panelCustomer = new Panel();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            readCustomer = new Button();
+            updateCustomer = new Button();
+            readAllCustomer = new Button();
+            deleteCustomer = new Button();
+            createCustomer = new Button();
             panelSale = new Panel();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
-            button9 = new Button();
-            button10 = new Button();
+            readSale = new Button();
+            updateSale = new Button();
+            readAllSales = new Button();
+            deleteSale = new Button();
+            createSale = new Button();
             panelProduct.SuspendLayout();
             panelCustomer.SuspendLayout();
             panelSale.SuspendLayout();
@@ -97,186 +97,196 @@
             // 
             // panelProduct
             // 
-            panelProduct.Controls.Add(Read);
-            panelProduct.Controls.Add(Update);
-            panelProduct.Controls.Add(ReadAll);
-            panelProduct.Controls.Add(Delete);
-            panelProduct.Controls.Add(Create);
+            panelProduct.Controls.Add(ReadProduct);
+            panelProduct.Controls.Add(UpdateProduct);
+            panelProduct.Controls.Add(ReadAllProduct);
+            panelProduct.Controls.Add(DeleteProduct);
+            panelProduct.Controls.Add(CreateProduct);
             panelProduct.Location = new Point(51, 222);
             panelProduct.Name = "panelProduct";
             panelProduct.Size = new Size(1842, 834);
             panelProduct.TabIndex = 4;
             panelProduct.Visible = false;
             // 
-            // Read
+            // ReadProduct
             // 
-            Read.Location = new Point(36, 255);
-            Read.Name = "Read";
-            Read.Size = new Size(388, 146);
-            Read.TabIndex = 4;
-            Read.Text = "לקרוא מוצר";
-            Read.UseVisualStyleBackColor = true;
+            ReadProduct.Location = new Point(36, 255);
+            ReadProduct.Name = "ReadProduct";
+            ReadProduct.Size = new Size(388, 146);
+            ReadProduct.TabIndex = 4;
+            ReadProduct.Text = "לקרוא מוצר";
+            ReadProduct.UseVisualStyleBackColor = true;
+            ReadProduct.Click += ReadProduct_Click;
             // 
-            // Update
+            // UpdateProduct
             // 
-            Update.Location = new Point(917, 36);
-            Update.Name = "Update";
-            Update.Size = new Size(388, 146);
-            Update.TabIndex = 3;
-            Update.Text = "לעדכן מוצר";
-            Update.UseVisualStyleBackColor = true;
+            UpdateProduct.Location = new Point(917, 36);
+            UpdateProduct.Name = "UpdateProduct";
+            UpdateProduct.Size = new Size(388, 146);
+            UpdateProduct.TabIndex = 3;
+            UpdateProduct.Text = "לעדכן מוצר";
+            UpdateProduct.UseVisualStyleBackColor = true;
+            UpdateProduct.Click += UpdateProduct_Click;
             // 
-            // ReadAll
+            // ReadAllProduct
             // 
-            ReadAll.Location = new Point(475, 255);
-            ReadAll.Name = "ReadAll";
-            ReadAll.Size = new Size(388, 146);
-            ReadAll.TabIndex = 2;
-            ReadAll.Text = "לקרוא את כל המוצרים";
-            ReadAll.UseVisualStyleBackColor = true;
+            ReadAllProduct.Location = new Point(475, 255);
+            ReadAllProduct.Name = "ReadAllProduct";
+            ReadAllProduct.Size = new Size(388, 146);
+            ReadAllProduct.TabIndex = 2;
+            ReadAllProduct.Text = "לקרוא את כל המוצרים";
+            ReadAllProduct.UseVisualStyleBackColor = true;
+            ReadAllProduct.Click += ReadAllProduct_Click;
             // 
-            // Delete
+            // DeleteProduct
             // 
-            Delete.Location = new Point(475, 36);
-            Delete.Name = "Delete";
-            Delete.Size = new Size(388, 146);
-            Delete.TabIndex = 1;
-            Delete.Text = "למחוק מוצר";
-            Delete.UseVisualStyleBackColor = true;
+            DeleteProduct.Location = new Point(475, 36);
+            DeleteProduct.Name = "DeleteProduct";
+            DeleteProduct.Size = new Size(388, 146);
+            DeleteProduct.TabIndex = 1;
+            DeleteProduct.Text = "למחוק מוצר";
+            DeleteProduct.UseVisualStyleBackColor = true;
+            DeleteProduct.Click += DeleteProduct_Click;
             // 
-            // Create
+            // CreateProduct
             // 
-            Create.Location = new Point(36, 36);
-            Create.Name = "Create";
-            Create.Size = new Size(388, 146);
-            Create.TabIndex = 0;
-            Create.Text = "ליצור מוצר";
-            Create.UseVisualStyleBackColor = true;
-            Create.Click += Create_Click;
+            CreateProduct.Location = new Point(36, 36);
+            CreateProduct.Name = "CreateProduct";
+            CreateProduct.Size = new Size(388, 146);
+            CreateProduct.TabIndex = 0;
+            CreateProduct.Text = "ליצור מוצר";
+            CreateProduct.UseVisualStyleBackColor = true;
+            CreateProduct.Click += CreateProduct_Click;
             // 
             // panelCustomer
             // 
-            panelCustomer.Controls.Add(button1);
-            panelCustomer.Controls.Add(button2);
-            panelCustomer.Controls.Add(button3);
-            panelCustomer.Controls.Add(button4);
-            panelCustomer.Controls.Add(button5);
-            panelCustomer.Location = new Point(920, 219);
+            panelCustomer.Controls.Add(readCustomer);
+            panelCustomer.Controls.Add(updateCustomer);
+            panelCustomer.Controls.Add(readAllCustomer);
+            panelCustomer.Controls.Add(deleteCustomer);
+            panelCustomer.Controls.Add(createCustomer);
+            panelCustomer.Location = new Point(644, 173);
             panelCustomer.Name = "panelCustomer";
             panelCustomer.Size = new Size(1842, 834);
             panelCustomer.TabIndex = 5;
             panelCustomer.Visible = false;
+            panelCustomer.Paint += panelCustomer_Paint;
             // 
-            // button1
+            // readCustomer
             // 
-            button1.Location = new Point(36, 255);
-            button1.Name = "button1";
-            button1.Size = new Size(388, 146);
-            button1.TabIndex = 4;
-            button1.Text = "לקרוא לקוח";
-            button1.UseVisualStyleBackColor = true;
+            readCustomer.Location = new Point(36, 255);
+            readCustomer.Name = "readCustomer";
+            readCustomer.Size = new Size(388, 146);
+            readCustomer.TabIndex = 4;
+            readCustomer.Text = "לקרוא לקוח";
+            readCustomer.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // updateCustomer
             // 
-            button2.Location = new Point(917, 36);
-            button2.Name = "button2";
-            button2.Size = new Size(388, 146);
-            button2.TabIndex = 3;
-            button2.Text = "לעדכן לקוח";
-            button2.UseVisualStyleBackColor = true;
+            updateCustomer.Location = new Point(917, 36);
+            updateCustomer.Name = "updateCustomer";
+            updateCustomer.Size = new Size(388, 146);
+            updateCustomer.TabIndex = 3;
+            updateCustomer.Text = "לעדכן לקוח";
+            updateCustomer.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // readAllCustomer
             // 
-            button3.Location = new Point(475, 255);
-            button3.Name = "button3";
-            button3.Size = new Size(388, 146);
-            button3.TabIndex = 2;
-            button3.Text = "לקרוא את כל הלקוחות";
-            button3.UseVisualStyleBackColor = true;
+            readAllCustomer.Location = new Point(475, 255);
+            readAllCustomer.Name = "readAllCustomer";
+            readAllCustomer.Size = new Size(388, 146);
+            readAllCustomer.TabIndex = 2;
+            readAllCustomer.Text = "לקרוא את כל הלקוחות";
+            readAllCustomer.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // deleteCustomer
             // 
-            button4.Location = new Point(475, 36);
-            button4.Name = "button4";
-            button4.Size = new Size(388, 146);
-            button4.TabIndex = 1;
-            button4.Text = "למחוק לקוח";
-            button4.UseVisualStyleBackColor = true;
+            deleteCustomer.Location = new Point(475, 36);
+            deleteCustomer.Name = "deleteCustomer";
+            deleteCustomer.Size = new Size(388, 146);
+            deleteCustomer.TabIndex = 1;
+            deleteCustomer.Text = "למחוק לקוח";
+            deleteCustomer.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // createCustomer
             // 
-            button5.Location = new Point(36, 36);
-            button5.Name = "button5";
-            button5.Size = new Size(388, 146);
-            button5.TabIndex = 0;
-            button5.Text = "ליצור לקוח";
-            button5.UseVisualStyleBackColor = true;
+            createCustomer.Location = new Point(36, 36);
+            createCustomer.Name = "createCustomer";
+            createCustomer.Size = new Size(388, 146);
+            createCustomer.TabIndex = 0;
+            createCustomer.Text = "ליצור לקוח";
+            createCustomer.UseVisualStyleBackColor = true;
             // 
             // panelSale
             // 
-            panelSale.Controls.Add(button6);
-            panelSale.Controls.Add(button7);
-            panelSale.Controls.Add(button8);
-            panelSale.Controls.Add(button9);
-            panelSale.Controls.Add(button10);
-            panelSale.Location = new Point(449, 222);
+            panelSale.Controls.Add(readSale);
+            panelSale.Controls.Add(updateSale);
+            panelSale.Controls.Add(readAllSales);
+            panelSale.Controls.Add(deleteSale);
+            panelSale.Controls.Add(createSale);
+            panelSale.Location = new Point(341, 199);
             panelSale.Name = "panelSale";
             panelSale.Size = new Size(1842, 834);
             panelSale.TabIndex = 6;
             panelSale.Visible = false;
             // 
-            // button6
+            // readSale
             // 
-            button6.Location = new Point(36, 255);
-            button6.Name = "button6";
-            button6.Size = new Size(388, 146);
-            button6.TabIndex = 4;
-            button6.Text = "לקרוא מבצע";
-            button6.UseVisualStyleBackColor = true;
+            readSale.Location = new Point(36, 255);
+            readSale.Name = "readSale";
+            readSale.Size = new Size(388, 146);
+            readSale.TabIndex = 4;
+            readSale.Text = "לקרוא מבצע";
+            readSale.UseVisualStyleBackColor = true;
+            readSale.Click += readSale_Click;
             // 
-            // button7
+            // updateSale
             // 
-            button7.Location = new Point(917, 36);
-            button7.Name = "button7";
-            button7.Size = new Size(388, 146);
-            button7.TabIndex = 3;
-            button7.Text = "לעדכן מבצע";
-            button7.UseVisualStyleBackColor = true;
+            updateSale.Location = new Point(917, 36);
+            updateSale.Name = "updateSale";
+            updateSale.Size = new Size(388, 146);
+            updateSale.TabIndex = 3;
+            updateSale.Text = "לעדכן מבצע";
+            updateSale.UseVisualStyleBackColor = true;
+            updateSale.Click += updateSale_Click;
             // 
-            // button8
+            // readAllSales
             // 
-            button8.Location = new Point(475, 255);
-            button8.Name = "button8";
-            button8.Size = new Size(388, 146);
-            button8.TabIndex = 2;
-            button8.Text = "לקרוא את כל המבצעים";
-            button8.UseVisualStyleBackColor = true;
+            readAllSales.Location = new Point(475, 255);
+            readAllSales.Name = "readAllSales";
+            readAllSales.Size = new Size(388, 146);
+            readAllSales.TabIndex = 2;
+            readAllSales.Text = "לקרוא את כל המבצעים";
+            readAllSales.UseVisualStyleBackColor = true;
+            readAllSales.Click += readAllSales_Click;
             // 
-            // button9
+            // deleteSale
             // 
-            button9.Location = new Point(475, 36);
-            button9.Name = "button9";
-            button9.Size = new Size(388, 146);
-            button9.TabIndex = 1;
-            button9.Text = "למחוק מבצע";
-            button9.UseVisualStyleBackColor = true;
+            deleteSale.Location = new Point(475, 36);
+            deleteSale.Name = "deleteSale";
+            deleteSale.Size = new Size(388, 146);
+            deleteSale.TabIndex = 1;
+            deleteSale.Text = "למחוק מבצע";
+            deleteSale.UseVisualStyleBackColor = true;
+            deleteSale.Click += deleteSale_Click;
             // 
-            // button10
+            // createSale
             // 
-            button10.Location = new Point(36, 36);
-            button10.Name = "button10";
-            button10.Size = new Size(388, 146);
-            button10.TabIndex = 0;
-            button10.Text = "ליצור מבצע";
-            button10.UseVisualStyleBackColor = true;
+            createSale.Location = new Point(36, 36);
+            createSale.Name = "createSale";
+            createSale.Size = new Size(388, 146);
+            createSale.TabIndex = 0;
+            createSale.Text = "ליצור מבצע";
+            createSale.UseVisualStyleBackColor = true;
+            createSale.Click += createSale_Click;
             // 
             // ManagerForm
             // 
             AutoScaleDimensions = new SizeF(20F, 48F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2498, 1118);
-            Controls.Add(panelCustomer);
             Controls.Add(panelSale);
+            Controls.Add(panelCustomer);
             Controls.Add(panelProduct);
             Controls.Add(sales);
             Controls.Add(customer);
@@ -284,6 +294,7 @@
             Controls.Add(backToMainForm);
             Name = "ManagerForm";
             Text = "ManagerForm";
+            Load += ManagerForm_Load;
             panelProduct.ResumeLayout(false);
             panelCustomer.ResumeLayout(false);
             panelSale.ResumeLayout(false);
@@ -297,22 +308,22 @@
         private Button customer;
         private Button sales;
         private Panel panelProduct;
-        private Button Create;
-        private Button Read;
-        private Button Update;
-        private Button ReadAll;
-        private Button Delete;
+        private Button CreateProduct;
+        private Button ReadProduct;
+        private Button UpdateProduct;
+        private Button ReadAllProduct;
+        private Button DeleteProduct;
         private Panel panelCustomer;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
+        private Button readCustomer;
+        private Button updateCustomer;
+        private Button readAllCustomer;
+        private Button deleteCustomer;
+        private Button createCustomer;
         private Panel panelSale;
-        private Button button6;
-        private Button button7;
-        private Button button8;
-        private Button button9;
-        private Button button10;
+        private Button readSale;
+        private Button updateSale;
+        private Button readAllSales;
+        private Button deleteSale;
+        private Button createSale;
     }
 }

@@ -26,9 +26,14 @@ namespace UI
 
         private void manager_Click(object sender, EventArgs e)
         {
-            ManagerForm manager= new ManagerForm();
+            ManagerForm manager = new ManagerForm();
             manager.Show();
             this.Hide();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
