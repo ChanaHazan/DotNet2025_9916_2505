@@ -63,4 +63,11 @@
     <Price>14</Price>
     <Stock>100</Stock>
   </Product>
+  <Product>
+    <Id>1023</Id>
+    <ProductName>Amnon</ProductName>
+    <Category>Fish</Category>
+    <Price>15</Price>
+    <Stock>100</Stock>
+  </Product>
 </ArrayOfProduct>

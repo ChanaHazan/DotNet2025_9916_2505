@@ -48,7 +48,6 @@ namespace UI
 
         private void ManagerForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void panelCustomer_Paint(object sender, PaintEventArgs e)
