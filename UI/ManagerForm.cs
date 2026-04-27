@@ -92,35 +92,35 @@ namespace UI
 
         private void createSale_Click(object sender, EventArgs e)
         {
-            SaleForm sf = new SaleForm(FormMode.Create);
+            SaleUpdateForm sf = new SaleUpdateForm(FormMode.Create);
             sf.Show();
             this.Hide();
         }
 
         private void deleteSale_Click(object sender, EventArgs e)
         {
-            SaleForm sf = new SaleForm(FormMode.Delete);
+            SaleUpdateForm sf = new SaleUpdateForm(FormMode.Delete);
             sf.Show();
             this.Hide();
         }
 
         private void updateSale_Click(object sender, EventArgs e)
         {
-            SaleForm sf = new SaleForm(FormMode.Update);
+            SaleUpdateForm sf = new SaleUpdateForm(FormMode.Update);
             sf.Show();
             this.Hide();
         }
 
         private void readSale_Click(object sender, EventArgs e)
         {
-            SaleForm sf = new SaleForm(FormMode.View);
+            SaleUpdateForm sf = new SaleUpdateForm(FormMode.View);
             sf.Show();
             this.Hide();
         }
 
         private void readAllSales_Click(object sender, EventArgs e)
         {
-            SaleForm sf = new SaleForm(FormMode.ViewAll);
+            SaleUpdateForm sf = new SaleUpdateForm(FormMode.ViewAll);
             sf.Show();
             this.Hide();
         }

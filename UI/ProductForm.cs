@@ -23,33 +23,34 @@ namespace UI
         }
         private void SetupUI()
         {
+            panelRead.Visible = false;
+            panelReadAll.Visible = false;
+            panelCreateProduct.Visible = false;
+            paneDelate.Visible = false;
+            formUpdateProduct.Visible = false;
+
             if (CurrentMode == FormMode.View)
             {
                 panelRead.Visible = true;
-                panelReadAll.Visible = false;
-                panelCreateProduct.Visible = false;
             }
             if (CurrentMode == FormMode.Create)
             {
                 panelCreateProduct.Visible = true;
-                panelRead.Visible = false;
-                panelReadAll.Visible = false;
+                
             }
             if (CurrentMode == FormMode.ViewAll)
             {
                 panelReadAll.Visible = true;
-                panelRead.Visible = false;
-                panelCreateProduct.Visible = false;
                 var products = _bl.Product.ReadAll();
                 dataGridViewReadAllProducts.DataSource = products;
             }
             if (CurrentMode == FormMode.Update)
             {
-
+                formUpdateProduct.Visible = true;
             }
             if (CurrentMode == FormMode.Delete)
             {
-
+                paneDelate.Visible = true;
             }
         }
 
@@ -99,17 +100,17 @@ namespace UI
                 BO.Product newProduct = new BO.Product
                 {
                     ProductName = textBoxName.Text,
-                    Category =(Categories)comboBoxCategory.SelectedItem,
+                    Category = (Categories)comboBoxCategory.SelectedItem,
                     Price = double.Parse(textBoxPrice.Text),
                     Stock = (int)numericUpDownStock.Value
                 };
 
-                int newId=_bl.Product.Create(newProduct);
+                int newId = _bl.Product.Create(newProduct);
 
                 MessageBox.Show($"המוצר נוסף בהצלחה! המזהה שלו:{newId}");
 
                 ClearFields();
-                
+
             }
             catch (Exception ex)
             {
@@ -121,6 +122,97 @@ namespace UI
             textBoxName.Clear();
             textBoxPrice.Clear();
             numericUpDownStock.Value = 0;
+        }
+
+        private void dataGridViewReadAllProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ToDelateProduct_Click(object sender, EventArgs e)
+        {
+
+            string input = IdToDelate.Text;
+
+            if (int.TryParse(input, out int productId))
+            {
+                try
+                {
+                    _bl.Product.Delete(productId);
+                    MessageBox.Show($"מוצר מספר {productId} נמחק בהצלחה!", "אישור", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    IdToDelate.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("חלה שגיאה: " + ex.Message, "שגיאה במערכת", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("נא להזין מספר מוצר תקין בלבד.", "קלט לא תקין", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void IdToDelate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelRead_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void paneDelate_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelCreateProduct_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void formUpdateProduct_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void updateProduct_Click(object sender, EventArgs e)
+        { 
+
+            try
+            {
+                string id = idToUpdate.Text;
+                if (!int.TryParse(id, out int productId)){
+                    
+                     MessageBox.Show("נא להזין מספר מוצר לעדכון תקין בלבד.", "קלט לא תקין", MessageBoxButtons.OK, MessageBoxIcon.Warning);  
+                }
+                BO.Product newProduct = new BO.Product
+                {
+                    Id = productId,
+                    ProductName = textBoxName.Text,
+                    Category = (Categories)comboBoxCategory.SelectedItem,
+                    Price = double.Parse(textBoxPrice.Text),
+                    Stock = (int)numericUpDownStock.Value
+                };
+                _bl.Product.Update(newProduct);
+
+                MessageBox.Show($"המוצר עודכן בהצלחה! המזהה שלו:{productId}");
+
+                ClearFields();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("שגיאה בעדכון המוצר: " + ex.Message);
+            }
         }
     }
 }
