@@ -102,7 +102,7 @@
             panelProduct.Controls.Add(ReadAllProduct);
             panelProduct.Controls.Add(DeleteProduct);
             panelProduct.Controls.Add(CreateProduct);
-            panelProduct.Location = new Point(51, 222);
+            panelProduct.Location = new Point(24, 260);
             panelProduct.Name = "panelProduct";
             panelProduct.Size = new Size(1842, 834);
             panelProduct.TabIndex = 4;
@@ -165,7 +165,7 @@
             panelCustomer.Controls.Add(readAllCustomer);
             panelCustomer.Controls.Add(deleteCustomer);
             panelCustomer.Controls.Add(createCustomer);
-            panelCustomer.Location = new Point(312, 20);
+            panelCustomer.Location = new Point(235, 211);
             panelCustomer.Name = "panelCustomer";
             panelCustomer.Size = new Size(1842, 834);
             panelCustomer.TabIndex = 5;
@@ -225,12 +225,11 @@
             // panelSale
             // 
             panelSale.Controls.Add(readSale);
-            panelSale.Controls.Add(panelCustomer);
             panelSale.Controls.Add(updateSale);
             panelSale.Controls.Add(readAllSales);
             panelSale.Controls.Add(deleteSale);
             panelSale.Controls.Add(createSale);
-            panelSale.Location = new Point(341, 199);
+            panelSale.Location = new Point(130, 236);
             panelSale.Name = "panelSale";
             panelSale.Size = new Size(1842, 834);
             panelSale.TabIndex = 6;
@@ -291,6 +290,7 @@
             AutoScaleDimensions = new SizeF(20F, 48F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2498, 1118);
+            Controls.Add(panelCustomer);
             Controls.Add(panelSale);
             Controls.Add(panelProduct);
             Controls.Add(sales);
