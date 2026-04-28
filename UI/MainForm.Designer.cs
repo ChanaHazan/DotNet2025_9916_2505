@@ -34,10 +34,10 @@
             // 
             // manager
             // 
-            manager.Location = new Point(137, 63);
-            manager.Margin = new Padding(1, 1, 1, 1);
+            manager.Location = new Point(342, 151);
+            manager.Margin = new Padding(2);
             manager.Name = "manager";
-            manager.Size = new Size(342, 177);
+            manager.Size = new Size(855, 425);
             manager.TabIndex = 0;
             manager.Text = "מנהל";
             manager.UseVisualStyleBackColor = true;
@@ -45,10 +45,10 @@
             // 
             // cashier
             // 
-            cashier.Location = new Point(137, 262);
-            cashier.Margin = new Padding(1, 1, 1, 1);
+            cashier.Location = new Point(342, 629);
+            cashier.Margin = new Padding(2);
             cashier.Name = "cashier";
-            cashier.Size = new Size(342, 177);
+            cashier.Size = new Size(855, 425);
             cashier.TabIndex = 1;
             cashier.Text = "קופאי";
             cashier.UseVisualStyleBackColor = true;
@@ -56,13 +56,14 @@
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(20F, 48F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(770, 459);
+            ClientSize = new Size(3009, 1519);
             Controls.Add(cashier);
             Controls.Add(manager);
-            Margin = new Padding(1, 1, 1, 1);
+            Margin = new Padding(2);
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm";
             Load += MainForm_Load;
             ResumeLayout(false);

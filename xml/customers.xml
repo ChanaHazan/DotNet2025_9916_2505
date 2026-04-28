@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfCustomer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Customer>
-    <Id>1003</Id>
-    <CustomerName>Yael Friedman</CustomerName>
-    <Adress>Haifa</Adress>
-    <Phone>050-9876543</Phone>
-  </Customer>
-  <Customer>
-    <Id>1004</Id>
-    <CustomerName>michal charar</CustomerName>
-    <Adress>shagat arie</Adress>
-    <Phone>0548550710</Phone>
-  </Customer>
-  <Customer>
     <Id>1002</Id>
     <CustomerName>Chana</CustomerName>
     <Adress>shaagatarie</Adress>
     <Phone>1234567890</Phone>
+  </Customer>
+  <Customer>
+    <Id>1004</Id>
+    <CustomerName>מיכל חרר</CustomerName>
+    <Adress>שאגת אריה</Adress>
+    <Phone>0548580710</Phone>
+  </Customer>
+  <Customer>
+    <Id>216389916</Id>
+    <CustomerName>חנה חזן</CustomerName>
+    <Adress>שאגת אריה 13</Adress>
+    <Phone>089798478</Phone>
   </Customer>
 </ArrayOfCustomer>

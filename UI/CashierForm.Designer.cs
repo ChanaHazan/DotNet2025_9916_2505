@@ -45,9 +45,10 @@
             // 
             AutoScaleDimensions = new SizeF(20F, 48F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2464, 1065);
+            ClientSize = new Size(3009, 1519);
             Controls.Add(backToMainForm);
             Name = "CashierForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CashierForm";
             Load += CashierForm_Load;
             ResumeLayout(false);

@@ -10,15 +10,17 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public enum FormMode { Create, Update, Delete, View, ViewAll }
-    public partial class SaleUpdateForm : Form
+    public partial class SaleForm : Form
     {
         private BlApi.IBl _bl = BlApi.Factory.Get();
         public FormMode CurrentMode { get; set; }
-        public SaleUpdateForm(FormMode mode)
+
+        private ManagerForm _parentForm;
+        public SaleForm(FormMode mode, ManagerForm parent)
         {
             InitializeComponent();
             CurrentMode = mode;
+            _parentForm = parent;
             SetupUI();
         }
 
@@ -58,7 +60,7 @@ namespace UI
         {
             var allProducts = _bl.Product.ReadAll();
             var productIds = allProducts.Select(p => p.Id).ToList();
-            comboBox1.DataSource = productIds;
+            comboBoxProductId.DataSource = productIds;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -124,9 +126,8 @@ namespace UI
 
         private void backToLastForm_Click(object sender, EventArgs e)
         {
-            ManagerForm manager = new ManagerForm();
-            manager.Show();
-            this.Hide();
+            _parentForm.Show();
+            this.Close();
         }
 
         private void ToDelateSale_Click(object sender, EventArgs e)
@@ -172,11 +173,11 @@ namespace UI
                 {
                     Id = saleId,
                     ProductId = int.Parse(comboBox1.Text),
-                    SalePrice = double.Parse(textBoxPrice.Text),
-                    QuantityRequier = (int)numericUpDownQuantity.Value,
-                    IsSaleToAllCustomer = checkBoxToAll.Checked,
-                    StartSale = dateStart.Value,
-                    EndSale = dateEnd.Value
+                    SalePrice = double.Parse(textBox1.Text),
+                    QuantityRequier = (int)numericUpDown1.Value,
+                    IsSaleToAllCustomer = checkBox1.Checked,
+                    StartSale = dateTimePicker2.Value,
+                    EndSale = dateTimePicker1.Value
                 };
 
                 _bl.Sale.Update(newSale);
@@ -194,4 +195,5 @@ namespace UI
 
         }
     }
+    public enum FormMode { Create, Update, Delete, View, ViewAll }
 }

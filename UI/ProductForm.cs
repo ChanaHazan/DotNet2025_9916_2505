@@ -15,11 +15,14 @@ namespace UI
     {
         private BlApi.IBl _bl = BlApi.Factory.Get();
         public FormMode CurrentMode { get; set; }
-        public ProductForm(FormMode mode)
+
+        private ManagerForm _parentForm;
+        public ProductForm(FormMode mode, ManagerForm parentForm)
         {
             InitializeComponent();
             CurrentMode = mode;
             SetupUI();
+            _parentForm = parentForm;
         }
         private void SetupUI()
         {
@@ -56,9 +59,9 @@ namespace UI
 
         private void backToMainForm_Click(object sender, EventArgs e)
         {
-            ManagerForm manager = new ManagerForm();
-            manager.Show();
-            this.Hide();
+
+            _parentForm.Show();
+            this.Close();
         }
 
         private void ProductForm_Load(object sender, EventArgs e)
@@ -165,7 +168,7 @@ namespace UI
                 string id = idToUpdate.Text;
                 if (!int.TryParse(id, out int productId)){
                     
-                     MessageBox.Show("נא להזין מספר מוצר לעדכון תקין בלבד.", "קלט לא תקין", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("נא להזין מספר מוצר לעדכון תקין בלבד.", "קלט לא תקין", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 BO.Product newProduct = new BO.Product
@@ -178,7 +181,8 @@ namespace UI
                 };
                 _bl.Product.Update(newProduct);
 
-                MessageBox.Show($"המוצר עודכן בהצלחה! המזהה שלו:{productId}");
+                //בעדכון נוצר מזהה חדש כי בפונקציה של העדכון יש מחיקה ואז יצירה 
+                MessageBox.Show($"המוצר עודכן בהצלחה!");
 
                 ClearFields();
 

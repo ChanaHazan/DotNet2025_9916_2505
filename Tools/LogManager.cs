@@ -71,7 +71,7 @@ public static class LogManager
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception("Failed To Delete Folder");//FailedToDeleteFolder
+                        throw new Exception("Failed To Delete Folder", ex);//FailedToDeleteFolder
                     }
                 }
             }

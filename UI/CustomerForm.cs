@@ -20,14 +20,14 @@ namespace UI
 
         private BlApi.IBl _bl = BlApi.Factory.Get();
 
+        private ManagerForm _parentForm;
 
-
-        public CustomerForm(FormMode mode)
+        public CustomerForm(FormMode mode, ManagerForm parentForm)
         {
             InitializeComponent();
             CurrentMode = mode;
             SetupUI();
-
+            _parentForm = parentForm;
         }
 
         private void SetupUI()
@@ -65,13 +65,6 @@ namespace UI
         private void CustomerForm_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void backToLastForm_Click(object sender, EventArgs e)
-        {
-            ManagerForm manager = new ManagerForm();
-            manager.Show();
-            this.Hide();
         }
 
         private void ToDelateCustomer_Click(object sender, EventArgs e)
@@ -179,9 +172,8 @@ namespace UI
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            ManagerForm mf = new ManagerForm();
-            mf.Show();
-            this.Hide();
+            _parentForm.Show();
+            this.Close();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -191,9 +183,9 @@ namespace UI
                 BO.Customer newCustomer = new BO.Customer
                 {
                     Id = int.Parse(textBoxId.Text),
-                    CustomerName =textBoxName.Text,
+                    CustomerName =textBoxName1.Text,
                     Phone=textBoxPhoneNumber.Text,
-                    Adress=textBoxAdress.Text
+                    Adress=textBoxAdress1.Text
                 };
 
                 int newId = _bl.Customer.Create(newCustomer);

@@ -24,138 +24,111 @@ namespace UI
             this.Hide();
         }
 
-        private void products_Click(object sender, EventArgs e)
-        {
-            panelProduct.Visible = true;
-            panelCustomer.Visible = false;
-            panelSale.Visible = false;
-
-        }
-
-        private void customer_Click(object sender, EventArgs e)
-        {
-            panelCustomer.Visible = true;
-            panelProduct.Visible = false;
-            panelSale.Visible = false;
-        }
-
-        private void sales_Click(object sender, EventArgs e)
-        {
-            panelSale.Visible = true;
-            panelCustomer.Visible = false;
-            panelProduct.Visible = false;
-        }
-
         private void ManagerForm_Load(object sender, EventArgs e)
         {
         }
 
-        private void panelCustomer_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void CreateProduct_Click(object sender, EventArgs e)
         {
-            ProductForm pf = new ProductForm(FormMode.Create);
+            ProductForm pf = new ProductForm(FormMode.Create, this);
             pf.Show();
             this.Hide();
         }
 
         private void DeleteProduct_Click(object sender, EventArgs e)
         {
-            ProductForm pf = new ProductForm(FormMode.Delete);
+            ProductForm pf = new ProductForm(FormMode.Delete, this);
             pf.Show();
             this.Hide();
         }
 
         private void UpdateProduct_Click(object sender, EventArgs e)
         {
-            ProductForm pf = new ProductForm(FormMode.Update);
+            ProductForm pf = new ProductForm(FormMode.Update, this);
             pf.Show();
             this.Hide();
         }
 
         private void ReadProduct_Click(object sender, EventArgs e)
         {
-            ProductForm pf = new ProductForm(FormMode.View);
+            ProductForm pf = new ProductForm(FormMode.View, this);
             pf.Show();
             this.Hide();
         }
 
         private void ReadAllProduct_Click(object sender, EventArgs e)
         {
-            ProductForm pf = new ProductForm(FormMode.ViewAll);
+            ProductForm pf = new ProductForm(FormMode.ViewAll, this);
             pf.Show();
             this.Hide();
         }
 
         private void createSale_Click(object sender, EventArgs e)
         {
-            SaleUpdateForm sf = new SaleUpdateForm(FormMode.Create);
+            SaleForm sf = new SaleForm(FormMode.Create,this);
             sf.Show();
             this.Hide();
         }
 
         private void deleteSale_Click(object sender, EventArgs e)
         {
-            SaleUpdateForm sf = new SaleUpdateForm(FormMode.Delete);
+            SaleForm sf = new SaleForm(FormMode.Delete, this);
             sf.Show();
             this.Hide();
         }
 
         private void updateSale_Click(object sender, EventArgs e)
         {
-            SaleUpdateForm sf = new SaleUpdateForm(FormMode.Update);
+            SaleForm sf = new SaleForm(FormMode.Update, this);
             sf.Show();
             this.Hide();
         }
 
         private void readSale_Click(object sender, EventArgs e)
         {
-            SaleUpdateForm sf = new SaleUpdateForm(FormMode.View);
+            SaleForm sf = new SaleForm(FormMode.View,this);
             sf.Show();
             this.Hide();
         }
 
         private void readAllSales_Click(object sender, EventArgs e)
         {
-            SaleUpdateForm sf = new SaleUpdateForm(FormMode.ViewAll);
+            SaleForm sf = new SaleForm(FormMode.ViewAll, this);
             sf.Show();
             this.Hide();
         }
 
         private void createCustomer_Click(object sender, EventArgs e)
         {
-            CustomerForm cf = new CustomerForm(FormMode.Create);
+            CustomerForm cf = new CustomerForm(FormMode.Create,this);
             cf.Show();
             this.Hide();
         }
 
         private void deleteCustomer_Click(object sender, EventArgs e)
         {
-            CustomerForm cf = new CustomerForm(FormMode.Delete);
+            CustomerForm cf = new CustomerForm(FormMode.Delete,this);
             cf.Show();
             this.Hide();
         }
 
         private void readCustomer_Click(object sender, EventArgs e)
         {
-            CustomerForm cf = new CustomerForm(FormMode.View);
+            CustomerForm cf = new CustomerForm(FormMode.View, this);
             cf.Show();
             this.Hide();
         }
 
         private void updateCustomer_Click(object sender, EventArgs e)
         {
-            CustomerForm cf = new CustomerForm(FormMode.Update);
+            CustomerForm cf = new CustomerForm(FormMode.Update, this);
             cf.Show();
             this.Hide();
         }
 
         private void readAllCustomer_Click(object sender, EventArgs e)
         {
-            CustomerForm cf = new CustomerForm(FormMode.ViewAll);
+            CustomerForm cf = new CustomerForm(FormMode.ViewAll, this);
             cf.Show();
             this.Hide();
         }

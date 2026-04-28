@@ -1,24 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfSale>
   <Sale>
-    <id>108</id>
-    <ProductId>107</ProductId>
-    <SalePrice>80</SalePrice>
-    <QuantityRequier>6</QuantityRequier>
-    <IsSaleToCustomer>true</IsSaleToCustomer>
-    <StartSale>2025-04-02T00:00:00</StartSale>
-    <EndSale>2026-06-04T00:00:00</EndSale>
-  </Sale>
-  <Sale>
-    <id>109</id>
-    <ProductId>1000</ProductId>
-    <SalePrice>23</SalePrice>
-    <QuantityRequier>12</QuantityRequier>
-    <IsSaleToCustomer>false</IsSaleToCustomer>
-    <StartSale>0001-01-01T00:00:00</StartSale>
-    <EndSale>0001-01-01T00:00:00</EndSale>
-  </Sale>
-  <Sale>
     <id>110</id>
     <ProductId>1011</ProductId>
     <SalePrice>10</SalePrice>
@@ -80,5 +62,14 @@
     <IsSaleToCustomer>false</IsSaleToCustomer>
     <StartSale>2026-04-27T17:13:09.435897+03:00</StartSale>
     <EndSale>2026-04-28T17:13:09.431</EndSale>
+  </Sale>
+  <Sale>
+    <id>120</id>
+    <ProductId>1016</ProductId>
+    <SalePrice>12</SalePrice>
+    <QuantityRequier>3</QuantityRequier>
+    <IsSaleToCustomer>false</IsSaleToCustomer>
+    <StartSale>2026-04-28T16:33:56.80243+03:00</StartSale>
+    <EndSale>2026-04-30T16:33:56.787</EndSale>
   </Sale>
 </ArrayOfSale>

@@ -33,12 +33,12 @@
             ToDelateCustomer = new Button();
             label1 = new Label();
             panelReadAll = new Panel();
+            dataGridViewReadAllCustomers = new DataGridView();
             panelRead = new Panel();
             dataGridViewReadProduct = new DataGridView();
             buttonSearchProduct = new Button();
             textBoxEnterProductName = new TextBox();
             labelEnterProductName = new Label();
-            dataGridViewReadAllCustomers = new DataGridView();
             panelUpdate = new Panel();
             textBoxPhone = new TextBox();
             label2 = new Label();
@@ -51,7 +51,7 @@
             label9 = new Label();
             buttonBack = new Button();
             panelCreate = new Panel();
-            textBoxEnterName = new TextBox();
+            textBoxName1 = new TextBox();
             label6 = new Label();
             textBoxId = new TextBox();
             textBoxAdress1 = new TextBox();
@@ -62,9 +62,9 @@
             label3 = new Label();
             paneDelate.SuspendLayout();
             panelReadAll.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewReadAllCustomers).BeginInit();
             panelRead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewReadProduct).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewReadAllCustomers).BeginInit();
             panelUpdate.SuspendLayout();
             panelCreate.SuspendLayout();
             SuspendLayout();
@@ -74,15 +74,15 @@
             paneDelate.Controls.Add(IdToDelate);
             paneDelate.Controls.Add(ToDelateCustomer);
             paneDelate.Controls.Add(label1);
-            paneDelate.Location = new Point(132, 65);
+            paneDelate.Location = new Point(0, 0);
             paneDelate.Margin = new Padding(8, 7, 8, 7);
             paneDelate.Name = "paneDelate";
-            paneDelate.Size = new Size(1660, 926);
+            paneDelate.Size = new Size(2063, 1322);
             paneDelate.TabIndex = 11;
             // 
             // IdToDelate
             // 
-            IdToDelate.Location = new Point(270, 362);
+            IdToDelate.Location = new Point(1041, 653);
             IdToDelate.Margin = new Padding(8, 7, 8, 7);
             IdToDelate.Name = "IdToDelate";
             IdToDelate.Size = new Size(306, 55);
@@ -90,7 +90,7 @@
             // 
             // ToDelateCustomer
             // 
-            ToDelateCustomer.Location = new Point(792, 358);
+            ToDelateCustomer.Location = new Point(629, 645);
             ToDelateCustomer.Margin = new Padding(8, 7, 8, 7);
             ToDelateCustomer.Name = "ToDelateCustomer";
             ToDelateCustomer.Size = new Size(365, 70);
@@ -102,7 +102,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(288, 281);
+            label1.Location = new Point(1372, 653);
             label1.Margin = new Padding(8, 0, 8, 0);
             label1.Name = "label1";
             label1.Size = new Size(264, 48);
@@ -112,10 +112,19 @@
             // panelReadAll
             // 
             panelReadAll.Controls.Add(dataGridViewReadAllCustomers);
-            panelReadAll.Location = new Point(35, 26);
+            panelReadAll.Location = new Point(0, 0);
             panelReadAll.Name = "panelReadAll";
-            panelReadAll.Size = new Size(1463, 854);
+            panelReadAll.Size = new Size(2059, 1321);
             panelReadAll.TabIndex = 12;
+            // 
+            // dataGridViewReadAllCustomers
+            // 
+            dataGridViewReadAllCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewReadAllCustomers.Location = new Point(21, 39);
+            dataGridViewReadAllCustomers.Name = "dataGridViewReadAllCustomers";
+            dataGridViewReadAllCustomers.RowHeadersWidth = 123;
+            dataGridViewReadAllCustomers.Size = new Size(2001, 1270);
+            dataGridViewReadAllCustomers.TabIndex = 0;
             // 
             // panelRead
             // 
@@ -125,14 +134,14 @@
             panelRead.Controls.Add(labelEnterProductName);
             panelRead.Location = new Point(0, 0);
             panelRead.Name = "panelRead";
-            panelRead.Size = new Size(1448, 889);
+            panelRead.Size = new Size(2080, 1338);
             panelRead.TabIndex = 13;
             panelRead.Paint += panel1_Paint;
             // 
             // dataGridViewReadProduct
             // 
             dataGridViewReadProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewReadProduct.Location = new Point(47, 251);
+            dataGridViewReadProduct.Location = new Point(590, 521);
             dataGridViewReadProduct.Margin = new Padding(2);
             dataGridViewReadProduct.Name = "dataGridViewReadProduct";
             dataGridViewReadProduct.RowHeadersWidth = 123;
@@ -141,7 +150,7 @@
             // 
             // buttonSearchProduct
             // 
-            buttonSearchProduct.Location = new Point(141, 134);
+            buttonSearchProduct.Location = new Point(684, 404);
             buttonSearchProduct.Margin = new Padding(2);
             buttonSearchProduct.Name = "buttonSearchProduct";
             buttonSearchProduct.Size = new Size(270, 70);
@@ -152,7 +161,7 @@
             // 
             // textBoxEnterProductName
             // 
-            textBoxEnterProductName.Location = new Point(462, 141);
+            textBoxEnterProductName.Location = new Point(1005, 411);
             textBoxEnterProductName.Margin = new Padding(2);
             textBoxEnterProductName.Name = "textBoxEnterProductName";
             textBoxEnterProductName.Size = new Size(464, 55);
@@ -161,21 +170,12 @@
             // labelEnterProductName
             // 
             labelEnterProductName.AutoSize = true;
-            labelEnterProductName.Location = new Point(960, 145);
+            labelEnterProductName.Location = new Point(1503, 415);
             labelEnterProductName.Margin = new Padding(2, 0, 2, 0);
             labelEnterProductName.Name = "labelEnterProductName";
             labelEnterProductName.Size = new Size(284, 48);
             labelEnterProductName.TabIndex = 4;
             labelEnterProductName.Text = "הכנס מזהה לקוח";
-            // 
-            // dataGridViewReadAllCustomers
-            // 
-            dataGridViewReadAllCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewReadAllCustomers.Location = new Point(21, 39);
-            dataGridViewReadAllCustomers.Name = "dataGridViewReadAllCustomers";
-            dataGridViewReadAllCustomers.RowHeadersWidth = 123;
-            dataGridViewReadAllCustomers.Size = new Size(1411, 790);
-            dataGridViewReadAllCustomers.TabIndex = 0;
             // 
             // panelUpdate
             // 
@@ -188,14 +188,14 @@
             panelUpdate.Controls.Add(textBoxName);
             panelUpdate.Controls.Add(label7);
             panelUpdate.Controls.Add(label9);
-            panelUpdate.Location = new Point(158, 12);
+            panelUpdate.Location = new Point(0, 0);
             panelUpdate.Name = "panelUpdate";
-            panelUpdate.Size = new Size(1628, 1024);
+            panelUpdate.Size = new Size(2065, 1326);
             panelUpdate.TabIndex = 13;
             // 
             // textBoxPhone
             // 
-            textBoxPhone.Location = new Point(924, 554);
+            textBoxPhone.Location = new Point(1004, 741);
             textBoxPhone.Margin = new Padding(2);
             textBoxPhone.Name = "textBoxPhone";
             textBoxPhone.Size = new Size(299, 55);
@@ -204,7 +204,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(1274, 554);
+            label2.Location = new Point(1365, 741);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(107, 48);
@@ -213,7 +213,7 @@
             // 
             // idToUpdate
             // 
-            idToUpdate.Location = new Point(196, 351);
+            idToUpdate.Location = new Point(1004, 403);
             idToUpdate.Margin = new Padding(8, 7, 8, 7);
             idToUpdate.Name = "idToUpdate";
             idToUpdate.Size = new Size(306, 55);
@@ -222,7 +222,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(196, 252);
+            label10.Location = new Point(1004, 349);
             label10.Margin = new Padding(8, 0, 8, 0);
             label10.Name = "label10";
             label10.Size = new Size(304, 48);
@@ -231,7 +231,7 @@
             // 
             // updateCustomer
             // 
-            updateCustomer.Location = new Point(977, 654);
+            updateCustomer.Location = new Point(1101, 860);
             updateCustomer.Margin = new Padding(2);
             updateCustomer.Name = "updateCustomer";
             updateCustomer.Size = new Size(225, 70);
@@ -242,7 +242,7 @@
             // 
             // textBoxAdress
             // 
-            textBoxAdress.Location = new Point(924, 450);
+            textBoxAdress.Location = new Point(1004, 652);
             textBoxAdress.Margin = new Padding(2);
             textBoxAdress.Name = "textBoxAdress";
             textBoxAdress.Size = new Size(299, 55);
@@ -250,7 +250,7 @@
             // 
             // textBoxName
             // 
-            textBoxName.Location = new Point(924, 351);
+            textBoxName.Location = new Point(1004, 553);
             textBoxName.Margin = new Padding(2);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(299, 55);
@@ -259,7 +259,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(1274, 450);
+            label7.Location = new Point(1354, 652);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
             label7.Size = new Size(123, 48);
@@ -269,7 +269,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(1274, 351);
+            label9.Location = new Point(1354, 553);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(73, 48);
@@ -278,7 +278,7 @@
             // 
             // buttonBack
             // 
-            buttonBack.Location = new Point(1709, 1088);
+            buttonBack.Location = new Point(2106, 1268);
             buttonBack.Margin = new Padding(2);
             buttonBack.Name = "buttonBack";
             buttonBack.Size = new Size(452, 70);
@@ -289,7 +289,7 @@
             // 
             // panelCreate
             // 
-            panelCreate.Controls.Add(textBoxEnterName);
+            panelCreate.Controls.Add(textBoxName1);
             panelCreate.Controls.Add(label6);
             panelCreate.Controls.Add(textBoxId);
             panelCreate.Controls.Add(textBoxAdress1);
@@ -298,23 +298,23 @@
             panelCreate.Controls.Add(label5);
             panelCreate.Controls.Add(label4);
             panelCreate.Controls.Add(label3);
-            panelCreate.Location = new Point(77, 118);
+            panelCreate.Location = new Point(0, 0);
             panelCreate.Name = "panelCreate";
-            panelCreate.Size = new Size(1663, 1008);
+            panelCreate.Size = new Size(2065, 1326);
             panelCreate.TabIndex = 15;
             // 
-            // textBoxEnterName
+            // textBoxName1
             // 
-            textBoxEnterName.Location = new Point(583, 128);
-            textBoxEnterName.Margin = new Padding(2);
-            textBoxEnterName.Name = "textBoxEnterName";
-            textBoxEnterName.Size = new Size(299, 55);
-            textBoxEnterName.TabIndex = 20;
+            textBoxName1.Location = new Point(949, 455);
+            textBoxName1.Margin = new Padding(2);
+            textBoxName1.Name = "textBoxName1";
+            textBoxName1.Size = new Size(299, 55);
+            textBoxName1.TabIndex = 20;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(925, 124);
+            label6.Location = new Point(1291, 446);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
             label6.Size = new Size(73, 48);
@@ -323,7 +323,7 @@
             // 
             // textBoxId
             // 
-            textBoxId.Location = new Point(583, 208);
+            textBoxId.Location = new Point(949, 530);
             textBoxId.Margin = new Padding(2);
             textBoxId.Name = "textBoxId";
             textBoxId.Size = new Size(299, 55);
@@ -331,7 +331,7 @@
             // 
             // textBoxAdress1
             // 
-            textBoxAdress1.Location = new Point(583, 283);
+            textBoxAdress1.Location = new Point(949, 605);
             textBoxAdress1.Margin = new Padding(2);
             textBoxAdress1.Name = "textBoxAdress1";
             textBoxAdress1.Size = new Size(299, 55);
@@ -339,7 +339,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(724, 476);
+            btnAdd.Location = new Point(1090, 798);
             btnAdd.Margin = new Padding(2);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(225, 70);
@@ -350,7 +350,7 @@
             // 
             // textBoxPhoneNumber
             // 
-            textBoxPhoneNumber.Location = new Point(583, 364);
+            textBoxPhoneNumber.Location = new Point(949, 686);
             textBoxPhoneNumber.Margin = new Padding(2);
             textBoxPhoneNumber.Name = "textBoxPhoneNumber";
             textBoxPhoneNumber.Size = new Size(299, 55);
@@ -359,17 +359,17 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(925, 367);
+            label5.Location = new Point(1291, 689);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(215, 48);
+            label5.Size = new Size(208, 48);
             label5.TabIndex = 12;
-            label5.Text = "כמות נדרשת";
+            label5.Text = "מספר טלפון";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(925, 283);
+            label4.Location = new Point(1291, 605);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(123, 48);
@@ -379,7 +379,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(925, 204);
+            label3.Location = new Point(1291, 526);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(193, 48);
@@ -390,24 +390,25 @@
             // 
             AutoScaleDimensions = new SizeF(20F, 48F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2224, 1178);
-            Controls.Add(panelRead);
+            ClientSize = new Size(3009, 1519);
             Controls.Add(panelCreate);
-            Controls.Add(buttonBack);
-            Controls.Add(panelUpdate);
-            Controls.Add(panelReadAll);
             Controls.Add(paneDelate);
+            Controls.Add(panelReadAll);
+            Controls.Add(panelUpdate);
+            Controls.Add(buttonBack);
+            Controls.Add(panelRead);
             Margin = new Padding(2);
             Name = "CustomerForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CustomerForm";
             Load += CustomerForm_Load;
             paneDelate.ResumeLayout(false);
             paneDelate.PerformLayout();
             panelReadAll.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewReadAllCustomers).EndInit();
             panelRead.ResumeLayout(false);
             panelRead.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewReadProduct).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewReadAllCustomers).EndInit();
             panelUpdate.ResumeLayout(false);
             panelUpdate.PerformLayout();
             panelCreate.ResumeLayout(false);
@@ -439,7 +440,6 @@
         private Label label2;
         private Button buttonBack;
         private Panel panelCreate;
-        private TextBox textBoxEnterName;
         private Label label6;
         private TextBox textBoxId;
         private TextBox textBoxAdress1;
@@ -448,5 +448,6 @@
         private Label label5;
         private Label label4;
         private Label label3;
+        private TextBox textBoxName1;
     }
 }

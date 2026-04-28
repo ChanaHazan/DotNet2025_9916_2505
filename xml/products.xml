@@ -29,20 +29,6 @@
     <Stock>110</Stock>
   </Product>
   <Product>
-    <Id>1022</Id>
-    <ProductName>BeefSteak</ProductName>
-    <Category>Meats</Category>
-    <Price>120.5</Price>
-    <Stock>44</Stock>
-  </Product>
-  <Product>
-    <Id>1022</Id>
-    <ProductName>fishfish</ProductName>
-    <Category>Fish</Category>
-    <Price>14</Price>
-    <Stock>100</Stock>
-  </Product>
-  <Product>
     <Id>1023</Id>
     <ProductName>Amnon</ProductName>
     <Category>Fish</Category>
@@ -62,5 +48,19 @@
     <Category>Frozens</Category>
     <Price>12</Price>
     <Stock>10</Stock>
+  </Product>
+  <Product>
+    <Id>1026</Id>
+    <ProductName>Salomon</ProductName>
+    <Category>Fish</Category>
+    <Price>75</Price>
+    <Stock>100</Stock>
+  </Product>
+  <Product>
+    <Id>1027</Id>
+    <ProductName>Antricot</ProductName>
+    <Category>Meats</Category>
+    <Price>200</Price>
+    <Stock>50</Stock>
   </Product>
 </ArrayOfProduct>
