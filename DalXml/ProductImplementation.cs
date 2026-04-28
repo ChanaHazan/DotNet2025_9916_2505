@@ -111,12 +111,46 @@ namespace Dal
             return q.ToList();
         }
 
-        public void Update(Product item)
+        //public void Update(Product item)
+        //{
+        //    LogManager.WriteToLog("start to upadate product", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+        //    Delete(item.Id);
+        //    Create(item);
+        //    LogManager.WriteToLog("finish to update product", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+        //}
+
+        public void Update(Product newItem)
         {
-            LogManager.WriteToLog("start to upadate product", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
-            Delete(item.Id);
-            Create(item);
-            LogManager.WriteToLog("finish to update product", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+            LogManager.WriteToLog("start to update product", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+            var products = LoadList();
+
+            var existingProduct = products.FirstOrDefault(p => p.Id == newItem.Id);
+
+            if (existingProduct != null)
+            {
+                Product updatedProduct = existingProduct with
+                {
+                    ProductName = !string.IsNullOrWhiteSpace(newItem.ProductName) ? newItem.ProductName : existingProduct.ProductName,
+
+                    Category = newItem.Category,
+
+                    Price = newItem.Price ?? existingProduct.Price,
+
+                    Stock = newItem.Stock ?? existingProduct.Stock
+                };
+                int index = products.IndexOf(existingProduct);
+                products[index] = updatedProduct;
+
+                SaveList(products);
+
+                LogManager.WriteToLog("finish to update product", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+            }
+            else
+            {
+                LogManager.WriteToLog("מוצר לא נמצא לעדכון", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+                throw new DalIdNotFoundException($"מוצר עם מספר {newItem.Id} לא נמצא במערכת.");
+            }
         }
+
     }
 }

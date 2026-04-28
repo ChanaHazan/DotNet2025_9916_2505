@@ -48,7 +48,15 @@ namespace BlImplemention
 
         public void Update(BO.Customer item)
         {
+            try
+            {
             _dal.Customer.Update(item.convertBOCustomerToDOCustomer());
+
+            }
+            catch (DO.DalIdNotFoundException ex)
+            {
+                throw new BO.BLIdNotFoundException("לא נמצא מבצע עם מספר מזהה זה", ex);
+            }
         }
 
         public void Delete(int id)

@@ -1,18 +1,6 @@
-﻿using BlApi;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+﻿
 namespace UI
 {
-
 
     public partial class CustomerForm : Form
     {
@@ -125,7 +113,7 @@ namespace UI
                     MessageBox.Show("נא להזין מספרים בלבד");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("שגיאה בקריאה: " + ex.Message);
             }
@@ -140,7 +128,7 @@ namespace UI
                 if (!int.TryParse(id, out int Id))
                 {
 
-                    MessageBox.Show("נא להזין מספר זהות לעדכון תקין בלבד.", "קלט לא תקין", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("נא להזין מספר זהות לעדכון לקוח תקין בלבד.", "קלט לא תקין", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 BO.Customer newCustomer = new BO.Customer
@@ -152,23 +140,16 @@ namespace UI
                 };
                 _bl.Customer.Update(newCustomer);
 
-                MessageBox.Show($"המוצר עודכן בהצלחה! המזהה שלו:{Id}");
+                MessageBox.Show($"הלקוח עודכן בהצלחה! המזהה שלו:{Id}");
 
-                ClearFields();
-
+                ClearAllCustomerFields();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("שגיאה בעדכון המוצר: " + ex.Message);
+                MessageBox.Show("שגיאה בעדכון הלקוח: " + ex.Message);
             }
         }
 
-        private void ClearFields()
-        {
-            textBoxName.Clear();
-            textBoxPhone.Clear();
-            textBoxAdress.Clear();
-        }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
@@ -183,21 +164,47 @@ namespace UI
                 BO.Customer newCustomer = new BO.Customer
                 {
                     Id = int.Parse(textBoxId.Text),
-                    CustomerName =textBoxName1.Text,
-                    Phone=textBoxPhoneNumber.Text,
-                    Adress=textBoxAdress1.Text
+                    CustomerName = textBoxName1.Text,
+                    Phone = textBoxPhoneNumber.Text,
+                    Adress = textBoxAdress1.Text
                 };
 
                 int newId = _bl.Customer.Create(newCustomer);
 
                 MessageBox.Show($"הלקוח נוסף בהצלחה! המזהה שלו:{newId}");
-
+                ClearAllCustomerFields();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("שגיאה בהוספת הלקוח: " + ex.Message);
             }
+        }
+        private void ClearAllCustomerFields()
+        {
+            Panel[] allCustomerPanels = { panelCreate, paneDelate, panelReadAll, panelUpdate, panelRead };
+
+            foreach (var panel in allCustomerPanels)
+            {
+                foreach (Control ctrl in panel.Controls)
+                {
+                    if (ctrl is TextBox txt)
+                        txt.Clear();
+
+                    if (ctrl is ComboBox cb)
+                        cb.SelectedIndex = -1;
+
+                    if (ctrl is DateTimePicker dtp)
+                        dtp.Value = DateTime.Now;
+
+                    if (ctrl is CheckBox chk)
+                        chk.Checked = false;
+                }
+            }
+        }
+        private void panelCreate_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -40,7 +40,14 @@ namespace BlImplemention
 
         public void Update(Sale item)
         {
-            _dal.Sale.Update(item.convertBOSaleToDOSale());
+            try
+            {
+                _dal.Sale.Update(item.convertBOSaleToDOSale());
+            }
+            catch (DO.DalIdNotFoundException ex)
+            {
+                throw new BO.BLIdNotFoundException("לא נמצא מבצע עם מספר מזהה זה", ex);
+            }
         }
 
         public void Delete(int id)

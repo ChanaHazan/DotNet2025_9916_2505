@@ -54,7 +54,15 @@ namespace BlImplemention
 
         public void Update(BO.Product item)
         {
+            try
+            {
             _dal.Product.Update(item.convertBOProductToDOProduct());
+
+            }
+            catch (DO.DalIdNotFoundException ex)
+            {
+                throw new BO.BLIdNotFoundException("לא נמצא מבצע עם מספר מזהה זה", ex);
+            }
         }
 
         public void Delete(int id)

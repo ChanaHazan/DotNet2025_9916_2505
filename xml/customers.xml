@@ -1,21 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfCustomer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Customer>
-    <Id>1002</Id>
-    <CustomerName>Chana</CustomerName>
-    <Adress>shaagatarie</Adress>
-    <Phone>1234567890</Phone>
+    <Id>216389916</Id>
+    <CustomerName>דינה</CustomerName>
+    <Adress>ערכ</Adress>
+    <Phone />
   </Customer>
   <Customer>
     <Id>1004</Id>
-    <CustomerName>מיכל חרר</CustomerName>
-    <Adress>שאגת אריה</Adress>
-    <Phone>0548580710</Phone>
+    <CustomerName>michalcharar</CustomerName>
+    <Adress />
+    <Phone />
   </Customer>
   <Customer>
-    <Id>216389916</Id>
-    <CustomerName>חנה חזן</CustomerName>
-    <Adress>שאגת אריה 13</Adress>
-    <Phone>089798478</Phone>
+    <Id>1002</Id>
+    <CustomerName>חני</CustomerName>
+    <Adress>modine</Adress>
+    <Phone />
+  </Customer>
+  <Customer>
+    <Id>328465985</Id>
+    <CustomerName>יעל</CustomerName>
+    <Adress>dimona</Adress>
+    <Phone>089742665</Phone>
+  </Customer>
+  <Customer>
+    <Id>328432505</Id>
+    <CustomerName>מיכל</CustomerName>
+    <Adress>ksim fiufe</Adress>
+    <Phone>05848484</Phone>
+  </Customer>
+  <Customer>
+    <Id>321859745</Id>
+    <CustomerName>יעל</CustomerName>
+    <Adress>רבי טרפון</Adress>
+    <Phone>089740552</Phone>
   </Customer>
 </ArrayOfCustomer>

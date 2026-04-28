@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
 
 namespace UI
 {
@@ -61,6 +53,7 @@ namespace UI
             var allProducts = _bl.Product.ReadAll();
             var productIds = allProducts.Select(p => p.Id).ToList();
             comboBoxProductId.DataSource = productIds;
+            comboBox1.DataSource = new List<int>(productIds);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -80,7 +73,7 @@ namespace UI
                 int newId = _bl.Sale.Create(newSale);
 
                 MessageBox.Show($"המבצע נוסף בהצלחה! המזהה שלו:{newId}");
-
+                ClearAllSaleFields();
 
             }
             catch (Exception ex)
@@ -173,7 +166,7 @@ namespace UI
                 {
                     Id = saleId,
                     ProductId = int.Parse(comboBox1.Text),
-                    SalePrice = double.Parse(textBox1.Text),
+                    SalePrice = string.IsNullOrWhiteSpace(textBox1.Text) ? 0 : double.Parse(textBox1.Text),
                     QuantityRequier = (int)numericUpDown1.Value,
                     IsSaleToAllCustomer = checkBox1.Checked,
                     StartSale = dateTimePicker2.Value,
@@ -182,15 +175,52 @@ namespace UI
 
                 _bl.Sale.Update(newSale);
 
-                MessageBox.Show($"המבצע נוסף בהצלחה! המזהה שלו:{saleId}");
+                MessageBox.Show($"המבצע התעדכן בהצלחה! המזהה שלו:{saleId}");
+                ClearAllSaleFields();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("שגיאה בעדכון המבצע: " + ex.Message);
             }
         }
+        private void ClearAllSaleFields()
+        {
+            Panel[] allPanels = { formToUpdateProduct, panelCreate, paneDelate, panelReadAll, panelRead };
+
+            foreach (var panel in allPanels)
+            {
+                foreach (Control ctrl in panel.Controls)
+                {
+                    if (ctrl is TextBox txt)
+                        txt.Clear();
+
+                    if (ctrl is ComboBox cb)
+                        cb.SelectedIndex = -1;
+
+                    if (ctrl is NumericUpDown nud)
+                        nud.Value = 0;
+
+                    if (ctrl is DateTimePicker dtp)
+                        dtp.Value = DateTime.Now;
+
+                    if (ctrl is CheckBox chk)
+                        chk.Checked = false;
+
+                }
+            }
+        }
 
         private void panelReadAll_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void formToUpdateProduct_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

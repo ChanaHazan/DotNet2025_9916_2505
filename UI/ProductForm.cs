@@ -1,13 +1,5 @@
 ﻿using BO;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace UI
 {
@@ -39,7 +31,7 @@ namespace UI
             if (CurrentMode == FormMode.Create)
             {
                 panelCreateProduct.Visible = true;
-                
+
             }
             if (CurrentMode == FormMode.ViewAll)
             {
@@ -121,19 +113,13 @@ namespace UI
 
                 MessageBox.Show($"המוצר נוסף בהצלחה! המזהה שלו:{newId}");
 
-                ClearFields();
+                ClearAllProductFields();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("שגיאה בהוספת המוצר: " + ex.Message);
             }
-        }
-        private void ClearFields()
-        {
-            textBoxName.Clear();
-            textBoxPrice.Clear();
-            numericUpDownStock.Value = 0;
         }
 
         private void ToDelateProduct_Click(object sender, EventArgs e)
@@ -161,36 +147,71 @@ namespace UI
             }
         }
         private void updateProduct_Click(object sender, EventArgs e)
-        { 
-
+        {
             try
             {
                 string id = idToUpdate.Text;
-                if (!int.TryParse(id, out int productId)){
-                    
+                if (!int.TryParse(id, out int productId))
+                {
+
                     MessageBox.Show("נא להזין מספר מוצר לעדכון תקין בלבד.", "קלט לא תקין", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
                 BO.Product newProduct = new BO.Product
                 {
                     Id = productId,
                     ProductName = textBox2.Text,
                     Category = (Categories)comboBox1.SelectedItem,
-                    Price = double.Parse(textBox1.Text),
+                    Price = string.IsNullOrWhiteSpace(textBox1.Text) ? 0 : double.Parse(textBox1.Text),
                     Stock = (int)numericUpDown1.Value
                 };
                 _bl.Product.Update(newProduct);
 
-                //בעדכון נוצר מזהה חדש כי בפונקציה של העדכון יש מחיקה ואז יצירה 
+
                 MessageBox.Show($"המוצר עודכן בהצלחה!");
-
-                ClearFields();
-
+                ClearAllProductFields();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("שגיאה בעדכון המוצר: " + ex.Message);
             }
+        }
+        private void ClearAllProductFields()
+        {
+            Panel[] productPanels = {
+        formUpdateProduct,
+        paneDelate,
+        panelCreateProduct,
+        panelRead,
+        panelReadAll
+    };
+
+            foreach (var panel in productPanels)
+            {
+                foreach (Control ctrl in panel.Controls)
+                {
+                    if (ctrl is TextBox txt)
+                        txt.Clear();
+
+                    if (ctrl is ComboBox cb)
+                        cb.SelectedIndex = -1;
+
+                    if (ctrl is NumericUpDown nud)
+                        nud.Value = 0;
+
+                    if (ctrl is DateTimePicker dtp)
+                        dtp.Value = DateTime.Now;
+
+                    if (ctrl is CheckBox chk)
+                        chk.Checked = false;
+                }
+            }
+        }
+
+        private void formUpdateProduct_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

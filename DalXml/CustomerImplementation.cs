@@ -113,12 +113,45 @@ namespace Dal
             return q.ToList();
         }
 
-        public void Update(Customer item)
+        //public void Update(Customer item)
+        //{
+        //    LogManager.WriteToLog("start to upadate customer", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+        //    Delete(item.Id);
+        //    Create(item);
+        //    LogManager.WriteToLog("finish to update customer", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+        //}
+
+        public void Update(Customer newItem)
         {
-            LogManager.WriteToLog("start to upadate customer", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
-            Delete(item.Id);
-            Create(item);
-            LogManager.WriteToLog("finish to update customer", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+            LogManager.WriteToLog("start to update customer", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+
+            var customers = LoadList();
+
+            var existingCustomer = customers.FirstOrDefault(c => c.Id == newItem.Id);
+
+            if (existingCustomer != null)
+            {
+                Customer updatedCustomer = existingCustomer with
+                {
+                    CustomerName = !string.IsNullOrWhiteSpace(newItem.CustomerName) ? newItem.CustomerName : existingCustomer.CustomerName,
+
+                    Adress = !string.IsNullOrWhiteSpace(newItem.Adress) ? newItem.Adress : existingCustomer.Adress,
+
+                    Phone = !string.IsNullOrWhiteSpace(newItem.Phone) ? newItem.Phone : existingCustomer.Phone
+                };
+
+                customers.Remove(existingCustomer);
+                customers.Add(updatedCustomer);
+
+                SaveList(customers);
+
+                LogManager.WriteToLog("finish to update customer", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+            }
+            else
+            {
+                LogManager.WriteToLog("לקוח לא נמצא לעדכון", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+                throw new DalIdNotFoundException($"לקוח עם מספר מזהה {newItem.Id} לא נמצא במערכת.");
+            }
         }
     }
 

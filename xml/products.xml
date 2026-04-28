@@ -3,9 +3,9 @@
   <Product>
     <Id>1015</Id>
     <ProductName>BlackPepper</ProductName>
-    <Category>Spices</Category>
-    <Price>12</Price>
-    <Stock>200</Stock>
+    <Category>Meats</Category>
+    <Price>0</Price>
+    <Stock>0</Stock>
   </Product>
   <Product>
     <Id>1016</Id>
@@ -15,24 +15,10 @@
     <Stock>180</Stock>
   </Product>
   <Product>
-    <Id>1017</Id>
-    <ProductName>FrozenBerries</ProductName>
-    <Category>Frozens</Category>
-    <Price>25</Price>
-    <Stock>70</Stock>
-  </Product>
-  <Product>
     <Id>1018</Id>
     <ProductName>FrozenFalafel</ProductName>
-    <Category>Frozens</Category>
-    <Price>20</Price>
-    <Stock>110</Stock>
-  </Product>
-  <Product>
-    <Id>1023</Id>
-    <ProductName>Amnon</ProductName>
-    <Category>Fish</Category>
-    <Price>15</Price>
+    <Category>Meats</Category>
+    <Price>0</Price>
     <Stock>100</Stock>
   </Product>
   <Product>
@@ -41,13 +27,6 @@
     <Category>Poultry</Category>
     <Price>12</Price>
     <Stock>100</Stock>
-  </Product>
-  <Product>
-    <Id>1025</Id>
-    <ProductName>afuna</ProductName>
-    <Category>Frozens</Category>
-    <Price>12</Price>
-    <Stock>10</Stock>
   </Product>
   <Product>
     <Id>1026</Id>
@@ -62,5 +41,33 @@
     <Category>Meats</Category>
     <Price>200</Price>
     <Stock>50</Stock>
+  </Product>
+  <Product>
+    <Id>1029</Id>
+    <ProductName>nufnu</ProductName>
+    <Category>Meats</Category>
+    <Price>0</Price>
+    <Stock>0</Stock>
+  </Product>
+  <Product>
+    <Id>1030</Id>
+    <ProductName>tnfjn</ProductName>
+    <Category>Meats</Category>
+    <Price>0</Price>
+    <Stock>0</Stock>
+  </Product>
+  <Product>
+    <Id>1031</Id>
+    <ProductName>organo</ProductName>
+    <Category>Spices</Category>
+    <Price>0</Price>
+    <Stock>0</Stock>
+  </Product>
+  <Product>
+    <Id>1033</Id>
+    <ProductName>rvIyrbh</ProductName>
+    <Category>Meats</Category>
+    <Price>34</Price>
+    <Stock>0</Stock>
   </Product>
 </ArrayOfProduct>

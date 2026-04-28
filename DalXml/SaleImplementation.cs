@@ -147,15 +147,53 @@ namespace Dal
                 return sa.Where(s=>filter(s)).ToList();
             }
         }
+        //שיניתי כדי שזה יהיה באמת עדכון!
+        //public void Update(Sale item)
+        //{
+        //    LogManager.WriteToLog("start to upadate sale", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
 
-        public void Update(Sale item)
+        //    Delete(item.Id);
+        //    Create(item);
+        //    LogManager.WriteToLog("finish to update sale", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+
+        //}
+        public void Update(Sale newItem)
         {
-            LogManager.WriteToLog("start to upadate sale", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+            LogManager.WriteToLog("start to update sale", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+            sales = LoadXElement();
+            XElement? saleElement = (from s in sales.Elements(SALE)
+                                     where (int)s.Element(ID) == newItem.Id
+                                     select s).FirstOrDefault();
+            if (saleElement != null)
+            {
+                if (newItem.ProductId != 0)
+                    saleElement.Element(PRODUCTID).Value = newItem.ProductId.ToString();
 
-            Delete(item.Id);
-            Create(item);
-            LogManager.WriteToLog("finish to update sale", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+                if (newItem.QuantityRequier != 0)
+                    saleElement.Element(QUANTITYREQUIER).Value = newItem.QuantityRequier.ToString();
 
+                if (newItem.SalePrice != null)
+                    saleElement.Element(SALEPRICE).Value = newItem.SalePrice.ToString();
+
+                saleElement.Element(ISSALETOCUSTOMER).Value = newItem.IsSaleToCustomer.ToString().ToLower();
+
+                if (newItem.StartSale != null)
+                    saleElement.Element(STARTSALE).Value = newItem.StartSale.Value.ToString("s");
+
+                if (newItem.EndSale != null)
+                    saleElement.Element(ENDSALE).Value = newItem.EndSale.Value.ToString("s");
+
+                sales.Save(path);
+
+                LogManager.WriteToLog("finish to update sale", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+            }
+            else
+            {
+                LogManager.WriteToLog("מבצע לא נמצא לעדכון", MethodBase.GetCurrentMethod().DeclaringType.FullName, MethodBase.GetCurrentMethod().Name);
+                throw new DalIdNotFoundException($"מבצע עם מספר {newItem.Id} לא נמצא במערכת.");
+            }
         }
+
+
     }
 }

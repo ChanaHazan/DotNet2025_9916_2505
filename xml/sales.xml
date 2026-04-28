@@ -1,15 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfSale>
   <Sale>
-    <id>110</id>
-    <ProductId>1011</ProductId>
-    <SalePrice>10</SalePrice>
-    <QuantityRequier>2</QuantityRequier>
-    <IsSaleToCustomer>false</IsSaleToCustomer>
-    <StartSale>2006-12-12T00:00:00</StartSale>
-    <EndSale>2027-10-10T00:00:00</EndSale>
-  </Sale>
-  <Sale>
     <id>111</id>
     <ProductId>1011</ProductId>
     <SalePrice>10</SalePrice>
@@ -21,11 +12,11 @@
   <Sale>
     <id>112</id>
     <ProductId>1018</ProductId>
-    <SalePrice>12</SalePrice>
+    <SalePrice>15</SalePrice>
     <QuantityRequier>4</QuantityRequier>
     <IsSaleToCustomer>false</IsSaleToCustomer>
-    <StartSale>0001-01-01T00:00:00</StartSale>
-    <EndSale>0001-01-01T00:00:00</EndSale>
+    <StartSale>2026-04-28T19:16:35</StartSale>
+    <EndSale>2026-04-28T19:16:35</EndSale>
   </Sale>
   <Sale>
     <id>115</id>
@@ -39,29 +30,20 @@
   <Sale>
     <id>117</id>
     <ProductId>1017</ProductId>
-    <SalePrice>7</SalePrice>
-    <QuantityRequier>2</QuantityRequier>
-    <IsSaleToCustomer>true</IsSaleToCustomer>
-    <StartSale>2020-01-01T00:00:00</StartSale>
-    <EndSale>2030-01-01T00:00:00</EndSale>
-  </Sale>
-  <Sale>
-    <id>118</id>
-    <ProductId>1014</ProductId>
-    <SalePrice>80</SalePrice>
-    <QuantityRequier>2</QuantityRequier>
-    <IsSaleToCustomer>true</IsSaleToCustomer>
-    <StartSale>2026-04-22T00:00:00</StartSale>
-    <EndSale>2026-05-05T00:00:00</EndSale>
+    <SalePrice>0</SalePrice>
+    <QuantityRequier>4</QuantityRequier>
+    <IsSaleToCustomer>false</IsSaleToCustomer>
+    <StartSale>2026-04-28T21:05:15</StartSale>
+    <EndSale>2026-04-28T21:05:15</EndSale>
   </Sale>
   <Sale>
     <id>119</id>
     <ProductId>1015</ProductId>
-    <SalePrice>13</SalePrice>
-    <QuantityRequier>2</QuantityRequier>
+    <SalePrice>6</SalePrice>
+    <QuantityRequier>6</QuantityRequier>
     <IsSaleToCustomer>false</IsSaleToCustomer>
-    <StartSale>2026-04-27T17:13:09.435897+03:00</StartSale>
-    <EndSale>2026-04-28T17:13:09.431</EndSale>
+    <StartSale>2026-04-28T21:10:00</StartSale>
+    <EndSale>2026-04-28T21:10:00</EndSale>
   </Sale>
   <Sale>
     <id>120</id>
@@ -71,5 +53,41 @@
     <IsSaleToCustomer>false</IsSaleToCustomer>
     <StartSale>2026-04-28T16:33:56.80243+03:00</StartSale>
     <EndSale>2026-04-30T16:33:56.787</EndSale>
+  </Sale>
+  <Sale>
+    <id>121</id>
+    <ProductId>1024</ProductId>
+    <SalePrice>50</SalePrice>
+    <QuantityRequier>4</QuantityRequier>
+    <IsSaleToCustomer>true</IsSaleToCustomer>
+    <StartSale>2026-04-20T17:24:23.067</StartSale>
+    <EndSale>2026-05-07T17:24:23.055</EndSale>
+  </Sale>
+  <Sale>
+    <id>122</id>
+    <ProductId>1015</ProductId>
+    <SalePrice>10</SalePrice>
+    <QuantityRequier>3</QuantityRequier>
+    <IsSaleToCustomer>false</IsSaleToCustomer>
+    <StartSale>2026-04-28T20:52:13.6849671+03:00</StartSale>
+    <EndSale>2026-04-28T20:52:13.6811771+03:00</EndSale>
+  </Sale>
+  <Sale>
+    <id>123</id>
+    <ProductId>1015</ProductId>
+    <SalePrice>4</SalePrice>
+    <QuantityRequier>3</QuantityRequier>
+    <IsSaleToCustomer>true</IsSaleToCustomer>
+    <StartSale>2026-04-16T21:11:22.514</StartSale>
+    <EndSale>2026-04-28T21:11:22.5085397+03:00</EndSale>
+  </Sale>
+  <Sale>
+    <id>124</id>
+    <ProductId>1015</ProductId>
+    <SalePrice>34</SalePrice>
+    <QuantityRequier>6</QuantityRequier>
+    <IsSaleToCustomer>true</IsSaleToCustomer>
+    <StartSale>2026-04-30T21:43:43.359</StartSale>
+    <EndSale>2026-04-30T21:43:43.351</EndSale>
   </Sale>
 </ArrayOfSale>

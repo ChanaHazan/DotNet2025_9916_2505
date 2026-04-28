@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
 
 namespace UI
 {
@@ -65,7 +57,7 @@ namespace UI
 
         private void createSale_Click(object sender, EventArgs e)
         {
-            SaleForm sf = new SaleForm(FormMode.Create,this);
+            SaleForm sf = new SaleForm(FormMode.Create, this);
             sf.Show();
             this.Hide();
         }
@@ -86,7 +78,7 @@ namespace UI
 
         private void readSale_Click(object sender, EventArgs e)
         {
-            SaleForm sf = new SaleForm(FormMode.View,this);
+            SaleForm sf = new SaleForm(FormMode.View, this);
             sf.Show();
             this.Hide();
         }
@@ -100,14 +92,14 @@ namespace UI
 
         private void createCustomer_Click(object sender, EventArgs e)
         {
-            CustomerForm cf = new CustomerForm(FormMode.Create,this);
+            CustomerForm cf = new CustomerForm(FormMode.Create, this);
             cf.Show();
             this.Hide();
         }
 
         private void deleteCustomer_Click(object sender, EventArgs e)
         {
-            CustomerForm cf = new CustomerForm(FormMode.Delete,this);
+            CustomerForm cf = new CustomerForm(FormMode.Delete, this);
             cf.Show();
             this.Hide();
         }
@@ -131,6 +123,11 @@ namespace UI
             CustomerForm cf = new CustomerForm(FormMode.ViewAll, this);
             cf.Show();
             this.Hide();
+        }
+
+        private void tabPageProducts_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
