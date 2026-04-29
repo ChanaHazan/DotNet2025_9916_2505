@@ -60,6 +60,7 @@ namespace UI
         {
             comboBoxCategory.DataSource = Enum.GetValues(typeof(BO.Categories));
             comboBox1.DataSource = Enum.GetValues(typeof(BO.Categories));
+            comboBoxFilter.DataSource = Enum.GetValues(typeof(BO.Categories));
 
         }
 
@@ -209,7 +210,40 @@ namespace UI
             }
         }
 
+        private void filterButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Categories category = (Categories)comboBoxFilter.SelectedItem;
+                var products = _bl.Product.ReadAll(c => (c.Category == category));
+                dataGridViewReadAllProducts.DataSource = products;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("חלה שגיאה: " + ex.Message, "שגיאה במערכת", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void formUpdateProduct_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void toViewallCategore_Click(object sender, EventArgs e)
+        {
+            var products = _bl.Product.ReadAll();
+            dataGridViewReadAllProducts.DataSource = products;
+            ClearAllProductFields();
+        }
+
+        private void panelReadAll_Paint(object sender, PaintEventArgs e)
         {
 
         }

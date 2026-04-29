@@ -206,5 +206,40 @@ namespace UI
         {
 
         }
+
+        private void filterButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string name = filterByName.Text;
+                if (string.IsNullOrWhiteSpace(name) ||
+                   (!name.All(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c))))
+                {
+                    MessageBox.Show("הכנס מחרוזת תקינה!  ");
+                    return;
+                }
+                var customers = _bl.Customer.ReadAll(c => c.CustomerName == name);
+                dataGridViewReadAllCustomers.DataSource = customers;
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("שגיאה בקריאה: " + ex.Message);
+            }
+
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toViewallCategore_Click(object sender, EventArgs e)
+        {
+            var customers = _bl.Customer.ReadAll();
+            dataGridViewReadAllCustomers.DataSource = customers;
+            ClearAllCustomerFields();
+
+        }
     }
 }

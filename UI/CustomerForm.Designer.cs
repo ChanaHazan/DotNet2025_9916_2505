@@ -33,6 +33,10 @@
             ToDelateCustomer = new Button();
             label1 = new Label();
             panelReadAll = new Panel();
+            filterByName = new TextBox();
+            toViewallCategore = new Button();
+            label11 = new Label();
+            filterButton = new Button();
             dataGridViewReadAllCustomers = new DataGridView();
             panelRead = new Panel();
             dataGridViewReadProduct = new DataGridView();
@@ -107,6 +111,10 @@
             // 
             // panelReadAll
             // 
+            panelReadAll.Controls.Add(filterByName);
+            panelReadAll.Controls.Add(toViewallCategore);
+            panelReadAll.Controls.Add(label11);
+            panelReadAll.Controls.Add(filterButton);
             panelReadAll.Controls.Add(dataGridViewReadAllCustomers);
             panelReadAll.Location = new Point(0, 0);
             panelReadAll.Margin = new Padding(1);
@@ -114,14 +122,50 @@
             panelReadAll.Size = new Size(824, 550);
             panelReadAll.TabIndex = 12;
             // 
+            // filterByName
+            // 
+            filterByName.Location = new Point(213, 388);
+            filterByName.Name = "filterByName";
+            filterByName.Size = new Size(136, 27);
+            filterByName.TabIndex = 5;
+            // 
+            // toViewallCategore
+            // 
+            toViewallCategore.Location = new Point(573, 358);
+            toViewallCategore.Name = "toViewallCategore";
+            toViewallCategore.Size = new Size(125, 57);
+            toViewallCategore.TabIndex = 4;
+            toViewallCategore.Text = "להצגת כל הלקוחות";
+            toViewallCategore.UseVisualStyleBackColor = true;
+            toViewallCategore.Click += toViewallCategore_Click;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(224, 355);
+            label11.Name = "label11";
+            label11.Size = new Size(102, 20);
+            label11.TabIndex = 2;
+            label11.Text = "בחר שם לסינון";
+            // 
+            // filterButton
+            // 
+            filterButton.Location = new Point(56, 358);
+            filterButton.Name = "filterButton";
+            filterButton.Size = new Size(101, 50);
+            filterButton.TabIndex = 3;
+            filterButton.Text = "לסינון לפי שם";
+            filterButton.UseVisualStyleBackColor = true;
+            filterButton.Click += filterButton_Click;
+            // 
             // dataGridViewReadAllCustomers
             // 
             dataGridViewReadAllCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewReadAllCustomers.Location = new Point(8, 16);
+            dataGridViewReadAllCustomers.Location = new Point(8, 1);
             dataGridViewReadAllCustomers.Margin = new Padding(1);
             dataGridViewReadAllCustomers.Name = "dataGridViewReadAllCustomers";
             dataGridViewReadAllCustomers.RowHeadersWidth = 123;
-            dataGridViewReadAllCustomers.Size = new Size(800, 529);
+            dataGridViewReadAllCustomers.Size = new Size(764, 328);
             dataGridViewReadAllCustomers.TabIndex = 0;
             // 
             // panelRead
@@ -391,9 +435,9 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(770, 440);
+            Controls.Add(panelReadAll);
             Controls.Add(panelCreate);
             Controls.Add(paneDelate);
-            Controls.Add(panelReadAll);
             Controls.Add(panelUpdate);
             Controls.Add(buttonBack);
             Controls.Add(panelRead);
@@ -405,6 +449,7 @@
             paneDelate.ResumeLayout(false);
             paneDelate.PerformLayout();
             panelReadAll.ResumeLayout(false);
+            panelReadAll.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewReadAllCustomers).EndInit();
             panelRead.ResumeLayout(false);
             panelRead.PerformLayout();
@@ -449,5 +494,9 @@
         private Label label4;
         private Label label3;
         private TextBox textBoxName1;
+        private Button toViewallCategore;
+        private Label label11;
+        private Button filterButton;
+        private TextBox filterByName;
     }
 }

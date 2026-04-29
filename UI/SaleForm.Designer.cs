@@ -51,6 +51,9 @@
             label12 = new Label();
             label13 = new Label();
             panelReadAll = new Panel();
+            label15 = new Label();
+            filterButton = new Button();
+            toViewallCategore = new Button();
             dataGridViewReadAll = new DataGridView();
             paneDelate = new Panel();
             IdToDelate = new TextBox();
@@ -70,6 +73,7 @@
             label1 = new Label();
             dateEnd = new DateTimePicker();
             dateStart = new DateTimePicker();
+            numericUpToAmount = new NumericUpDown();
             panelRead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewRead).BeginInit();
             formToUpdateProduct.SuspendLayout();
@@ -79,6 +83,7 @@
             paneDelate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownQuantity).BeginInit();
             panelCreate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpToAmount).BeginInit();
             SuspendLayout();
             // 
             // panelRead
@@ -310,23 +315,56 @@
             // 
             // panelReadAll
             // 
+            panelReadAll.Controls.Add(numericUpToAmount);
+            panelReadAll.Controls.Add(label15);
+            panelReadAll.Controls.Add(filterButton);
+            panelReadAll.Controls.Add(toViewallCategore);
             panelReadAll.Controls.Add(dataGridViewReadAll);
             panelReadAll.Location = new Point(0, 0);
             panelReadAll.Margin = new Padding(1);
             panelReadAll.Name = "panelReadAll";
-            panelReadAll.Size = new Size(989, 616);
+            panelReadAll.Size = new Size(989, 463);
             panelReadAll.TabIndex = 10;
             panelReadAll.Visible = false;
             panelReadAll.Paint += panelReadAll_Paint;
             // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(257, 367);
+            label15.Name = "label15";
+            label15.Size = new Size(113, 20);
+            label15.TabIndex = 2;
+            label15.Text = "בחר כמות לסינון";
+            // 
+            // filterButton
+            // 
+            filterButton.Location = new Point(61, 379);
+            filterButton.Name = "filterButton";
+            filterButton.Size = new Size(101, 69);
+            filterButton.TabIndex = 3;
+            filterButton.Text = "לסינון לפי כמות נדרשת למבצע";
+            filterButton.UseVisualStyleBackColor = true;
+            filterButton.Click += filterButton_Click;
+            // 
+            // toViewallCategore
+            // 
+            toViewallCategore.Location = new Point(660, 385);
+            toViewallCategore.Name = "toViewallCategore";
+            toViewallCategore.Size = new Size(125, 57);
+            toViewallCategore.TabIndex = 4;
+            toViewallCategore.Text = "להצגת כל המבצעים";
+            toViewallCategore.UseVisualStyleBackColor = true;
+            toViewallCategore.Click += toViewallCategore_Click;
+            // 
             // dataGridViewReadAll
             // 
             dataGridViewReadAll.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewReadAll.Location = new Point(13, 21);
+            dataGridViewReadAll.Location = new Point(13, 10);
             dataGridViewReadAll.Margin = new Padding(1);
             dataGridViewReadAll.Name = "dataGridViewReadAll";
             dataGridViewReadAll.RowHeadersWidth = 123;
-            dataGridViewReadAll.Size = new Size(946, 584);
+            dataGridViewReadAll.Size = new Size(946, 338);
             dataGridViewReadAll.TabIndex = 0;
             // 
             // paneDelate
@@ -511,15 +549,22 @@
             dateStart.Size = new Size(242, 27);
             dateStart.TabIndex = 11;
             // 
+            // numericUpToAmount
+            // 
+            numericUpToAmount.Location = new Point(240, 404);
+            numericUpToAmount.Name = "numericUpToAmount";
+            numericUpToAmount.Size = new Size(150, 27);
+            numericUpToAmount.TabIndex = 5;
+            // 
             // SaleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(770, 440);
+            ClientSize = new Size(824, 473);
+            Controls.Add(panelReadAll);
             Controls.Add(formToUpdateProduct);
             Controls.Add(panelCreate);
             Controls.Add(paneDelate);
-            Controls.Add(panelReadAll);
             Controls.Add(backToLastForm);
             Controls.Add(panelRead);
             Location = new Point(38, 11);
@@ -535,12 +580,14 @@
             formToUpdateProduct.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             panelReadAll.ResumeLayout(false);
+            panelReadAll.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewReadAll).EndInit();
             paneDelate.ResumeLayout(false);
             paneDelate.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownQuantity).EndInit();
             panelCreate.ResumeLayout(false);
             panelCreate.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpToAmount).EndInit();
             ResumeLayout(false);
         }
 
@@ -587,5 +634,9 @@
         private Label label11;
         private Label label12;
         private Label label13;
+        private Label label15;
+        private Button filterButton;
+        private Button toViewallCategore;
+        private NumericUpDown numericUpToAmount;
     }
 }

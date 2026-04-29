@@ -74,12 +74,12 @@
   </Sale>
   <Sale>
     <id>123</id>
-    <ProductId>1015</ProductId>
+    <ProductId>1020</ProductId>
     <SalePrice>4</SalePrice>
-    <QuantityRequier>3</QuantityRequier>
+    <QuantityRequier>10</QuantityRequier>
     <IsSaleToCustomer>true</IsSaleToCustomer>
-    <StartSale>2026-04-16T21:11:22.514</StartSale>
-    <EndSale>2026-04-28T21:11:22.5085397+03:00</EndSale>
+    <StartSale>2026-04-20T17:49:35</StartSale>
+    <EndSale>2026-05-21T17:49:35</EndSale>
   </Sale>
   <Sale>
     <id>124</id>

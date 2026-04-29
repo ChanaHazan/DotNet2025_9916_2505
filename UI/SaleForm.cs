@@ -1,4 +1,5 @@
-﻿
+﻿using BO;
+
 
 namespace UI
 {
@@ -54,6 +55,7 @@ namespace UI
             var productIds = allProducts.Select(p => p.Id).ToList();
             comboBoxProductId.DataSource = productIds;
             comboBox1.DataSource = new List<int>(productIds);
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -223,6 +225,28 @@ namespace UI
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void toViewallCategore_Click(object sender, EventArgs e)
+        {
+            var sales = _bl.Sale.ReadAll();
+            dataGridViewReadAll.DataSource = sales;
+            ClearAllSaleFields();
+        }
+
+        private void filterButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int amount=(int)numericUpToAmount.Value;
+                var sales = _bl.Sale.ReadAll(s => (s.QuantityRequier== amount));
+                dataGridViewReadAll.DataSource = sales;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("חלה שגיאה: " + ex.Message, "שגיאה במערכת", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
     public enum FormMode { Create, Update, Delete, View, ViewAll }

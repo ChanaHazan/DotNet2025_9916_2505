@@ -30,6 +30,10 @@
         {
             backToLastForm = new Button();
             panelReadAll = new Panel();
+            toViewallCategore = new Button();
+            filterButton = new Button();
+            label11 = new Label();
+            comboBoxFilter = new ComboBox();
             dataGridViewReadAllProducts = new DataGridView();
             panelRead = new Panel();
             dataGridViewReadProduct = new DataGridView();
@@ -76,7 +80,7 @@
             // backToLastForm
             // 
             backToLastForm.Location = new Point(918, 593);
-            backToLastForm.Margin = new Padding(1, 1, 1, 1);
+            backToLastForm.Margin = new Padding(1);
             backToLastForm.Name = "backToLastForm";
             backToLastForm.Size = new Size(181, 29);
             backToLastForm.TabIndex = 1;
@@ -86,22 +90,64 @@
             // 
             // panelReadAll
             // 
+            panelReadAll.Controls.Add(toViewallCategore);
+            panelReadAll.Controls.Add(filterButton);
+            panelReadAll.Controls.Add(label11);
+            panelReadAll.Controls.Add(comboBoxFilter);
             panelReadAll.Controls.Add(dataGridViewReadAllProducts);
-            panelReadAll.Location = new Point(0, 0);
-            panelReadAll.Margin = new Padding(1, 1, 1, 1);
+            panelReadAll.Location = new Point(0, 10);
+            panelReadAll.Margin = new Padding(1);
             panelReadAll.Name = "panelReadAll";
-            panelReadAll.Size = new Size(908, 618);
+            panelReadAll.Size = new Size(769, 420);
             panelReadAll.TabIndex = 2;
             panelReadAll.Visible = false;
+            panelReadAll.Paint += panelReadAll_Paint;
+            // 
+            // toViewallCategore
+            // 
+            toViewallCategore.Location = new Point(586, 346);
+            toViewallCategore.Name = "toViewallCategore";
+            toViewallCategore.Size = new Size(125, 57);
+            toViewallCategore.TabIndex = 4;
+            toViewallCategore.Text = "להצגת כל הקטגוריות";
+            toViewallCategore.UseVisualStyleBackColor = true;
+            toViewallCategore.Click += toViewallCategore_Click;
+            // 
+            // filterButton
+            // 
+            filterButton.Location = new Point(152, 356);
+            filterButton.Name = "filterButton";
+            filterButton.Size = new Size(101, 50);
+            filterButton.TabIndex = 3;
+            filterButton.Text = "לסינון לפי קטגוריה";
+            filterButton.UseVisualStyleBackColor = true;
+            filterButton.Click += filterButton_Click;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(269, 350);
+            label11.Name = "label11";
+            label11.Size = new Size(133, 20);
+            label11.TabIndex = 2;
+            label11.Text = "בחר קטגוריה לסינון";
+            // 
+            // comboBoxFilter
+            // 
+            comboBoxFilter.FormattingEnabled = true;
+            comboBoxFilter.Location = new Point(269, 378);
+            comboBoxFilter.Name = "comboBoxFilter";
+            comboBoxFilter.Size = new Size(151, 28);
+            comboBoxFilter.TabIndex = 1;
             // 
             // dataGridViewReadAllProducts
             // 
             dataGridViewReadAllProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewReadAllProducts.Location = new Point(14, 18);
-            dataGridViewReadAllProducts.Margin = new Padding(1, 1, 1, 1);
+            dataGridViewReadAllProducts.Location = new Point(14, 9);
+            dataGridViewReadAllProducts.Margin = new Padding(1);
             dataGridViewReadAllProducts.Name = "dataGridViewReadAllProducts";
             dataGridViewReadAllProducts.RowHeadersWidth = 123;
-            dataGridViewReadAllProducts.Size = new Size(875, 588);
+            dataGridViewReadAllProducts.Size = new Size(746, 322);
             dataGridViewReadAllProducts.TabIndex = 0;
             // 
             // panelRead
@@ -111,7 +157,7 @@
             panelRead.Controls.Add(textBoxEnterProductName);
             panelRead.Controls.Add(labelEnterProductName);
             panelRead.Location = new Point(0, 0);
-            panelRead.Margin = new Padding(1, 1, 1, 1);
+            panelRead.Margin = new Padding(1);
             panelRead.Name = "panelRead";
             panelRead.Size = new Size(913, 628);
             panelRead.TabIndex = 3;
@@ -121,7 +167,7 @@
             // 
             dataGridViewReadProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewReadProduct.Location = new Point(300, 236);
-            dataGridViewReadProduct.Margin = new Padding(1, 1, 1, 1);
+            dataGridViewReadProduct.Margin = new Padding(1);
             dataGridViewReadProduct.Name = "dataGridViewReadProduct";
             dataGridViewReadProduct.RowHeadersWidth = 123;
             dataGridViewReadProduct.Size = new Size(506, 188);
@@ -130,7 +176,7 @@
             // buttonSearchProduct
             // 
             buttonSearchProduct.Location = new Point(328, 184);
-            buttonSearchProduct.Margin = new Padding(1, 1, 1, 1);
+            buttonSearchProduct.Margin = new Padding(1);
             buttonSearchProduct.Name = "buttonSearchProduct";
             buttonSearchProduct.Size = new Size(108, 29);
             buttonSearchProduct.TabIndex = 2;
@@ -141,7 +187,7 @@
             // textBoxEnterProductName
             // 
             textBoxEnterProductName.Location = new Point(460, 189);
-            textBoxEnterProductName.Margin = new Padding(1, 1, 1, 1);
+            textBoxEnterProductName.Margin = new Padding(1);
             textBoxEnterProductName.Name = "textBoxEnterProductName";
             textBoxEnterProductName.Size = new Size(188, 27);
             textBoxEnterProductName.TabIndex = 1;
@@ -168,7 +214,7 @@
             panelCreateProduct.Controls.Add(label3);
             panelCreateProduct.Controls.Add(label2);
             panelCreateProduct.Location = new Point(0, 0);
-            panelCreateProduct.Margin = new Padding(1, 1, 1, 1);
+            panelCreateProduct.Margin = new Padding(1);
             panelCreateProduct.Name = "panelCreateProduct";
             panelCreateProduct.Size = new Size(897, 610);
             panelCreateProduct.TabIndex = 4;
@@ -177,7 +223,7 @@
             // btnAddProduct
             // 
             btnAddProduct.Location = new Point(502, 356);
-            btnAddProduct.Margin = new Padding(1, 1, 1, 1);
+            btnAddProduct.Margin = new Padding(1);
             btnAddProduct.Name = "btnAddProduct";
             btnAddProduct.Size = new Size(90, 29);
             btnAddProduct.TabIndex = 9;
@@ -188,7 +234,7 @@
             // numericUpDownStock
             // 
             numericUpDownStock.Location = new Point(436, 312);
-            numericUpDownStock.Margin = new Padding(1, 1, 1, 1);
+            numericUpDownStock.Margin = new Padding(1);
             numericUpDownStock.Name = "numericUpDownStock";
             numericUpDownStock.Size = new Size(144, 27);
             numericUpDownStock.TabIndex = 8;
@@ -196,7 +242,7 @@
             // textBoxPrice
             // 
             textBoxPrice.Location = new Point(460, 277);
-            textBoxPrice.Margin = new Padding(1, 1, 1, 1);
+            textBoxPrice.Margin = new Padding(1);
             textBoxPrice.Name = "textBoxPrice";
             textBoxPrice.Size = new Size(122, 27);
             textBoxPrice.TabIndex = 7;
@@ -206,7 +252,7 @@
             comboBoxCategory.FormattingEnabled = true;
             comboBoxCategory.Items.AddRange(new object[] { "Meats", "Poultry", "Spices", "Frozens", "Fish" });
             comboBoxCategory.Location = new Point(436, 245);
-            comboBoxCategory.Margin = new Padding(1, 1, 1, 1);
+            comboBoxCategory.Margin = new Padding(1);
             comboBoxCategory.Name = "comboBoxCategory";
             comboBoxCategory.Size = new Size(148, 28);
             comboBoxCategory.TabIndex = 6;
@@ -214,7 +260,7 @@
             // textBoxName
             // 
             textBoxName.Location = new Point(457, 211);
-            textBoxName.Margin = new Padding(1, 1, 1, 1);
+            textBoxName.Margin = new Padding(1);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(122, 27);
             textBoxName.TabIndex = 5;
@@ -309,7 +355,7 @@
             formUpdateProduct.Controls.Add(label8);
             formUpdateProduct.Controls.Add(label9);
             formUpdateProduct.Location = new Point(0, 0);
-            formUpdateProduct.Margin = new Padding(1, 1, 1, 1);
+            formUpdateProduct.Margin = new Padding(1);
             formUpdateProduct.Name = "formUpdateProduct";
             formUpdateProduct.Size = new Size(908, 628);
             formUpdateProduct.TabIndex = 11;
@@ -335,7 +381,7 @@
             // updateProduct
             // 
             updateProduct.Location = new Point(523, 387);
-            updateProduct.Margin = new Padding(1, 1, 1, 1);
+            updateProduct.Margin = new Padding(1);
             updateProduct.Name = "updateProduct";
             updateProduct.Size = new Size(90, 29);
             updateProduct.TabIndex = 9;
@@ -346,7 +392,7 @@
             // numericUpDown1
             // 
             numericUpDown1.Location = new Point(470, 341);
-            numericUpDown1.Margin = new Padding(1, 1, 1, 1);
+            numericUpDown1.Margin = new Padding(1);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(144, 27);
             numericUpDown1.TabIndex = 8;
@@ -354,7 +400,7 @@
             // textBox1
             // 
             textBox1.Location = new Point(494, 306);
-            textBox1.Margin = new Padding(1, 1, 1, 1);
+            textBox1.Margin = new Padding(1);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(122, 27);
             textBox1.TabIndex = 7;
@@ -364,7 +410,7 @@
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Meats", "Poultry", "Spices", "Frozens", "Fish" });
             comboBox1.Location = new Point(470, 274);
-            comboBox1.Margin = new Padding(1, 1, 1, 1);
+            comboBox1.Margin = new Padding(1);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(148, 28);
             comboBox1.TabIndex = 6;
@@ -372,7 +418,7 @@
             // textBox2
             // 
             textBox2.Location = new Point(490, 240);
-            textBox2.Margin = new Padding(1, 1, 1, 1);
+            textBox2.Margin = new Padding(1);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(122, 27);
             textBox2.TabIndex = 5;
@@ -422,18 +468,19 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(770, 440);
+            Controls.Add(panelReadAll);
             Controls.Add(formUpdateProduct);
             Controls.Add(paneDelate);
             Controls.Add(panelCreateProduct);
             Controls.Add(panelRead);
             Controls.Add(backToLastForm);
-            Controls.Add(panelReadAll);
-            Margin = new Padding(1, 1, 1, 1);
+            Margin = new Padding(1);
             Name = "ProductForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ProductForm";
             Load += ProductForm_Load;
             panelReadAll.ResumeLayout(false);
+            panelReadAll.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewReadAllProducts).EndInit();
             panelRead.ResumeLayout(false);
             panelRead.PerformLayout();
@@ -485,5 +532,9 @@
         private Label label9;
         private TextBox idToUpdate;
         private Label label10;
+        private Label label11;
+        private ComboBox comboBoxFilter;
+        private Button filterButton;
+        private Button toViewallCategore;
     }
 }
