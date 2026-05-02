@@ -36,4 +36,10 @@
     <Adress>רבי טרפון</Adress>
     <Phone>089740552</Phone>
   </Customer>
+  <Customer>
+    <Id>985674158</Id>
+    <CustomerName>אילה</CustomerName>
+    <Adress>חזון דוד 6</Adress>
+    <Phone>089740998</Phone>
+  </Customer>
 </ArrayOfCustomer>

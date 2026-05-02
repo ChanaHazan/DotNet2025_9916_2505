@@ -12,6 +12,7 @@ namespace UI
 {
     public partial class CashierForm : Form
     {
+        private BlApi.IBl _bl = BlApi.Factory.Get();
         public CashierForm()
         {
             InitializeComponent();
@@ -25,6 +26,16 @@ namespace UI
         }
 
         private void CashierForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void toRemoveProduct_Click(object sender, EventArgs e)
         {
 
         }
