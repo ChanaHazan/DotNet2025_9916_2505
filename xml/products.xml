@@ -4,7 +4,7 @@
     <Id>1015</Id>
     <ProductName>BlackPepper</ProductName>
     <Category>Meats</Category>
-    <Price>0</Price>
+    <Price>10</Price>
     <Stock>0</Stock>
   </Product>
   <Product>
@@ -18,7 +18,7 @@
     <Id>1018</Id>
     <ProductName>FrozenFalafel</ProductName>
     <Category>Meats</Category>
-    <Price>0</Price>
+    <Price>12</Price>
     <Stock>100</Stock>
   </Product>
   <Product>
@@ -46,21 +46,21 @@
     <Id>1029</Id>
     <ProductName>nufnu</ProductName>
     <Category>Meats</Category>
-    <Price>0</Price>
+    <Price>11</Price>
     <Stock>0</Stock>
   </Product>
   <Product>
     <Id>1030</Id>
     <ProductName>tnfjn</ProductName>
     <Category>Meats</Category>
-    <Price>0</Price>
+    <Price>24</Price>
     <Stock>0</Stock>
   </Product>
   <Product>
     <Id>1031</Id>
     <ProductName>organo</ProductName>
     <Category>Spices</Category>
-    <Price>0</Price>
+    <Price>45</Price>
     <Stock>0</Stock>
   </Product>
   <Product>
