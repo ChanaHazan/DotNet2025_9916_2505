@@ -96,7 +96,7 @@ namespace BlImplemention
                s.StartSale <= DateTime.Now && 
                s.EndSale >= DateTime.Now &&
                product.Amount >= s.QuantityRequier &&
-               (s.IsSaleToCustomer || isOrderToExistCustomer))
+               (s.IsSaleToCustomer))
                .Select(s => new BO.SaleInProduct()
                {
                    IsSaleToAllCustomer = s.IsSaleToCustomer,

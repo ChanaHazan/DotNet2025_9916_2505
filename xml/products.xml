@@ -70,4 +70,18 @@
     <Price>34</Price>
     <Stock>0</Stock>
   </Product>
+  <Product>
+    <Id>1034</Id>
+    <ProductName>Amnon</ProductName>
+    <Category>Fish</Category>
+    <Price>12</Price>
+    <Stock>2</Stock>
+  </Product>
+  <Product>
+    <Id>1035</Id>
+    <ProductName>Afuna</ProductName>
+    <Category>Frozens</Category>
+    <Price>20</Price>
+    <Stock>100</Stock>
+  </Product>
 </ArrayOfProduct>

@@ -27,4 +27,31 @@
     <StartSale>2026-05-01T15:17:56.735</StartSale>
     <EndSale>2026-05-29T15:17:56.723</EndSale>
   </Sale>
+  <Sale>
+    <id>128</id>
+    <ProductId>1016</ProductId>
+    <SalePrice>20</SalePrice>
+    <QuantityRequier>4</QuantityRequier>
+    <IsSaleToCustomer>true</IsSaleToCustomer>
+    <StartSale>2026-05-03T22:11:55.4678718+03:00</StartSale>
+    <EndSale>2026-05-08T22:11:55.459</EndSale>
+  </Sale>
+  <Sale>
+    <id>129</id>
+    <ProductId>1024</ProductId>
+    <SalePrice>12</SalePrice>
+    <QuantityRequier>4</QuantityRequier>
+    <IsSaleToCustomer>true</IsSaleToCustomer>
+    <StartSale>2026-05-03T22:29:39.5005566+03:00</StartSale>
+    <EndSale>2026-05-16T22:29:39.492</EndSale>
+  </Sale>
+  <Sale>
+    <id>130</id>
+    <ProductId>1018</ProductId>
+    <SalePrice>22</SalePrice>
+    <QuantityRequier>2</QuantityRequier>
+    <IsSaleToCustomer>false</IsSaleToCustomer>
+    <StartSale>2026-05-03T22:29:57.0365169+03:00</StartSale>
+    <EndSale>2026-05-22T22:29:57.036</EndSale>
+  </Sale>
 </ArrayOfSale>

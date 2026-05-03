@@ -54,6 +54,7 @@ namespace UI
             }
             else if (columnName == "DeleteColumn")
             {
+                currentOrder.ProductInOrder.Remove(item);
                 cartList.RemoveAt(e.RowIndex);
                 UpdateFinalTotal();
             }
@@ -149,6 +150,25 @@ namespace UI
                 }
             }
         }
+
+        private void dataGridViewOrder_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridViewOrder.Columns[e.ColumnIndex].Name == "SalesColumn" && e.Value != null)
+            {
+                var sales = e.Value as List<BO.SaleInProduct>;
+
+                if (sales != null && sales.Any())
+                {
+                    e.Value = string.Join(", ", sales.Select(s => $"{s.QuantityRequire} in - {s.Price}₪"));
+                    e.FormattingApplied = true;
+                }
+                else
+                {
+                    e.Value = "אין מבצעים";
+                    e.FormattingApplied = true;
+                }
+            }
+        }
         private void toAddProduct_Click(object sender, EventArgs e)
         {
             int productId = 0;
@@ -180,10 +200,12 @@ namespace UI
                 }
                 catch (BO.BLThereIsNotEnoughInStock ex)
                 {
+                    codeToAddProduct.Clear();
                     MessageBox.Show(ex.Message, "מחסור במלאי", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 catch (Exception ex)
                 {
+                    codeToAddProduct.Clear();
                     MessageBox.Show("שגיאה: " + ex.Message);
                 }
             }

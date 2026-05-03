@@ -58,9 +58,12 @@
             // 
             AutoScaleDimensions = new SizeF(20F, 48F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.רקע23;
+            BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(3009, 1519);
             Controls.Add(cashier);
             Controls.Add(manager);
+            DoubleBuffered = true;
             Margin = new Padding(2);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;

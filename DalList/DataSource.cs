@@ -12,36 +12,28 @@ internal static class DataSource
     
     internal static class Config
     {
-        const string path = @"xml\data-config.xml";
-        const string PRODUCTID = "productId";
-        const string SALEID = "saleId";
-        static XElement dataConfigXml = XElement.Load(path);
-        private static int ProductId= int.Parse(dataConfigXml.Element(PRODUCTID).Value);
-        private static int myVar; //מיותר?!
-
+        internal const int firstIdProduct = 100000;
+        private static int productId = firstIdProduct;
+        private static int myVar;
+      
 
         public static int GetProductId
         {
             get
             {
-                ProductId++;
-                dataConfigXml.Element(PRODUCTID).SetValue(ProductId.ToString());
-                dataConfigXml.Save(path);
-                return ProductId;
+                return productId++;
             }
         }
 
-
-        private static int SaleId = int.Parse(dataConfigXml.Element(SALEID).Value);
+        internal const int firstIdSale = 100;
+        private static int saleId = firstIdSale;
+        
 
         public static int GetSaleId
         {
             get
             {
-                SaleId++;
-                dataConfigXml.Element(SALEID).SetValue(SaleId.ToString());
-                dataConfigXml.Save(path);
-                return SaleId;
+                return saleId++;
             }
         }
     }
