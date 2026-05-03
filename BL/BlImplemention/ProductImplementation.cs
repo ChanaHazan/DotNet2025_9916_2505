@@ -97,9 +97,8 @@ namespace BlImplemention
             {
                 var sales = _dal.Sale.ReadAll(s =>
                 s.ProductId == product.Id
-                //צריך לבדוק פה שהמבצע בתוקף
-                 //&& s.StartSale <= DateTime.Now &&
-                 // s.EndSale <= DateTime.Now
+                 && s.StartSale <= DateTime.Now &&
+                  s.EndSale <= DateTime.Now
                 );
 
 

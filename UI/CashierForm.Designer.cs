@@ -35,25 +35,25 @@
             label1 = new Label();
             label2 = new Label();
             dataGridViewOrder = new DataGridView();
+            statusStrip1 = new StatusStrip();
+            lblFinalSum = new ToolStripStatusLabel();
+            btnDoOrder = new Button();
             DeleteColumn = new DataGridViewButtonColumn();
             productID = new DataGridViewTextBoxColumn();
             productName = new DataGridViewTextBoxColumn();
             amount = new DataGridViewTextBoxColumn();
             MinusColumn = new DataGridViewButtonColumn();
             PlusColumn = new DataGridViewButtonColumn();
-            statusStrip1 = new StatusStrip();
-            lblFinalSum = new ToolStripStatusLabel();
-            btnDoOrder = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewOrder).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // backToMainForm
             // 
-            backToMainForm.Location = new Point(2208, 1565);
-            backToMainForm.Margin = new Padding(2);
+            backToMainForm.Location = new Point(883, 652);
+            backToMainForm.Margin = new Padding(1);
             backToMainForm.Name = "backToMainForm";
-            backToMainForm.Size = new Size(452, 70);
+            backToMainForm.Size = new Size(181, 29);
             backToMainForm.TabIndex = 1;
             backToMainForm.Text = "חזרה לדף הראשי";
             backToMainForm.UseVisualStyleBackColor = true;
@@ -61,10 +61,9 @@
             // 
             // toAddProduct
             // 
-            toAddProduct.Location = new Point(1870, 528);
-            toAddProduct.Margin = new Padding(8, 7, 8, 7);
+            toAddProduct.Location = new Point(748, 220);
             toAddProduct.Name = "toAddProduct";
-            toAddProduct.Size = new Size(368, 70);
+            toAddProduct.Size = new Size(147, 29);
             toAddProduct.TabIndex = 3;
             toAddProduct.Text = "להוספת מוצר";
             toAddProduct.UseVisualStyleBackColor = true;
@@ -75,37 +74,33 @@
             toChooseProduct.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             toChooseProduct.AutoCompleteSource = AutoCompleteSource.ListItems;
             toChooseProduct.FormattingEnabled = true;
-            toChooseProduct.Location = new Point(2142, 370);
-            toChooseProduct.Margin = new Padding(8, 7, 8, 7);
+            toChooseProduct.Location = new Point(857, 154);
             toChooseProduct.Name = "toChooseProduct";
-            toChooseProduct.Size = new Size(372, 56);
+            toChooseProduct.Size = new Size(151, 28);
             toChooseProduct.TabIndex = 4;
             // 
             // codeToAddProduct
             // 
-            codeToAddProduct.Location = new Point(1692, 370);
-            codeToAddProduct.Margin = new Padding(8, 7, 8, 7);
+            codeToAddProduct.Location = new Point(677, 154);
             codeToAddProduct.Name = "codeToAddProduct";
-            codeToAddProduct.Size = new Size(306, 55);
+            codeToAddProduct.Size = new Size(125, 27);
             codeToAddProduct.TabIndex = 5;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(1715, 254);
-            label1.Margin = new Padding(8, 0, 8, 0);
+            label1.Location = new Point(686, 106);
             label1.Name = "label1";
-            label1.Size = new Size(248, 48);
+            label1.Size = new Size(103, 20);
             label1.TabIndex = 6;
             label1.Text = "הכנס קוד מוצר";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(2208, 254);
-            label2.Margin = new Padding(8, 0, 8, 0);
+            label2.Location = new Point(883, 106);
             label2.Name = "label2";
-            label2.Size = new Size(225, 48);
+            label2.Size = new Size(94, 20);
             label2.TabIndex = 7;
             label2.Text = "לבחירת מוצר";
             // 
@@ -113,16 +108,42 @@
             // 
             dataGridViewOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewOrder.Columns.AddRange(new DataGridViewColumn[] { DeleteColumn, productID, productName, amount, MinusColumn, PlusColumn });
-            dataGridViewOrder.Location = new Point(30, 110);
-            dataGridViewOrder.Margin = new Padding(8, 7, 8, 7);
+            dataGridViewOrder.Location = new Point(12, 46);
             dataGridViewOrder.Name = "dataGridViewOrder";
             dataGridViewOrder.RowHeadersWidth = 51;
-            dataGridViewOrder.Size = new Size(1625, 1490);
+            dataGridViewOrder.Size = new Size(650, 621);
             dataGridViewOrder.TabIndex = 8;
             dataGridViewOrder.CellContentClick += dataGridViewOrder_CellContentClick;
             dataGridViewOrder.CellValidating += dataGridViewOrder_CellValidating;
             dataGridViewOrder.CellValueChanged += dataGridViewOrder_CellValueChanged;
             dataGridViewOrder.CurrentCellDirtyStateChanged += dataGridViewOrder_CurrentCellDirtyStateChanged;
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.ImageScalingSize = new Size(48, 48);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { lblFinalSum });
+            statusStrip1.Location = new Point(0, 418);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Padding = new Padding(0, 0, 6, 0);
+            statusStrip1.Size = new Size(1079, 22);
+            statusStrip1.TabIndex = 9;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // lblFinalSum
+            // 
+            lblFinalSum.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFinalSum.Name = "lblFinalSum";
+            lblFinalSum.Size = new Size(0, 0);
+            // 
+            // btnDoOrder
+            // 
+            btnDoOrder.Location = new Point(696, 313);
+            btnDoOrder.Name = "btnDoOrder";
+            btnDoOrder.Size = new Size(242, 84);
+            btnDoOrder.TabIndex = 10;
+            btnDoOrder.Text = "לביצוע הזמנה";
+            btnDoOrder.UseVisualStyleBackColor = true;
+            btnDoOrder.Click += btnDoOrder_Click;
             // 
             // DeleteColumn
             // 
@@ -177,38 +198,11 @@
             PlusColumn.UseColumnTextForButtonValue = true;
             PlusColumn.Width = 80;
             // 
-            // statusStrip1
-            // 
-            statusStrip1.ImageScalingSize = new Size(48, 48);
-            statusStrip1.Items.AddRange(new ToolStripItem[] { lblFinalSum });
-            statusStrip1.Location = new Point(0, 1680);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(2715, 22);
-            statusStrip1.TabIndex = 9;
-            statusStrip1.Text = "statusStrip1";
-            // 
-            // lblFinalSum
-            // 
-            lblFinalSum.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFinalSum.Name = "lblFinalSum";
-            lblFinalSum.Size = new Size(0, 7);
-            // 
-            // btnDoOrder
-            // 
-            btnDoOrder.Location = new Point(1740, 752);
-            btnDoOrder.Margin = new Padding(8, 7, 8, 7);
-            btnDoOrder.Name = "btnDoOrder";
-            btnDoOrder.Size = new Size(604, 202);
-            btnDoOrder.TabIndex = 10;
-            btnDoOrder.Text = "לביצוע הזמנה";
-            btnDoOrder.UseVisualStyleBackColor = true;
-            btnDoOrder.Click += btnDoOrder_Click;
-            // 
             // CashierForm
             // 
-            AutoScaleDimensions = new SizeF(20F, 48F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2715, 1702);
+            ClientSize = new Size(1079, 440);
             Controls.Add(btnDoOrder);
             Controls.Add(statusStrip1);
             Controls.Add(dataGridViewOrder);
@@ -218,7 +212,7 @@
             Controls.Add(toChooseProduct);
             Controls.Add(toAddProduct);
             Controls.Add(backToMainForm);
-            Margin = new Padding(2);
+            Margin = new Padding(1);
             Name = "CashierForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CashierForm";
@@ -241,12 +235,12 @@
         private DataGridView dataGridViewOrder;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel lblFinalSum;
+        private Button btnDoOrder;
         private DataGridViewButtonColumn DeleteColumn;
         private DataGridViewTextBoxColumn productID;
         private DataGridViewTextBoxColumn productName;
         private DataGridViewTextBoxColumn amount;
         private DataGridViewButtonColumn MinusColumn;
         private DataGridViewButtonColumn PlusColumn;
-        private Button btnDoOrder;
     }
 }

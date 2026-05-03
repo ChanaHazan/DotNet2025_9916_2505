@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace UI
 {
@@ -30,6 +24,10 @@ namespace UI
         private void CashierForm_Load(object sender, EventArgs e)
         {
             dataGridViewOrder.DataSource = cartList;
+            dataGridViewOrder.Columns["BasePrice"].ReadOnly = true;
+            dataGridViewOrder.Columns["TotalPrice"].ReadOnly = true;
+            dataGridViewOrder.Columns["ProductId"].ReadOnly = true;
+            dataGridViewOrder.Columns["ProductName"].ReadOnly = true;
             dataGridViewOrder.AllowUserToAddRows = false;
             var allProducts = _bl.Product.ReadAll();
             toChooseProduct.DataSource = allProducts.ToList();
@@ -61,7 +59,7 @@ namespace UI
             }
         }
 
-        // פונקציית עזר קטנה כדי לא לחזור על קוד
+        //פונקצית עזר קטנה כדי לא לחזור על קוד
         private void RefreshRowData(int rowIndex, int amountToAdd)
         {
             var item = cartList[rowIndex];
@@ -199,28 +197,28 @@ namespace UI
 
         private void btnDoOrder_Click(object sender, EventArgs e)
         {
-            
-                if (!cartList.Any())
-                {
-                    MessageBox.Show("הסל ריק!");
-                    return;
-                }
 
-                try
-                {
-                    _bl.Order.DoOrder(currentOrder);
+            if (!cartList.Any())
+            {
+                MessageBox.Show("הסל ריק!");
+                return;
+            }
 
-                    MessageBox.Show("ההזמנה בוצעה בהצלחה! המלאי עודכן במערכת.");
+            try
+            {
+                _bl.Order.DoOrder(currentOrder);
 
-                    currentOrder = new BO.Order { ProductInOrder = new List<BO.ProductInOrder>() };
-                    cartList.Clear();
-                    UpdateFinalTotal();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"שגיאה בביצוע ההזמנה: {ex.Message}");
-                }
-            
+                MessageBox.Show("ההזמנה בוצעה בהצלחה! המלאי עודכן במערכת.");
+
+                currentOrder = new BO.Order { ProductInOrder = new List<BO.ProductInOrder>() };
+                cartList.Clear();
+                UpdateFinalTotal();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"שגיאה בביצוע ההזמנה: {ex.Message}");
+            }
+
         }
     }
 }

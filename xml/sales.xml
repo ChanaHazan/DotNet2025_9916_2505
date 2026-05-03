@@ -18,4 +18,13 @@
     <StartSale>2026-05-03T01:33:48.0046247+03:00</StartSale>
     <EndSale>2026-05-09T01:33:48.002</EndSale>
   </Sale>
+  <Sale>
+    <id>127</id>
+    <ProductId>1027</ProductId>
+    <SalePrice>300</SalePrice>
+    <QuantityRequier>2</QuantityRequier>
+    <IsSaleToCustomer>false</IsSaleToCustomer>
+    <StartSale>2026-05-01T15:17:56.735</StartSale>
+    <EndSale>2026-05-29T15:17:56.723</EndSale>
+  </Sale>
 </ArrayOfSale>
